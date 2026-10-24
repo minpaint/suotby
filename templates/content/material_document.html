@@ -40,16 +40,10 @@
   </div>
 </section>
 
-<section id="zakaz" class="section section--sm section--dark on-dark">
-  <div class="container row row--center" style="justify-content:space-between;gap:24px 48px">
-    <div class="stack stack--sm" style="flex:1 1 480px;min-width:0">
-      <h2 class="h2--md" style="font-weight:800">Образец — основа. Подготовим документ под вашу организацию</h2>
-      <p class="text-on-dark" style="font-size:17px">С учётом структуры, видов работ и действующих редакций НПА.</p>
-    </div>
-    <div class="row" style="gap:12px">
-      <a class="btn btn--accent btn--lg" href="/razrabotka-vsej-neobhodimoj-dlya-predpriyatiya-dokumentacii-po-ohrane-truda.html">Разработка документов по ОТ</a>
-      <a class="btn btn--outline-light btn--lg" href="/kontakty.html#zayavka">Задать вопрос</a>
-    </div>
-  </div>
-</section>
+{# 💡 заголовок как на старом сайте: у инструкций — про инструкции, у остальных документов — про всю документацию #}
+{% if material.type == "instruction" %}
+{% with call_id="zakaz" call_title="Разработка инструкций по охране труда для Вашей организации" call_link="/razrabotka-vsej-neobhodimoj-dlya-predpriyatiya-dokumentacii-po-ohrane-truda.html" call_link_text="Разработка документов по ОТ" %}{% include "includes/call_cta.html" %}{% endwith %}
+{% else %}
+{% with call_id="zakaz" call_link="/razrabotka-vsej-neobhodimoj-dlya-predpriyatiya-dokumentacii-po-ohrane-truda.html" call_link_text="Разработка документов по ОТ" %}{% include "includes/call_cta.html" %}{% endwith %}
+{% endif %}
 {% endblock %}
