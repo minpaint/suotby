@@ -23,10 +23,17 @@
     {% if material.basis %}<div class="notice notice--plain" style="flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><b>Основание</b><div class="muted">{{ material.basis|safe_html }}</div></div>{% endif %}
   </article>
   <aside class="side-col stack" style="gap:20px;padding-top:44px">
-    <div class="aside-box aside-box--accent">
-      <b class="aside-box__title">Выстроим охрану труда под ключ</b>
-      <span style="color:var(--accent-on)">Программы, инструкции, журналы и периодичность для каждой профессии.</span>
-      <a class="btn btn--dark" style="align-self:flex-start" href="/kachestvennaya-razrabotka-dokumentov-po-ohrane-truda-individualno-dlya-vashej-organizacii.html">Организация работы по ОТ</a>
+    <div class="aside-box aside-box--accent offer-box">
+      <div class="offer-box__head"><span class="ico-badge ico-badge--sm">{% icon "shield-check" 22 %}</span><b class="aside-box__title">Выстроим охрану труда под ключ</b></div>
+      <span>Подготовим всё, что спросит проверяющий, — под ваши профессии и виды работ:</span>
+      <ul class="checklist offer-box__list">
+        <li>{% check_icon color="#fff" size=20 %}Программы и журналы инструктажей</li>
+        <li>{% check_icon color="#fff" size=20 %}Инструкции по охране труда по профессиям</li>
+        <li>{% check_icon color="#fff" size=20 %}Периодичность обучения и проверки знаний</li>
+        <li>{% check_icon color="#fff" size=20 %}Приказы о назначении ответственных</li>
+      </ul>
+      <a class="btn btn--light btn--block" href="/kachestvennaya-razrabotka-dokumentov-po-ohrane-truda-individualno-dlya-vashej-organizacii.html">Организация работы по ОТ →</a>
+      <a class="offer-box__phone" href="{{ site.phone_1|tel }}"><span class="offer-box__phone-ico">{% icon "phone" 18 %}</span><span><small>Или позвоните — проконсультируем бесплатно</small>{{ site.phone_1 }}</span></a>
     </div>
     {% if related %}
     <div class="aside-box aside-box--white"><b class="aside-box__title">Читайте также</b>{% for r in related %}<a href="{{ r.path }}">{{ r.title }}</a>{% endfor %}</div>

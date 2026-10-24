@@ -1,6 +1,6 @@
 {# templates/pages/services_hub.html — все услуги (макет Uslugi) #}
 {% extends "base.html" %}
-{% load content_tags %}
+{% load site_tags content_tags %}
 {% block title %}{{ material.seo_title }} — {{ site.brand }}{% endblock %}
 {% block content %}
 <section class="container section--top stack" style="gap:20px">
@@ -15,7 +15,7 @@
     <div class="row row--between"><h2 class="h2--md" style="font-weight:800">{{ g.title }}</h2><span class="{% if forloop.first %}muted{% else %}text-on-dark{% endif %}" style="font-size:15px">Услуг: {{ g.items|length }}</span></div>
     <div class="grid">
       {% for s in g.items %}
-      <a class="card {% if forloop.parentloop.first %}card--muted{% else %}card--dark{% endif %}" href="{{ s.path }}"><b class="card__title">{{ s.title }}</b>{% if s.meta_description %}<span class="card__text">{{ s.meta_description|truncatechars:140 }}</span>{% endif %}<span class="card__more"{% if not forloop.parentloop.first %} style="color:var(--dark-accent)"{% endif %}>Подробнее →</span></a>
+      <a class="card {% if forloop.parentloop.first %}card--muted{% else %}card--dark{% endif %}" href="{{ s.path }}"><span class="ico-badge">{% icon s.title|icon_for %}</span><b class="card__title">{{ s.title }}</b>{% if s.meta_description %}<span class="card__text">{{ s.meta_description|truncatechars:140 }}</span>{% endif %}<span class="card__more"{% if not forloop.parentloop.first %} style="color:var(--dark-accent)"{% endif %}>Подробнее →</span></a>
       {% endfor %}
     </div>
   </div>

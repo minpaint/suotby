@@ -1,5 +1,6 @@
 {# templates/content/faq_hub.html — хаб «Вопрос-ответ» (макет VoprosOtvet) #}
 {% extends "base.html" %}
+{% load site_tags %}
 {% block title %}{{ category.meta_title|default:"Часто задаваемые вопросы по охране труда" }} — {{ site.brand }}{% endblock %}
 {% block content %}
 <section class="container section--top stack" style="gap:18px">
@@ -16,7 +17,7 @@
   <div class="container stack" style="gap:24px">
     <h2 class="h2--sm" style="font-weight:800;font-size:30px">Разделы</h2>
     <div class="grid grid--wide" style="gap:14px">
-      {% for s in sections %}<a class="section-link" href="{{ s.path }}"><span>{{ s.title }}</span><span class="counter">{{ s.n }}</span></a>{% endfor %}
+      {% for s in sections %}<a class="section-link" href="{{ s.path }}"><span class="section-link__main">{% icon s.title|icon_for 22 %}<span>{{ s.title }}</span></span><span class="counter">{{ s.n }}</span></a>{% endfor %}
     </div>
   </div>
 </section>

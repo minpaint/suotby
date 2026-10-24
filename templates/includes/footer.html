@@ -29,8 +29,8 @@
       </nav>
       <div class="footer__col">
         <b>Контакты</b>
-        {% for phone in site.phones %}<a class="footer__phone" href="{{ phone|tel }}">{{ phone }}</a>{% endfor %}
-        {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+        {% for phone in site.phones %}<a class="footer__phone ico-label" href="{{ phone|tel }}">{% icon "phone" 16 %}{{ phone }}</a>{% endfor %}
+        {% if site.email %}<a class="ico-label" href="mailto:{{ site.email }}">{% icon "mail" 16 %}{{ site.email }}</a>{% endif %}
         <span>Viber, Telegram — по тем же номерам</span>
         <a href="/kontakty.html#zayavka" style="color:var(--dark-accent);font-weight:600;text-decoration:underline">Оставить заявку →</a>
       </div>

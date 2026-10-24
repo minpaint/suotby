@@ -2,10 +2,10 @@
 {% load site_tags %}
 <div class="topbar">
   <div class="container topbar__inner">
-    <span>{{ site.region_note }}</span>
+    <span class="ico-label">{% icon "map-pin" 15 %}{{ site.region_note }}</span>
     <span class="topbar__contacts">
-      {% for phone in site.phones %}<a href="{{ phone|tel }}">{{ phone }}</a>{% endfor %}
-      {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+      {% for phone in site.phones %}<a class="ico-label" href="{{ phone|tel }}">{% icon "phone" 15 %}{{ phone }}</a>{% endfor %}
+      {% if site.email %}<a class="ico-label" href="mailto:{{ site.email }}">{% icon "mail" 15 %}{{ site.email }}</a>{% endif %}
       {% if site.viber_url %}<a class="pill pill--viber" href="{{ site.viber_url }}">Viber</a>{% endif %}
       {% if site.telegram_url %}<a class="pill pill--telegram" href="{{ site.telegram_url }}">Telegram</a>{% endif %}
     </span>

@@ -35,9 +35,9 @@
   <div class="container stack" style="padding-bottom:80px;gap:20px">
     <h2 class="h2--sm" style="font-weight:700">С чем вы пришли?</h2>
     <div class="grid grid--wide">
-      <a class="card" href="/vypolnenie-predpisanij-po-ohrane-truda.html"><b class="card__title">Пришло предписание</b><span class="card__text">Разберём каждый пункт, подготовим документы и ответ в установленный срок.</span><span class="card__more">Выполнить предписание →</span></a>
-      <a class="card" href="/obsluzhivanie-organizacii-v-kachestve-specialista-po-ohrane-truda.html"><b class="card__title">Нет специалиста по охране труда</b><span class="card__text">Возьмём функции на себя по договору: документы, инструктажи, контроль сроков.</span><span class="card__more">Аутсорсинг ОТ →</span></a>
-      <a class="card" href="/razrabotka-i-vnedrenie-suot-pod-klyuch.html"><b class="card__title">Нужна СУОТ</b><span class="card__text">Разработаем и внедрим систему управления охраной труда, подготовим к сертификации.</span><span class="card__more">Разработка СУОТ →</span></a>
+      <a class="card" href="/vypolnenie-predpisanij-po-ohrane-truda.html"><span class="ico-badge">{% icon "alert-triangle" %}</span><b class="card__title">Пришло предписание</b><span class="card__text">Разберём каждый пункт, подготовим документы и ответ в установленный срок.</span><span class="card__more">Выполнить предписание →</span></a>
+      <a class="card" href="/obsluzhivanie-organizacii-v-kachestve-specialista-po-ohrane-truda.html"><span class="ico-badge">{% icon "hard-hat" %}</span><b class="card__title">Нет специалиста по охране труда</b><span class="card__text">Возьмём функции на себя по договору: документы, инструктажи, контроль сроков.</span><span class="card__more">Аутсорсинг ОТ →</span></a>
+      <a class="card" href="/razrabotka-i-vnedrenie-suot-pod-klyuch.html"><span class="ico-badge">{% icon "shield-check" %}</span><b class="card__title">Нужна СУОТ</b><span class="card__text">Разработаем и внедрим систему управления охраной труда, подготовим к сертификации.</span><span class="card__more">Разработка СУОТ →</span></a>
     </div>
   </div>
 </section>
@@ -70,7 +70,7 @@
     <div class="section__head"><span class="eyebrow">Услуги по охране труда</span><h2 class="h2">Всё по охране труда — в одном месте</h2></div>
     <div class="grid grid--wide">
       {% for s in services %}
-      <a class="card card--muted" href="{{ s.path }}"><b class="card__title">{{ s.title }}</b>{% if s.meta_description %}<span class="card__text">{{ s.meta_description|truncatechars:140 }}</span>{% endif %}<span class="card__more">Подробнее →</span></a>
+      <a class="card card--muted" href="{{ s.path }}"><span class="ico-badge">{% icon s.title|icon_for %}</span><b class="card__title">{{ s.title }}</b>{% if s.meta_description %}<span class="card__text">{{ s.meta_description|truncatechars:140 }}</span>{% endif %}<span class="card__more">Подробнее →</span></a>
       {% endfor %}
     </div>
     <a class="link-more" href="/uslugi-po-ohrane-truda-v-minske-i-po-belarusi.html">Все услуги →</a>
@@ -96,10 +96,10 @@
         </ul>
       </div>
       <div class="grid grid--fit" style="flex:2 1 520px;min-width:0;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
-        <div class="card card--dark"><span class="card__num">01</span><b style="font-size:18px">Аудит и идентификация опасностей</b><span class="card__text">Оцениваем текущее состояние и профессиональные риски.</span></div>
-        <div class="card card--dark"><span class="card__num">02</span><b style="font-size:18px">Разработка документов</b><span class="card__text">Под вашу организацию, виды работ и численность.</span></div>
-        <div class="card card--dark"><span class="card__num">03</span><b style="font-size:18px">Внедрение и обучение</b><span class="card__text">Запускаем процессы, обучаем ответственных, подключаем онлайн-сервис.</span></div>
-        <div class="card card--dark"><span class="card__num">04</span><b style="font-size:18px">Подготовка к сертификации</b><span class="card__text">Сопровождаем аудит органа по сертификации и поддерживаем систему.</span></div>
+        <div class="card card--dark"><div class="card__top"><span class="ico-badge">{% icon "search-check" %}</span><span class="card__num">01</span></div><b style="font-size:18px">Аудит и идентификация опасностей</b><span class="card__text">Оцениваем текущее состояние и профессиональные риски.</span></div>
+        <div class="card card--dark"><div class="card__top"><span class="ico-badge">{% icon "file-text" %}</span><span class="card__num">02</span></div><b style="font-size:18px">Разработка документов</b><span class="card__text">Под вашу организацию, виды работ и численность.</span></div>
+        <div class="card card--dark"><div class="card__top"><span class="ico-badge">{% icon "graduation" %}</span><span class="card__num">03</span></div><b style="font-size:18px">Внедрение и обучение</b><span class="card__text">Запускаем процессы, обучаем ответственных, подключаем онлайн-сервис.</span></div>
+        <div class="card card--dark"><div class="card__top"><span class="ico-badge">{% icon "award" %}</span><span class="card__num">04</span></div><b style="font-size:18px">Подготовка к сертификации</b><span class="card__text">Сопровождаем аудит органа по сертификации и поддерживаем систему.</span></div>
       </div>
     </div>
   </div>
@@ -120,14 +120,14 @@
       </div>
     </div>
     <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
-      <div class="card" style="border:0"><b style="font-size:18px">Сотрудники и структура</b><span class="card__text">Организации, подразделения, должности, приём на работу.</span></div>
-      <div class="card" style="border:0"><b style="font-size:18px">СИЗ</b><span class="card__text">Нормы выдачи по должностям, учёт выдачи, личные карточки.</span></div>
-      <div class="card" style="border:0"><b style="font-size:18px">Медосмотры</b><span class="card__text">Вредные факторы, направления, контроль сроков.</span></div>
-      <div class="card" style="border:0"><b style="font-size:18px">Проверка знаний</b><span class="card__text">Комиссии, протоколы, удостоверения, онлайн-тестирование.</span></div>
-      <div class="card" style="border:0"><b style="font-size:18px">Инструктажи</b><span class="card__text">Журнал инструктажей и рассылки ответственным.</span></div>
-      <div class="card" style="border:0"><b style="font-size:18px">Оборудование</b><span class="card__text">Учёт оборудования и сроков технического обслуживания.</span></div>
-      <div class="card" style="border:0"><b style="font-size:18px">Документы по шаблонам</b><span class="card__text">Приказы, карточки и другие документы в Word.</span></div>
-      <div class="card" style="border:0"><b style="font-size:18px">Уведомления о сроках</b><span class="card__text">Напоминания по почте до того, как срок истёк.</span></div>
+      <div class="card" style="border:0"><span class="ico-badge ico-badge--info">{% icon "users" %}</span><b style="font-size:18px">Сотрудники и структура</b><span class="card__text">Организации, подразделения, должности, приём на работу.</span></div>
+      <div class="card" style="border:0"><span class="ico-badge ico-badge--info">{% icon "shirt" %}</span><b style="font-size:18px">СИЗ</b><span class="card__text">Нормы выдачи по должностям, учёт выдачи, личные карточки.</span></div>
+      <div class="card" style="border:0"><span class="ico-badge ico-badge--info">{% icon "heart-pulse" %}</span><b style="font-size:18px">Медосмотры</b><span class="card__text">Вредные факторы, направления, контроль сроков.</span></div>
+      <div class="card" style="border:0"><span class="ico-badge ico-badge--info">{% icon "graduation" %}</span><b style="font-size:18px">Проверка знаний</b><span class="card__text">Комиссии, протоколы, удостоверения, онлайн-тестирование.</span></div>
+      <div class="card" style="border:0"><span class="ico-badge ico-badge--info">{% icon "list-checks" %}</span><b style="font-size:18px">Инструктажи</b><span class="card__text">Журнал инструктажей и рассылки ответственным.</span></div>
+      <div class="card" style="border:0"><span class="ico-badge ico-badge--info">{% icon "wrench" %}</span><b style="font-size:18px">Оборудование</b><span class="card__text">Учёт оборудования и сроков технического обслуживания.</span></div>
+      <div class="card" style="border:0"><span class="ico-badge ico-badge--info">{% icon "files" %}</span><b style="font-size:18px">Документы по шаблонам</b><span class="card__text">Приказы, карточки и другие документы в Word.</span></div>
+      <div class="card" style="border:0"><span class="ico-badge ico-badge--info">{% icon "bell" %}</span><b style="font-size:18px">Уведомления о сроках</b><span class="card__text">Напоминания по почте до того, как срок истёк.</span></div>
     </div>
   </div>
 </section>
@@ -174,8 +174,8 @@
     <div class="stack" style="flex:1 1 380px;min-width:0;gap:14px">
       <b style="font-size:18px">Полезное</b>
       <div class="row" style="gap:10px">
-        {% for tab in useful %}<a class="chip" href="{{ tab.path }}">{{ tab.short_title }}</a>{% endfor %}
-        <a class="chip" href="/chasto-zadavaemye-voprosy-po-ohrane-truda/">Вопросы и ответы</a>
+        {% for tab in useful %}<a class="chip" href="{{ tab.path }}">{% icon tab.title|icon_for 18 %}{{ tab.short_title }}</a>{% endfor %}
+        <a class="chip" href="/chasto-zadavaemye-voprosy-po-ohrane-truda/">{% icon "help-circle" 18 %}Вопросы и ответы</a>
       </div>
     </div>
   </div>
@@ -187,11 +187,11 @@
   <div class="container stack" style="gap:28px">
     <div class="section__head" style="gap:10px"><span class="eyebrow">Партнёры</span><h2 class="h2--md" style="font-weight:800">Что ещё нужно по охране труда — у наших партнёров</h2></div>
     <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">
-      <a class="card" href="https://attestation.by/" rel="noopener"><b style="font-size:18px">Аттестация рабочих мест</b><span class="card__more" style="padding:0">attestation.by ↗</span></a>
-      <a class="card" href="http://profitrud.by/" rel="noopener"><b style="font-size:18px">Обучение по охране труда</b><span class="card__more" style="padding:0">profitrud.by ↗</span></a>
-      <a class="card" href="https://znaki.by/" rel="noopener"><b style="font-size:18px">Бланки журналов</b><span class="card__more" style="padding:0">znaki.by ↗</span></a>
-      <a class="card" href="https://leskadr.by/" rel="noopener"><b style="font-size:18px">Курсы</b><span class="card__more" style="padding:0">leskadr.by ↗</span></a>
-      <a class="card" href="https://www.ohrana-truda.by/" rel="noopener"><b style="font-size:18px">Форум по охране труда</b><span class="card__more" style="padding:0">ohrana-truda.by ↗</span></a>
+      <a class="card" href="https://attestation.by/" rel="noopener"><span class="ico-badge">{% icon "badge-check" %}</span><b style="font-size:18px">Аттестация рабочих мест</b><span class="card__more" style="padding:0">attestation.by ↗</span></a>
+      <a class="card" href="http://profitrud.by/" rel="noopener"><span class="ico-badge">{% icon "graduation" %}</span><b style="font-size:18px">Обучение по охране труда</b><span class="card__more" style="padding:0">profitrud.by ↗</span></a>
+      <a class="card" href="https://znaki.by/" rel="noopener"><span class="ico-badge">{% icon "book" %}</span><b style="font-size:18px">Бланки журналов</b><span class="card__more" style="padding:0">znaki.by ↗</span></a>
+      <a class="card" href="https://leskadr.by/" rel="noopener"><span class="ico-badge">{% icon "presentation" %}</span><b style="font-size:18px">Курсы</b><span class="card__more" style="padding:0">leskadr.by ↗</span></a>
+      <a class="card" href="https://www.ohrana-truda.by/" rel="noopener"><span class="ico-badge">{% icon "messages" %}</span><b style="font-size:18px">Форум по охране труда</b><span class="card__more" style="padding:0">ohrana-truda.by ↗</span></a>
     </div>
   </div>
 </section>

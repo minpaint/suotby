@@ -1,6 +1,6 @@
 {# templates/pages/about.html — о нас (макет ONas) #}
 {% extends "base.html" %}
-{% load content_tags %}
+{% load site_tags content_tags %}
 {% block title %}О нас — {{ site.brand }}{% endblock %}
 {% block content %}
 <section class="container section--top stack" style="gap:28px;padding-bottom:64px">
@@ -16,9 +16,9 @@
   <div class="container stack" style="gap:28px">
     <h2 class="h2--md" style="font-weight:800">Наш подход</h2>
     <div class="grid grid--fit">
-      <div class="card card--muted" style="border:0"><b class="card__title">Только необходимые документы</b><span class="card__text">Не навязываем лишнего: в СУОТ войдут только нужные документы.</span></div>
-      <div class="card card--muted" style="border:0"><b class="card__title">Опыт и качество</b><span class="card__text">При аудите видим недостатки и даём рекомендации по организации охраны труда.</span></div>
-      <div class="card card--muted" style="border:0"><b class="card__title">Всё в одной системе</b><span class="card__text">Документация по охране труда сразу интегрирована в систему управления.</span></div>
+      <div class="card card--muted" style="border:0"><span class="ico-badge">{% icon "target" %}</span><b class="card__title">Только необходимые документы</b><span class="card__text">Не навязываем лишнего: в СУОТ войдут только нужные документы.</span></div>
+      <div class="card card--muted" style="border:0"><span class="ico-badge">{% icon "award" %}</span><b class="card__title">Опыт и качество</b><span class="card__text">При аудите видим недостатки и даём рекомендации по организации охраны труда.</span></div>
+      <div class="card card--muted" style="border:0"><span class="ico-badge">{% icon "layers" %}</span><b class="card__title">Всё в одной системе</b><span class="card__text">Документация по охране труда сразу интегрирована в систему управления.</span></div>
     </div>
     {% if material.body %}<div class="prose prose--narrow">{{ material.body|safe_html }}</div>{% endif %}
   </div>
@@ -36,7 +36,7 @@
 <section class="section section--md section--dark on-dark">
   <div class="container row" style="gap:40px;align-items:center">
     <div class="stack" style="flex:1 1 440px;min-width:0;gap:14px">
-      <span class="eyebrow">Документы</span>
+      <span class="eyebrow ico-label">{% icon "badge-check" 18 %}Документы</span>
       <h2 class="h2--md" style="font-weight:800">Кто оказывает услуги</h2>
       <p class="text-on-dark" style="font-size:17px;line-height:1.6">«{{ site.brand }}» — торговая марка, созданная для узнаваемости на рынке, и не является юридическим лицом. Полный комплекс услуг оказывает {{ site.legal_name }}, УНП {{ site.unp }}, на основании отдельных договоров.</p>
       {% if site.accreditation %}<p class="text-on-dark">Свидетельство об аккредитации: {{ site.accreditation }}</p>{% endif %}

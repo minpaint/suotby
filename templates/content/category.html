@@ -1,6 +1,6 @@
 {# templates/content/category.html — раздел материалов (макет Razdel) #}
 {% extends "base.html" %}
-{% load content_tags %}
+{% load site_tags content_tags %}
 {% block title %}{{ category.meta_title|default:category.title }}{% if page_obj.number > 1 %} — страница {{ page_obj.number }}{% endif %} — {{ site.brand }}{% endblock %}
 {% block meta_description %}{{ category.meta_description|default:category.title }}{% endblock %}
 {% block meta_extra %}{% if query %}<meta name="robots" content="noindex, follow">{% endif %}{% endblock %}
@@ -30,6 +30,7 @@
 
       {% for m in page_obj %}
       <a class="item" href="{{ m.path }}">
+        <span class="ico-badge ico-badge--sm">{% icon m.type|type_icon 22 %}</span>
         <div class="item__body">
           <span class="card__kind">{{ m.get_type_display }}</span>
           <b class="item__title">{{ m.title }}</b>
@@ -51,7 +52,7 @@
     </div>
     <aside class="side-col stack" style="gap:20px">
       <div class="aside-box aside-box--dark">
-        <b class="aside-box__title">Нужен документ под вашу организацию?</b>
+        <span class="ico-badge ico-badge--sm">{% icon "files" 22 %}</span><b class="aside-box__title">Нужен документ под вашу организацию?</b>
         <span class="text-on-dark">Образец — только основа. Подготовим документы с учётом вашей структуры и видов работ.</span>
         <a class="btn btn--accent" style="align-self:flex-start" href="/razrabotka-vsej-neobhodimoj-dlya-predpriyatiya-dokumentacii-po-ohrane-truda.html">Разработка документов</a>
       </div>

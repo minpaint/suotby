@@ -56,6 +56,8 @@ p { margin: 0; }
 .btn--dark:hover { background: #24384A; color: #fff; }
 .btn--outline { border-color: var(--ink); color: var(--ink); background: transparent; }
 .btn--outline:hover { background: var(--ink); color: #fff; }
+.btn--light { background: #fff; color: var(--accent-ink); }
+.btn--light:hover { background: var(--accent-soft); color: var(--accent-ink-hover); }
 .btn--outline-light { border-color: #fff; color: #fff; }
 .btn--outline-light:hover { background: #fff; color: var(--ink); }
 .btn--block { width: 100%; }
@@ -188,7 +190,8 @@ a.card--dark:hover { border-color: var(--dark-accent); color: #fff; }
 .aside-box--white { background: #fff; border: 1px solid var(--border-2); }
 .aside-box--dark { background: var(--dark); color: #fff; padding: 24px; gap: 12px; }
 .aside-box--accent { background: var(--accent); color: #fff; padding: 24px; gap: 12px; }
-.aside-box a { color: var(--ink); line-height: 1.45; }
+/* ✏️ ИЗМЕНЕНО: только обычные ссылки — иначе правило перекрашивало текст кнопок (тёмный текст на тёмной кнопке) */
+.aside-box a:not(.btn) { color: var(--ink); line-height: 1.45; }
 .aside-box--dark a:not(.btn), .aside-box--accent a:not(.btn) { color: #fff; }
 .aside-box__title { font-size: 17px; font-weight: 700; }
 .aside-box--dark .aside-box__title, .aside-box--accent .aside-box__title { font-size: 20px; line-height: 1.3; }
@@ -227,6 +230,35 @@ a.card--dark:hover { border-color: var(--dark-accent); color: #fff; }
 .team-photo { aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius); width: 100%; background: var(--border-2); }
 .big-phone { color: #fff; font-size: 28px; font-weight: 800; letter-spacing: -0.4px; text-decoration: none; }
 .big-phone:hover { color: var(--dark-accent); }
+/* ------------------------------------------------------------------ иконки (apps/core/icons.py, тег {% icon %}) */
+.ico { flex: none; display: block; }
+.ico-badge { flex: none; width: 48px; height: 48px; border-radius: 14px; background: var(--accent-soft); color: var(--accent-ink); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px; transition: background .2s, color .2s; }
+.ico-badge--sm { width: 40px; height: 40px; border-radius: 12px; margin-bottom: 0; }
+.ico-badge--info { background: var(--info-bg); color: var(--info-ink); }
+.card--dark .ico-badge, .on-dark .ico-badge, .aside-box--dark .ico-badge { background: rgba(159, 208, 174, .14); color: var(--dark-accent); }
+.aside-box--accent .ico-badge { background: rgba(255, 255, 255, .16); color: #fff; }
+a.card:hover .ico-badge, a.item:hover .ico-badge { background: var(--accent); color: #fff; }
+a.card--dark:hover .ico-badge { background: var(--dark-accent); color: var(--dark); }
+.card__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.ico-label { display: inline-flex; align-items: center; gap: 8px; }
+.ico-label .ico { color: var(--accent); }
+.on-dark .ico-label .ico, .footer .ico-label .ico, .topbar .ico-label .ico { color: var(--dark-accent); }
+/* Боковая плашка-предложение у вопросов: что входит, кнопка, телефон */
+.offer-box { gap: 14px; line-height: 1.5; box-shadow: 0 12px 28px rgba(39, 63, 46, .22); }
+.offer-box__head { display: flex; align-items: center; gap: 12px; }
+.offer-box__list { gap: 9px; font-size: 15px; color: #fff; }
+.offer-box__list svg { margin-top: 2px; }
+.offer-box .btn { margin-top: 4px; }
+.offer-box__phone { display: flex; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .25); color: #fff; text-decoration: none; font-size: 19px; font-weight: 700; }
+.offer-box__phone small { display: block; font-size: 13px; font-weight: 500; }
+.offer-box__phone:hover { text-decoration: underline; }
+.offer-box__phone-ico { flex: none; width: 40px; height: 40px; border-radius: 50%; background: #fff; color: var(--accent-ink); display: inline-flex; align-items: center; justify-content: center; }
+.chip .ico { color: var(--accent); }
+.chip--active .ico { color: #fff; }
+.section-link__main { display: flex; align-items: flex-start; gap: 12px; min-width: 0; }
+.section-link__main .ico { color: var(--accent); margin-top: 1px; }
+.item .ico-badge { align-self: flex-start; }
+
 /* Блок «звоните» в конце статей — серая плашка, телефоны крупно, фото специалиста справа (как на старом сайте) */
 .call-cta__card { background: var(--border-2); border-radius: var(--radius); display: flex; align-items: flex-end; overflow: hidden; }
 .call-cta__body { flex: 1 1 0; min-width: 0; align-self: center; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; padding: 48px 32px; }
@@ -234,6 +266,8 @@ a.card--dark:hover { border-color: var(--dark-accent); color: #fff; }
 .call-cta__phones { display: flex; flex-direction: column; gap: 4px; margin: 8px 0; }
 .call-cta__phone { color: var(--ink); font-size: clamp(32px, 5vw, 58px); font-weight: 500; line-height: 1.2; letter-spacing: -0.5px; text-decoration: none; white-space: nowrap; }
 .call-cta__phone:hover { color: var(--accent-ink); }
+.call-cta__phone { display: inline-flex; align-items: center; gap: 16px; }
+.call-cta__ico { flex: none; width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: #fff; display: inline-flex; align-items: center; justify-content: center; }
 .call-cta__photo { flex: 0 0 auto; width: clamp(260px, 34%, 420px); height: auto; display: block; }
 
 /* ------------------------------------------------------------------ подвал */
@@ -267,6 +301,9 @@ a.card--dark:hover { border-color: var(--dark-accent); color: #fff; }
   .call-cta__body { padding: 36px 20px 8px; }
   .call-cta__title { font-size: 22px; }
   .call-cta__photo { width: 240px; }
+  .call-cta__phone { gap: 10px; font-size: 25px; }
+  .call-cta__ico { width: 34px; height: 34px; }
+  .call-cta__ico .ico { width: 18px; height: 18px; }
 }
 @media print {
   .topbar, .header, .footer, .no-print, form { display: none !important; }

@@ -29,9 +29,9 @@
   <div class="container stack" style="gap:28px">
     <h2 class="h2--md" style="font-weight:800">От чего зависит цена</h2>
     <div class="grid grid--fit" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
-      <div class="card"><span class="card__num">01</span><b class="card__title">Численность сотрудников</b><span class="card__text">Чем больше работников, тем больше масштаб СУОТ и объём документации. Для анализа нужно штатное расписание.</span></div>
-      <div class="card"><span class="card__num">02</span><b class="card__title">Работы с повышенной опасностью</b><span class="card__text">Требуют дополнительных мер безопасности и отдельных процедур СУОТ. Нужен перечень выполняемых работ.</span></div>
-      <div class="card"><span class="card__num">03</span><b class="card__title">Количество и сложность оборудования</b><span class="card__text">В проектах инструкций учитываем специфику каждой модели оборудования, а не берём шаблон из интернета.</span></div>
+      <div class="card"><div class="card__top"><span class="ico-badge">{% icon "users" %}</span><span class="card__num">01</span></div><b class="card__title">Численность сотрудников</b><span class="card__text">Чем больше работников, тем больше масштаб СУОТ и объём документации. Для анализа нужно штатное расписание.</span></div>
+      <div class="card"><div class="card__top"><span class="ico-badge">{% icon "alert-triangle" %}</span><span class="card__num">02</span></div><b class="card__title">Работы с повышенной опасностью</b><span class="card__text">Требуют дополнительных мер безопасности и отдельных процедур СУОТ. Нужен перечень выполняемых работ.</span></div>
+      <div class="card"><div class="card__top"><span class="ico-badge">{% icon "wrench" %}</span><span class="card__num">03</span></div><b class="card__title">Количество и сложность оборудования</b><span class="card__text">В проектах инструкций учитываем специфику каждой модели оборудования, а не берём шаблон из интернета.</span></div>
     </div>
     {% if material.body %}<div class="prose prose--narrow">{{ material.body|safe_html }}</div>{% endif %}
   </div>
@@ -45,8 +45,8 @@
       <p class="text-on-dark" style="font-size:17px">Так вы получите СУОТ под потребности вашего предприятия и не переплатите за избыточные документы.</p>
     </div>
     <div class="stack" style="flex:1 1 360px;min-width:0;gap:12px">
-      <div class="card card--dark" style="flex-direction:row;align-items:center;gap:14px"><b style="font-size:17px">📄 Штатное расписание</b></div>
-      <div class="card card--dark" style="flex-direction:row;align-items:center;gap:14px"><b style="font-size:17px">📄 Перечень выполняемых работ</b></div>
+      <div class="card card--dark" style="flex-direction:row;align-items:center;gap:14px"><span class="ico-badge ico-badge--sm">{% icon "file-text" 22 %}</span><b style="font-size:17px">Штатное расписание</b></div>
+      <div class="card card--dark" style="flex-direction:row;align-items:center;gap:14px"><span class="ico-badge ico-badge--sm">{% icon "list-checks" 22 %}</span><b style="font-size:17px">Перечень выполняемых работ</b></div>
       <a class="btn btn--accent btn--lg" style="align-self:flex-start" href="/kontakty.html#zayavka">Отправить на расчёт</a>
     </div>
   </div>

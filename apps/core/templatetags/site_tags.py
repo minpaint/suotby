@@ -9,6 +9,7 @@ from django import template
 from django.utils.html import format_html
 from django.utils.safestring import SafeString
 
+from apps.core import icons
 from apps.core.models import SiteSettings
 from apps.core.sanitize import mark_clean
 
@@ -48,6 +49,25 @@ def json_ld(data: dict[str, Any]) -> SafeString:
     """
     payload = json.dumps(data, ensure_ascii=False).replace("<", "\\u003c")
     return mark_clean(f'<script type="application/ld+json">{payload}</script>')
+
+
+@register.simple_tag
+def icon(name: str, size: int = 24) -> SafeString:
+    """Линейная иконка из набора ``apps.core.icons``: ``{% icon "phone" 18 %}`` или ``{% icon s.title|icon_for %}``."""
+    # 💡 разметка собирается только из констант набора — пользовательский текст в неё не попадает
+    return mark_clean(icons.svg(name, size))
+
+
+@register.filter
+def icon_for(text: str) -> str:
+    """Имя иконки по названию услуги или раздела."""
+    return icons.icon_for(text)
+
+
+@register.filter
+def type_icon(material_type: str) -> str:
+    """Имя иконки по типу материала (инструкция, приказ, вопрос…)."""
+    return icons.TYPE_ICONS.get(material_type, icons.DEFAULT_ICON)
 
 
 @register.simple_tag

@@ -7,7 +7,7 @@
       <div class="call-cta__body">
         <h2 class="call-cta__title">{{ call_title|default:"Разработка всей необходимой документации по охране труда для Вашей организации" }}</h2>
         <div class="call-cta__phones">
-          {% for phone in site.phones %}<a class="call-cta__phone" href="{{ phone|tel }}">{{ phone }}</a>{% endfor %}
+          {% for phone in site.phones %}<a class="call-cta__phone" href="{{ phone|tel }}"><span class="call-cta__ico">{% icon "phone" 26 %}</span>{{ phone }}</a>{% endfor %}
         </div>
         <a class="btn btn--accent btn--lg" href="/kontakty.html#zayavka">Отправить заявку</a>
         {% if call_link %}<a class="link-more" href="{{ call_link }}">{{ call_link_text }} →</a>{% endif %}
