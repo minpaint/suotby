@@ -34,8 +34,8 @@ class SiteSettings(models.Model):
         max_length=200,
         default="Минск и вся Беларусь · выезд и удалённо",
     )
-    phone_1 = models.CharField("Телефон 1", max_length=30, default="+375 29 357-09-11")
-    phone_2 = models.CharField("Телефон 2", max_length=30, blank=True, default="+375 33 357-09-11")
+    phone_1 = models.CharField("Телефон 1", max_length=30, default="+375 (29) 35-70-911")
+    phone_2 = models.CharField("Телефон 2", max_length=30, blank=True, default="+375 (33) 35-70-911")
     email = models.EmailField("E-mail", blank=True, default="3570911@tut.by")
     viber_url = models.CharField(
         "Ссылка Viber", max_length=200, blank=True, default="viber://chat?number=%2B375293570911"
