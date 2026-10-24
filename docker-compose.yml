@@ -1,0 +1,55 @@
+# docker-compose.yml — локальная разработка и тесты: docker compose up
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: suot
+      POSTGRES_USER: suot
+      POSTGRES_PASSWORD: suot
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U suot"]
+      interval: 5s
+      retries: 10
+
+  web:
+    build:
+      context: .
+      args:
+        DEV: "1"
+    command: >
+      sh -c "python manage.py migrate --noinput &&
+             python manage.py seed_site &&
+             python manage.py import_redirects &&
+             python manage.py runserver 0.0.0.0:8000"
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.dev
+      DATABASE_URL: postgres://suot:suot@db:5432/suot
+      ALLOWED_HOSTS: localhost,127.0.0.1
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Тесты в отдельном контейнере: docker compose run --rm tests
+  tests:
+    build:
+      context: .
+      args:
+        DEV: "1"
+    command: pytest --create-db --cov
+    environment:
+      DATABASE_URL: postgres://suot:suot@db:5432/suot
+    volumes:
+      - .:/app
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles: ["tests"]
+
+volumes:
+  pgdata:

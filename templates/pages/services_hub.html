@@ -1,0 +1,26 @@
+{# templates/pages/services_hub.html — все услуги (макет Uslugi) #}
+{% extends "base.html" %}
+{% load content_tags %}
+{% block title %}{{ material.seo_title }} — {{ site.brand }}{% endblock %}
+{% block content %}
+<section class="container section--top stack" style="gap:20px">
+  {% include "includes/breadcrumbs.html" %}
+  <h1 class="h1" style="max-width:860px">{{ material.title }}</h1>
+  <p class="lead">Разрабатываем документы, внедряем СУОТ, берём на себя функции специалиста по охране труда. Работаем по договору, расчёт безналичный.</p>
+  <div class="row" style="gap:10px;margin-top:4px">{% for g in groups %}{% if g.items %}<a class="chip" href="#{{ g.anchor }}">{{ g.title }}</a>{% endif %}{% endfor %}</div>
+</section>
+{% for g in groups %}{% if g.items %}
+<section id="{{ g.anchor }}" class="section section--md {% if forloop.first %}section--white{% else %}section--dark on-dark{% endif %}">
+  <div class="container stack" style="gap:28px">
+    <div class="row row--between"><h2 class="h2--md" style="font-weight:800">{{ g.title }}</h2><span class="{% if forloop.first %}muted{% else %}text-on-dark{% endif %}" style="font-size:15px">Услуг: {{ g.items|length }}</span></div>
+    <div class="grid">
+      {% for s in g.items %}
+      <a class="card {% if forloop.parentloop.first %}card--muted{% else %}card--dark{% endif %}" href="{{ s.path }}"><b class="card__title">{{ s.title }}</b>{% if s.meta_description %}<span class="card__text">{{ s.meta_description|truncatechars:140 }}</span>{% endif %}<span class="card__more"{% if not forloop.parentloop.first %} style="color:var(--dark-accent)"{% endif %}>Подробнее →</span></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}{% endfor %}
+{% if material.body %}<section class="section section--sm section--bg"><div class="container prose prose--narrow">{{ material.body|safe_html }}</div></section>{% endif %}
+{% with cta_title="Не нашли нужную услугу?" %}{% include "includes/cta.html" %}{% endwith %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{# templates/leads/thanks.html — заявка отправлена #}
+{% extends "base.html" %}
+{% block title %}Заявка отправлена — {{ site.brand }}{% endblock %}
+{% block meta_extra %}<meta name="robots" content="noindex">{% endblock %}
+{% block content %}
+<div class="container stack" style="padding-top:72px;padding-bottom:88px;gap:18px;max-width:760px">
+  <span class="badge">Готово</span>
+  <h1 class="h1 h1--md">Спасибо! Заявка отправлена</h1>
+  <p class="lead">Перезвоним в рабочее время в тот же день. Если вопрос срочный — позвоните: {% for p in site.phones %}<a href="tel:{{ p }}">{{ p }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}.</p>
+  <div class="row" style="gap:12px;margin-top:8px"><a class="btn btn--dark" href="/">На главную</a><a class="btn btn--outline" href="/chasto-zadavaemye-voprosy-po-ohrane-truda/">Вопрос-ответ</a></div>
+</div>
+{% endblock %}

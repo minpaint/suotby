@@ -1,0 +1,22 @@
+{# templates/pages/clients.html — наши клиенты (макет Klienty) #}
+{% extends "base.html" %}
+{% block title %}Наши клиенты — {{ site.brand }}{% endblock %}
+{% block content %}
+<section class="container section--top stack" style="gap:18px;padding-bottom:40px">
+  {% include "includes/breadcrumbs.html" %}
+  <h1 class="h1">{{ material.title }}</h1>
+  <p class="lead" style="font-size:18px">{{ clients|length }} организаций из Минска и регионов: производство, строительство, торговля, медицина, культура и представительства иностранных компаний.</p>
+</section>
+{% if testimonials %}
+<div class="container grid grid--fit" style="padding-bottom:48px">
+  {% for t in testimonials %}<div class="card"><b style="font-size:17px">«{{ t.text }}»</b><span class="muted" style="font-size:14px">{{ t.author }}{% if t.organization %}, {{ t.organization }}{% endif %}{% if t.scan %} · <a href="{{ t.scan.url }}">скан письма</a>{% endif %}</span></div>{% endfor %}
+</div>
+{% endif %}
+<section class="section section--sm section--white">
+  <div class="container stack" style="gap:20px">
+    <h2 class="h2--sm" style="font-weight:800">Полный список</h2>
+    <ul class="clients">{% for c in clients %}<li>{{ c.name }}</li>{% endfor %}</ul>
+  </div>
+</section>
+{% with cta_title="Станьте следующим" cta_button="Получить расчёт" %}{% include "includes/cta.html" %}{% endwith %}
+{% endblock %}

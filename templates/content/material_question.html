@@ -1,0 +1,36 @@
+{# templates/content/material_question.html — вопрос-ответ и справки «Охрана труда при…» (макет Vopros) #}
+{% extends "base.html" %}
+{% load site_tags content_tags %}
+{% block title %}{{ material.seo_title }} — {{ site.brand }}{% endblock %}
+{% block meta_description %}{{ material.meta_description|default:material.short_answer|default:material.search_text|truncatechars:160 }}{% endblock %}
+{% block jsonld %}{% if material.type == "faq" %}{% json_ld faq_schema %}{% endif %}{% endblock %}
+{% block content %}
+<div class="container row" style="padding-top:28px;padding-bottom:64px;gap:40px;align-items:flex-start">
+  <article class="main-col stack" style="gap:20px;flex-basis:620px">
+    {% include "includes/breadcrumbs.html" %}
+    <span class="badge badge--info">{{ badge|default:"Вопрос" }}</span>
+    <h1 class="h1" style="font-size:38px;line-height:1.15;letter-spacing:-0.8px">{{ material.title }}</h1>
+    <div class="meta">
+      <span>Опубликовано: {{ material.published_at|date:"d.m.Y" }}</span>
+      {% if material.hits %}<span>{{ material.hits }} просмотров</span>{% endif %}
+      {% if material.npa_checked_at %}<span>Ответ актуален на: {{ material.npa_checked_at|date:"d.m.Y" }}</span>{% endif %}
+    </div>
+    {% if material.short_answer %}
+    <div class="short-answer"><span class="eyebrow eyebrow--light">Коротко</span><span>{{ material.short_answer }}</span></div>
+    {% endif %}
+    {% if material.intro %}<div class="prose">{{ material.intro|safe_html }}</div>{% endif %}
+    <div class="prose">{{ material.body|safe_html }}</div>
+    {% if material.basis %}<div class="notice notice--plain" style="flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><b>Основание</b><div class="muted">{{ material.basis|safe_html }}</div></div>{% endif %}
+  </article>
+  <aside class="side-col stack" style="gap:20px;padding-top:44px">
+    <div class="aside-box aside-box--accent">
+      <b class="aside-box__title">Выстроим охрану труда под ключ</b>
+      <span style="color:var(--accent-on)">Программы, инструкции, журналы и периодичность для каждой профессии.</span>
+      <a class="btn btn--dark" style="align-self:flex-start" href="/kachestvennaya-razrabotka-dokumentov-po-ohrane-truda-individualno-dlya-vashej-organizacii.html">Организация работы по ОТ</a>
+    </div>
+    {% if related %}
+    <div class="aside-box aside-box--white"><b class="aside-box__title">Читайте также</b>{% for r in related %}<a href="{{ r.path }}">{{ r.title }}</a>{% endfor %}</div>
+    {% endif %}
+  </aside>
+</div>
+{% endblock %}

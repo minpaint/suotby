@@ -1,0 +1,101 @@
+# pyproject.toml — зависимости и настройки инструментов проекта suot.by
+
+[tool.poetry]
+name = "suotby"
+version = "0.1.0"
+description = "Сайт suot.by: разработка СУОТ и услуги по охране труда (Django)"
+authors = ["ИП Мингинович А.Г."]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Django = "~5.2"
+django-environ = "^0.12"
+psycopg = { version = "^3.2", extras = ["binary"] }
+nh3 = "^0.3"
+Markdown = "^3.7"
+PyYAML = "^6.0"
+django-ckeditor-5 = "^0.2"
+Pillow = "^11.0"
+gunicorn = "^23.0"
+whitenoise = "^6.8"
+django-ratelimit = "^4.1"
+django-csp = "^4.0"
+sentry-sdk = { version = "^2.18", extras = ["django"] }
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3"
+pytest-django = "^4.9"
+pytest-cov = "^6.0"
+factory-boy = "^3.3"
+ruff = "^0.8"
+black = "^24.10"
+mypy = "^1.13"
+django-stubs = { version = "^5.1", extras = ["compatible-mypy"] }
+types-PyYAML = "^6.0"
+types-Markdown = "^3.7"
+bandit = "^1.8"
+pip-audit = "^2.7"
+radon = "^6.0"
+locust = "^2.32"
+pre-commit = "^4.0"
+
+[build-system]
+requires = ["poetry-core>=1.8"]
+build-backend = "poetry.core.masonry.api"
+
+# ---------------------------------------------------------------- инструменты
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+extend-exclude = "migrations"
+
+[tool.ruff]
+# 💡 black режет код по 100, а длинные русские строки и комментарии допускаем до 120
+line-length = 120
+target-version = "py312"
+extend-exclude = ["migrations", ".venv"]
+
+[tool.ruff.lint]
+# E/F — ошибки, I — сортировка импортов (замена isort), B — bugbear, DJ — django, UP — современный синтаксис,
+# S — проверки безопасности (как bandit), RUF — прочее
+select = ["E", "F", "W", "I", "B", "DJ", "UP", "S", "RUF", "SIM"]
+ignore = ["RUF001", "RUF002", "RUF003", "RUF012", "DJ012"]  # кириллица в строках/комментариях — норма для проекта
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106"]
+"apps/*/admin.py" = ["DJ007"]  # формы админки намеренно со всеми полями модели  # assert и тестовые пароли в тестах допустимы
+"loadtests/**" = ["S311"]
+
+[tool.mypy]
+python_version = "3.12"
+plugins = ["mypy_django_plugin.main"]
+ignore_missing_imports = true
+check_untyped_defs = true
+exclude = ["migrations/", ".venv/"]
+
+[tool.django-stubs]
+django_settings_module = "config.settings.test"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.test"
+python_files = ["test_*.py"]
+testpaths = ["tests"]
+addopts = "--reuse-db -q"
+filterwarnings = [
+    "ignore::pytest.PytestCollectionWarning",
+    "ignore:The default scheme will be changed:DeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["apps", "config"]
+omit = ["*/migrations/*", "config/wsgi.py", "config/asgi.py", "config/settings/prod.py"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_covered = true
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv", "loadtests"]

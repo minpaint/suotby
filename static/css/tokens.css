@@ -1,0 +1,48 @@
+/* static/css/tokens.css — дизайн-токены из макетов (docs/mockups) */
+:root {
+  --font: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --bg: #F6F4EF;
+  --surface: #FFFFFF;
+  --surface-2: #FBFAF7;
+  --ink: #14212B;
+  --text: #2A3843;
+  --text-2: #3C4A55;
+  --muted: #5E6872;
+  --border: #DDD9CE;
+  --border-2: #E6E2D8;
+  --border-dashed: #B9B4A6;
+
+  --accent: #C2410C;
+  --accent-hover: #A8380A;
+  --accent-ink: #8A2F08;
+  --accent-ink-hover: #5E1F05;
+  --accent-soft: #FBE3D4;
+  --accent-bg: #FFF8F3;
+  --accent-line: #F3C7AE;
+  --accent-on: #FFE9DC;
+
+  --dark: #14212B;
+  --dark-2: #1E3140;
+  --dark-line: #2C3E4C;
+  --dark-text: #C6D1DA;
+  --dark-text-2: #D5DEE5;
+  --dark-muted: #B7C4CE;
+  --dark-accent: #F4A77E;
+
+  --info-bg: #EAF1F6;
+  --info-ink: #1A4F78;
+  --info-text: #33475A;
+
+  --viber: #7360F2;
+  --telegram: #1F7FB8;
+
+  --radius-sm: 10px;
+  --radius: 12px;
+  --radius-md: 16px;
+  --radius-lg: 18px;
+  --radius-xl: 20px;
+
+  --container: 1200px;
+  --gutter: 24px;
+}

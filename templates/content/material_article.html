@@ -1,0 +1,39 @@
+{# templates/content/material_article.html — статья (макет Statya) #}
+{% extends "base.html" %}
+{% load site_tags content_tags %}
+{% block title %}{{ material.seo_title }} — {{ site.brand }}{% endblock %}
+{% block meta_description %}{{ material.meta_description|default:material.search_text|truncatechars:160 }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block content %}
+{% with doc=material.body|with_toc %}
+<section class="container stack prose--narrow" style="padding-top:28px;padding-bottom:32px;gap:18px">
+  {% include "includes/breadcrumbs.html" %}
+  <span class="badge">{{ badge|default:"Статья" }}</span>
+  <h1 class="h1" style="font-size:44px">{{ material.title }}</h1>
+  <div class="meta"><span>Обновлено: {{ material.updated_at|date:"d.m.Y" }}</span><span>{{ material.reading_minutes }} мин чтения</span>{% if material.hits %}<span>{{ material.hits }} просмотров</span>{% endif %}</div>
+</section>
+{% if material.cover %}<div class="container" style="max-width:1080px"><img class="cover" src="{{ material.cover.url }}" alt=""></div>{% endif %}
+<div class="container prose--narrow stack" style="padding-top:40px;padding-bottom:64px;gap:20px">
+  {% if doc.toc|length > 1 %}
+  <nav class="toc" aria-label="Содержание"><b>В статье</b>{% for anchor, text in doc.toc %}<a href="#{{ anchor }}">{{ text }}</a>{% endfor %}</nav>
+  {% endif %}
+  {% if material.intro %}<div class="prose prose--article" style="font-size:20px;color:var(--ink)">{{ material.intro|safe_html }}</div>{% endif %}
+  <article class="prose prose--article">{{ doc.html }}</article>
+  <div class="notice" style="background:var(--dark);border-color:var(--dark);color:#fff;flex-wrap:wrap;justify-content:space-between;align-items:center">
+    <div class="stack stack--sm" style="flex:1 1 320px;min-width:0"><b style="font-size:19px;color:#fff">Нужна помощь с охраной труда?</b><span class="text-on-dark">Разработаем документы или возьмём функции специалиста по ОТ на себя.</span></div>
+    <a class="btn btn--accent" href="/uslugi-po-ohrane-truda-v-minske-i-po-belarusi.html">Наши услуги</a>
+  </div>
+  <div class="row muted" style="border-top:1px solid var(--border);padding-top:20px;justify-content:space-between;font-size:15px">
+    <span>{% if material.npa_checked_at %}Ссылки на НПА проверены: {{ material.npa_checked_at|date:"d.m.Y" }}{% endif %}</span>
+  </div>
+</div>
+{% endwith %}
+{% if related %}
+<section class="section section--sm section--white">
+  <div class="container stack" style="gap:20px">
+    <h2 class="h2--sm" style="font-weight:800">Читайте также</h2>
+    <div class="grid grid--wide">{% for r in related %}<a class="card card--muted" href="{{ r.path }}"><span class="card__kind">{{ r.get_type_display }}</span><b style="font-size:17px;line-height:1.35">{{ r.title }}</b></a>{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{# templates/includes/breadcrumbs.html — хлебные крошки + schema.org BreadcrumbList #}
+{% load site_tags %}
+{% if breadcrumbs %}
+<nav class="breadcrumbs" aria-label="Хлебные крошки">
+  {% for title, url in breadcrumbs %}
+    {% if url %}<a href="{{ url }}">{{ title }}</a><span aria-hidden="true">/</span>{% else %}<span>{{ title|truncatechars:70 }}</span>{% endif %}
+  {% endfor %}
+</nav>
+{% endif %}

@@ -1,0 +1,38 @@
+{# templates/pages/terms.html — условия оказания услуг, политика ПДн, cookie (макет Usloviya) #}
+{% extends "base.html" %}
+{% load content_tags %}
+{% block title %}Условия оказания услуг и политика обработки персональных данных — {{ site.brand }}{% endblock %}
+{% block content %}
+<div class="container row" style="padding-top:28px;padding-bottom:64px;gap:40px;align-items:flex-start">
+  <aside class="side-col stack" style="flex:1 1 260px;gap:10px;font-size:15px">
+    {% include "includes/breadcrumbs.html" %}
+    <b style="margin-top:12px">Документы сайта</b>
+    <a href="#usloviya">Условия оказания услуг</a>
+    <a href="#pdn">Политика обработки персональных данных</a>
+    {% if site.cookie_policy %}<a href="#cookie">Использование cookie</a>{% endif %}
+  </aside>
+  <article class="main-col stack" style="gap:18px">
+    <h1 id="usloviya" class="h1 h1--md">Условия оказания услуг</h1>
+    <div class="notice notice--plain" style="flex-direction:column;gap:6px">
+      <p>Бренд «{{ site.brand }}» не является юридическим лицом. «{{ site.brand }}» — торговая марка, созданная в целях узнаваемости на рынке.</p>
+      <p><b>Полный комплекс услуг оказывается {{ site.legal_name }}, УНП {{ site.unp }}</b>, на основании отдельных договоров.</p>
+      {% if site.accreditation %}<p>Свидетельство об аккредитации: {{ site.accreditation }}</p>{% endif %}
+    </div>
+    <div class="prose">{% if material.body %}{{ material.body|safe_html }}{% else %}
+      <ul>
+        <li>все услуги, представленные на сайте, являются консультативными и носят технический характер, в том числе услуги по заполнению форм документов;</li>
+        <li>услуги оказываются на договорной основе, все расчёты осуществляются в безналичном порядке;</li>
+        <li>сайт не является интернет-магазином;</li>
+        <li>цены, приведённые на сайте, являются ориентировочными;</li>
+        <li>детали оказания каждой из услуг индивидуально согласовываются при заключении договора;</li>
+        <li>полные реквизиты для заключения договора предоставляются после окончательного согласования требуемой услуги, всех существенных условий договора, в том числе цены.</li>
+      </ul>{% endif %}
+    </div>
+    <h2 id="pdn" class="h2--md" style="font-weight:800;margin-top:28px">Политика обработки персональных данных</h2>
+    {% if site.privacy_updated_at %}<span class="muted" style="font-size:14px">Редакция от {{ site.privacy_updated_at|date:"d.m.Y" }}</span>{% endif %}
+    {% if site.privacy_policy %}<div class="prose">{{ site.privacy_policy|safe_html }}</div>
+    {% else %}<div class="prose"><p>Сведения из форм сайта (имя, телефон, e-mail, организация, приложенные файлы) используются только для ответа на заявку и подготовки предложения. Чтобы узнать, какие ваши данные у нас есть, или отозвать согласие, напишите на {{ site.email|default:"нашу почту" }}.</p></div>{% endif %}
+    {% if site.cookie_policy %}<h2 id="cookie" class="h2--sm" style="font-weight:800;margin-top:28px">Использование cookie</h2><div class="prose">{{ site.cookie_policy|safe_html }}</div>{% endif %}
+  </article>
+</div>
+{% endblock %}

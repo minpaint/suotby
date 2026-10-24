@@ -1,0 +1,64 @@
+{# templates/content/category.html — раздел материалов (макет Razdel) #}
+{% extends "base.html" %}
+{% load content_tags %}
+{% block title %}{{ category.meta_title|default:category.title }}{% if page_obj.number > 1 %} — страница {{ page_obj.number }}{% endif %} — {{ site.brand }}{% endblock %}
+{% block meta_description %}{{ category.meta_description|default:category.title }}{% endblock %}
+{% block meta_extra %}{% if query %}<meta name="robots" content="noindex, follow">{% endif %}{% endblock %}
+{% block content %}
+<section class="container section--top stack" style="padding-bottom:40px;gap:18px">
+  {% include "includes/breadcrumbs.html" %}
+  <h1 class="h1">{{ category.title }}</h1>
+  {% if category.description %}<div class="lead" style="font-size:18px">{{ category.description|safe_html }}</div>{% endif %}
+  {% if tabs %}
+  <nav class="row" style="gap:10px;margin-top:6px" aria-label="Разделы «Полезное»">
+    {% for tab in tabs %}<a class="chip{% if tab.pk == category.pk %} chip--active{% endif %}" href="{{ tab.path }}"{% if tab.pk == category.pk %} aria-current="page"{% endif %}>{{ tab.short_title }} <span class="chip__n">{{ tab.n }}</span></a>{% endfor %}
+    <a class="chip" href="/chasto-zadavaemye-voprosy-po-ohrane-truda/">Вопрос-ответ</a>
+  </nav>
+  {% endif %}
+</section>
+
+<section class="section--white">
+  <div class="container row" style="padding-top:48px;padding-bottom:64px;gap:40px;align-items:flex-start">
+    <div class="main-col stack">
+      <form class="row" method="get" role="search" style="justify-content:space-between;align-items:flex-end;gap:12px">
+        <label class="field" style="flex:1 1 280px">Поиск в разделе<input type="search" name="q" value="{{ query }}" placeholder="Например: стажировка"></label>
+        <label class="field">Сортировка
+          <select name="sort">{% for key, label in sort_options %}<option value="{{ key }}"{% if key == sort %} selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+        </label>
+        <button class="btn btn--dark" type="submit">Найти</button>
+      </form>
+
+      {% for m in page_obj %}
+      <a class="item" href="{{ m.path }}">
+        <div class="item__body">
+          <span class="card__kind">{{ m.get_type_display }}</span>
+          <b class="item__title">{{ m.title }}</b>
+          <span class="muted" style="font-size:14px">Обновлено: {{ m.updated_at|date:"d.m.Y" }}{% if m.hits %} · {{ m.hits }} просмотров{% endif %}</span>
+        </div>
+        <span class="link-more">Открыть →</span>
+      </a>
+      {% empty %}
+      <p class="muted">{% if query %}По запросу «{{ query }}» ничего не нашлось.{% else %}В разделе пока нет материалов.{% endif %}</p>
+      {% endfor %}
+
+      {% if page_obj.has_other_pages %}
+      <nav class="pagination" aria-label="Страницы раздела">
+        {% for n in page_obj.paginator.page_range %}
+          {% if n == page_obj.number %}<span aria-current="page">{{ n }}</span>{% else %}<a href="?page={{ n }}{% if sort != 'popular' %}&sort={{ sort }}{% endif %}{% if query %}&q={{ query|urlencode }}{% endif %}">{{ n }}</a>{% endif %}
+        {% endfor %}
+      </nav>
+      {% endif %}
+    </div>
+    <aside class="side-col stack" style="gap:20px">
+      <div class="aside-box aside-box--dark">
+        <b class="aside-box__title">Нужен документ под вашу организацию?</b>
+        <span class="text-on-dark">Образец — только основа. Подготовим документы с учётом вашей структуры и видов работ.</span>
+        <a class="btn btn--accent" style="align-self:flex-start" href="/razrabotka-vsej-neobhodimoj-dlya-predpriyatiya-dokumentacii-po-ohrane-truda.html">Разработка документов</a>
+      </div>
+      {% if popular %}
+      <div class="aside-box"><b class="aside-box__title">Популярное в «Вопрос-ответ»</b>{% for q in popular %}<a href="{{ q.path }}">{{ q.title }}</a>{% endfor %}<a class="link-more" href="/chasto-zadavaemye-voprosy-po-ohrane-truda/">Все вопросы →</a></div>
+      {% endif %}
+    </aside>
+  </div>
+</section>
+{% endblock %}

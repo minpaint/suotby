@@ -1,0 +1,47 @@
+{# templates/includes/footer.html — модуль «подвал» (макет Podval) #}
+{% load site_tags %}
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__cols">
+      <div class="footer__col footer__col--wide">
+        <span class="footer__brand">{{ site.brand }}</span>
+        <span>{{ site.tagline }}</span>
+        <span>«{{ site.brand }}» — торговая марка, не юридическое лицо. Услуги оказывает {{ site.legal_name }}, УНП {{ site.unp }}, по отдельным договорам.</span>
+        {% if site.address %}<span>{{ site.address }}</span>{% endif %}
+      </div>
+      <nav class="footer__col" aria-label="Услуги">
+        <b>Услуги</b>
+        <a href="/razrabotka-i-vnedrenie-suot-pod-klyuch.html">Разработка и внедрение СУОТ</a>
+        <a href="/razrabotka-vsej-neobhodimoj-dlya-predpriyatiya-dokumentacii-po-ohrane-truda.html">Документы по охране труда</a>
+        <a href="/obsluzhivanie-organizacii-v-kachestve-specialista-po-ohrane-truda.html">Аутсорсинг специалиста по ОТ</a>
+        <a href="/audit-ohrany-truda-na-predpriyatii.html">Аудит охраны труда</a>
+        <a href="/uslugi-po-ohrane-truda-v-minske-i-po-belarusi.html">Все услуги</a>
+        <a href="/ceny-na-razrabotku-suot-v-minske.html">Цены</a>
+      </nav>
+      <nav class="footer__col" aria-label="Полезное">
+        <b>Полезное</b>
+        <a href="/instrukcii-po-ohrane-truda/">Инструкции по ОТ</a>
+        <a href="/prikazy-po-ohrane-truda/">Приказы по ОТ</a>
+        <a href="/karty-identifikacii-opasnostej-ocenki-riskov/">Карты рисков</a>
+        <a href="/stati/">Статьи</a>
+        <a href="/chasto-zadavaemye-voprosy-po-ohrane-truda/">Вопрос-ответ</a>
+        <a href="https://www.ohrana-truda.by/" rel="noopener">Форум по охране труда ↗</a>
+      </nav>
+      <div class="footer__col">
+        <b>Контакты</b>
+        {% for phone in site.phones %}<a class="footer__phone" href="{{ phone|tel }}">{{ phone }}</a>{% endfor %}
+        {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+        <span>Viber, Telegram — по тем же номерам</span>
+        <a href="/kontakty.html#zayavka" style="color:var(--dark-accent);font-weight:600;text-decoration:underline">Оставить заявку →</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2013–{% now "Y" %} {{ site.brand }}</span>
+      <span class="row" style="gap:6px 20px">
+        <a href="/usloviya-okazaniya-uslug.html">Условия оказания услуг</a>
+        <a href="/usloviya-okazaniya-uslug.html#pdn">Политика обработки персональных данных</a>
+        <a href="/karta-sajta.html">Карта сайта</a>
+      </span>
+    </div>
+  </div>
+</footer>
