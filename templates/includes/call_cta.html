@@ -1,18 +1,18 @@
-{# templates/includes/call_cta.html — блок «звоните» в конце статей: крупные телефоны и заявка (как на старом сайте) #}
+{# templates/includes/call_cta.html — блок «звоните» в конце статей: крупные телефоны, заявка и фото специалиста (как на старом сайте) #}
 {# Параметры: call_title — заголовок, call_id — якорь секции, call_link / call_link_text — ссылка на услугу #}
-{% load site_tags %}
-<section{% if call_id %} id="{{ call_id }}"{% endif %} class="section section--md section--accent call-cta no-print">
-  <div class="container row row--center" style="justify-content:space-between;gap:28px 48px">
-    <div class="stack" style="flex:1 1 520px;min-width:0;gap:14px">
-      <h2 class="h2--md" style="font-weight:800">{{ call_title|default:"Разработка всей необходимой документации по охране труда для Вашей организации" }}</h2>
-      <div class="call-cta__phones">
-        {% for phone in site.phones %}<a class="call-cta__phone" href="{{ phone|tel }}">{{ phone }}</a>{% endfor %}
+{% load static site_tags %}
+<section{% if call_id %} id="{{ call_id }}"{% endif %} class="section section--sm call-cta no-print">
+  <div class="container">
+    <div class="call-cta__card">
+      <div class="call-cta__body">
+        <h2 class="call-cta__title">{{ call_title|default:"Разработка всей необходимой документации по охране труда для Вашей организации" }}</h2>
+        <div class="call-cta__phones">
+          {% for phone in site.phones %}<a class="call-cta__phone" href="{{ phone|tel }}">{{ phone }}</a>{% endfor %}
+        </div>
+        <a class="btn btn--accent btn--lg" href="/kontakty.html#zayavka">Отправить заявку</a>
+        {% if call_link %}<a class="link-more" href="{{ call_link }}">{{ call_link_text }} →</a>{% endif %}
       </div>
-      <p class="text-on-accent" style="font-size:17px">Звоните — обсудим подробности будущего сотрудничества.</p>
-    </div>
-    <div class="stack" style="gap:14px;align-items:flex-start">
-      <a class="btn btn--dark btn--lg" href="/kontakty.html#zayavka">Отправить заявку</a>
-      {% if call_link %}<a class="call-cta__link" href="{{ call_link }}">{{ call_link_text }} →</a>{% endif %}
+      <img class="call-cta__photo" src="{% static 'img/cta-specialist.webp' %}" alt="" width="560" height="609" loading="lazy">
     </div>
   </div>
 </section>

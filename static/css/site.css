@@ -227,12 +227,14 @@ a.card--dark:hover { border-color: var(--dark-accent); color: #fff; }
 .team-photo { aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius); width: 100%; background: var(--border-2); }
 .big-phone { color: #fff; font-size: 28px; font-weight: 800; letter-spacing: -0.4px; text-decoration: none; }
 .big-phone:hover { color: var(--dark-accent); }
-/* Блок «звоните» в конце статей — телефоны крупно, как на старом сайте */
-.call-cta__phones { display: flex; flex-direction: column; gap: 2px; }
-.call-cta__phone { color: #fff; font-size: clamp(34px, 5.4vw, 56px); font-weight: 800; line-height: 1.15; letter-spacing: -1px; text-decoration: none; white-space: nowrap; }
-.call-cta__phone:hover { color: var(--accent-on); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
-.call-cta__link { color: #fff; font-weight: 600; }
-.call-cta__link:hover { color: var(--accent-on); }
+/* Блок «звоните» в конце статей — серая плашка, телефоны крупно, фото специалиста справа (как на старом сайте) */
+.call-cta__card { background: var(--border-2); border-radius: var(--radius); display: flex; align-items: flex-end; overflow: hidden; }
+.call-cta__body { flex: 1 1 0; min-width: 0; align-self: center; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; padding: 48px 32px; }
+.call-cta__title { font-size: 26px; line-height: 1.25; font-weight: 800; letter-spacing: -0.4px; max-width: 560px; }
+.call-cta__phones { display: flex; flex-direction: column; gap: 4px; margin: 8px 0; }
+.call-cta__phone { color: var(--ink); font-size: clamp(32px, 5vw, 58px); font-weight: 500; line-height: 1.2; letter-spacing: -0.5px; text-decoration: none; white-space: nowrap; }
+.call-cta__phone:hover { color: var(--accent-ink); }
+.call-cta__photo { flex: 0 0 auto; width: clamp(260px, 34%, 420px); height: auto; display: block; }
 
 /* ------------------------------------------------------------------ подвал */
 .footer { background: var(--dark); color: var(--dark-muted); font-size: 14px; line-height: 1.6; }
@@ -260,6 +262,11 @@ a.card--dark:hover { border-color: var(--dark-accent); color: #fff; }
   .hero-card { padding: 24px; }
   .lead { font-size: 17px; }
   .nav { gap: 4px 16px; font-size: 15px; }
+  /* 💡 на телефоне фото уходит под текст и уменьшается — телефоны остаются первыми */
+  .call-cta__card { flex-direction: column; align-items: center; }
+  .call-cta__body { padding: 36px 20px 8px; }
+  .call-cta__title { font-size: 22px; }
+  .call-cta__photo { width: 240px; }
 }
 @media print {
   .topbar, .header, .footer, .no-print, form { display: none !important; }
