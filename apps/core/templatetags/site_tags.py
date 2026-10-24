@@ -51,7 +51,7 @@ def json_ld(data: dict[str, Any]) -> SafeString:
 
 
 @register.simple_tag
-def check_icon(color: str = "#F4A77E", size: int = 22) -> SafeString:
+def check_icon(color: str = "#9FD0AE", size: int = 22) -> SafeString:
     """Иконка «галочка» из макетов (декоративная)."""
     return format_html(
         '<svg width="{0}" height="{0}" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6" '

@@ -3,7 +3,7 @@
 /* ------------------------------------------------------------------ база */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.5; }
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.5; }
 img { max-width: 100%; height: auto; }
 a { color: var(--accent-ink); }
 a:hover { color: var(--accent-ink-hover); }
@@ -76,7 +76,7 @@ p { margin: 0; }
 .topbar__contacts { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; }
 .pill { color: #fff !important; font-weight: 600; padding: 5px 12px; border-radius: 999px; }
 .pill--viber { background: var(--viber); } .pill--telegram { background: var(--telegram); }
-.header { background: var(--bg); border-bottom: 1px solid var(--border); }
+.header { background: var(--surface); border-bottom: 1px solid var(--border); }
 .header__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; padding-top: 18px; padding-bottom: 18px; }
 .logo { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-weight: 800; font-size: 22px; letter-spacing: -0.3px; }
 .logo:hover { color: var(--ink); }
