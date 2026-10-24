@@ -1,0 +1,29 @@
+{"v":3,"createdOnFiles":{"v":1,"at":"2026-10-22T09:00:00Z"},"title":"Редизайн suot.by","launch":{"view":"canvas"},"pages":[],
+"boards":{
+"Shapka.dc.html":{"x":0,"y":-800,"w":1360,"h":150,"title":"Модуль: шапка"},
+"Podval.dc.html":{"x":1440,"y":-800,"w":1360,"h":420,"title":"Модуль: подвал"},
+"Main.dc.html":{"x":0,"y":0,"w":1360,"h":7000,"title":"Главная","expand":"fill"},
+"Uslugi.dc.html":{"x":1440,"y":0,"w":1360,"h":2700,"title":"Все услуги","expand":"fill"},
+"Usluga.dc.html":{"x":2880,"y":0,"w":1360,"h":3000,"title":"Шаблон: услуга","expand":"fill"},
+"Ceny.dc.html":{"x":4320,"y":0,"w":1360,"h":2900,"title":"Цены","expand":"fill"},
+"Razdel.dc.html":{"x":0,"y":7400,"w":1360,"h":2100,"title":"Шаблон: раздел материалов","expand":"fill"},
+"Dokument.dc.html":{"x":1440,"y":7400,"w":1360,"h":2700,"title":"Шаблон: документ-образец","expand":"fill"},
+"Statya.dc.html":{"x":2880,"y":7400,"w":1360,"h":2900,"title":"Шаблон: статья","expand":"fill"},
+"VoprosOtvet.dc.html":{"x":4320,"y":7400,"w":1360,"h":2300,"title":"Вопрос-ответ: хаб","expand":"fill"},
+"Vopros.dc.html":{"x":5760,"y":7400,"w":1360,"h":2000,"title":"Шаблон: вопрос","expand":"fill"},
+"ONas.dc.html":{"x":0,"y":10700,"w":1360,"h":3000,"title":"О нас","expand":"fill"},
+"Klienty.dc.html":{"x":1440,"y":10700,"w":1360,"h":2600,"title":"Наши клиенты","expand":"fill"},
+"Kontakty.dc.html":{"x":2880,"y":10700,"w":1360,"h":1700,"title":"Контакты","expand":"fill"},
+"Usloviya.dc.html":{"x":4320,"y":10700,"w":1360,"h":2100,"title":"Условия и политика ПДн","expand":"fill"},
+"KartaSajta.dc.html":{"x":5760,"y":10700,"w":1360,"h":1900,"title":"Карта сайта","expand":"fill"},
+"Oshibka404.dc.html":{"x":7200,"y":10700,"w":1360,"h":1250,"title":"Ошибка 404","expand":"fill"}
+},
+"order":["Shapka.dc.html","Podval.dc.html","Main.dc.html","Uslugi.dc.html","Usluga.dc.html","Ceny.dc.html","Razdel.dc.html","Dokument.dc.html","Statya.dc.html","VoprosOtvet.dc.html","Vopros.dc.html","ONas.dc.html","Klienty.dc.html","Kontakty.dc.html","Usloviya.dc.html","KartaSajta.dc.html","Oshibka404.dc.html"],
+"notes":{
+"t-moduli":{"x":0,"y":-1100,"text":"Общие модули","kind":"title1","maxW":2800},
+"s-moduli":{"x":2880,"y":-800,"w":440,"text":"Шапка и подвал подключены во все внутренние страницы. Правка здесь меняет их везде — как модули в позициях шаблона Joomla.","fill":"teal"},
+"t-uslugi":{"x":0,"y":-300,"text":"Главная, услуги, цены","kind":"title1","maxW":5680},
+"t-materialy":{"x":0,"y":7100,"text":"Материалы: разделы, документы, статьи, вопрос-ответ","kind":"title1","maxW":7120},
+"t-kompaniya":{"x":0,"y":10400,"text":"О компании и служебные страницы","kind":"title1","maxW":8560}
+},
+"designSystems":[]}

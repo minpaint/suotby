@@ -1,0 +1,32 @@
+# .gitignore — suot.by
+
+# 🔐 секреты и окружение
+.env
+.env.*
+!.env.example
+
+# исходники импорта со старого сайта (не коммитить: БД, выгрузка, картинки)
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Django
+/media/
+/staticfiles/
+*.sqlite3
+db.sqlite3
+
+# IDE и ОС
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

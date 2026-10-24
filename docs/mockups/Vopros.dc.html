@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Шаблон страницы вопроса</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F4EF}
+a{color:#8A2F08}a:hover{color:#5E1F05}
+</style>
+</helmet>
+<div style="width:100%;background:#F6F4EF;color:#14212B;font-family:'Onest',system-ui,sans-serif">
+
+<dc-import name="Shapka" active="faq" hint-size="100%,150px"></dc-import>
+
+<div style="max-width:1200px;margin:0 auto;padding:28px 24px 64px;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+
+<!-- вопрос и ответ -->
+<article style="flex:999 1 620px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<nav aria-label="Хлебные крошки" style="font-size:14px;color:#5E6872;display:flex;flex-wrap:wrap;gap:6px"><a href="Main.dc.html" style="color:#5E6872">Главная</a><span aria-hidden="true">/</span><a href="VoprosOtvet.dc.html" style="color:#5E6872">Вопрос-ответ</a><span aria-hidden="true">/</span><a href="Razdel.dc.html" style="color:#5E6872">Организация работы по охране труда</a></nav>
+<span style="align-self:flex-start;background:#EAF1F6;color:#1A4F78;font-weight:600;font-size:13px;letter-spacing:0.6px;text-transform:uppercase;padding:7px 12px;border-radius:999px">Вопрос</span>
+<h1 style="margin:0;font-size:38px;line-height:1.15;font-weight:800;letter-spacing:-0.8px">В каких случаях и в каком порядке проводится внеплановый инструктаж по охране труда?</h1>
+<div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:#5E6872"><span>Опубликовано: 22.10.2022</span><span>18 786 просмотров</span><span>Ответ актуален на: [ДАТА ПРОВЕРКИ]</span></div>
+
+<!-- короткий ответ -->
+<div style="background:#14212B;color:#fff;border-radius:18px;padding:24px 26px;display:flex;flex-direction:column;gap:8px">
+<span style="font-size:13px;letter-spacing:0.6px;text-transform:uppercase;color:#F4A77E;font-weight:600">Коротко</span>
+<span style="font-size:18px;line-height:1.55">Проводит непосредственный руководитель работ — при новых НПА, смене оборудования или технологии, нарушениях требований, перерыве в работе более шести месяцев и по требованию контролирующих органов.</span>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px;font-size:17px;line-height:1.7;color:#2A3843">
+<p style="margin:0">Согласно Инструкции № 175 внеплановый инструктаж по охране труда проводится при:</p>
+<ul style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px">
+<li>принятии новых нормативных правовых актов, в том числе технических нормативных правовых актов, локальных правовых актов или внесении в них изменений;</li>
+<li>изменении технологического процесса, замене или модернизации оборудования, приборов и инструмента, сырья, материалов и других факторов, влияющих на безопасность труда;</li>
+<li>нарушении работающими требований нормативных правовых актов, которое привело или могло привести к аварии, несчастному случаю на производстве и другим тяжёлым последствиям;</li>
+<li>перерывах в работе по профессии рабочего (в должности служащего) более шести месяцев;</li>
+<li>поступлении информации об авариях и несчастных случаях, происшедших в однопрофильных организациях.</li>
+</ul>
+<p style="margin:0">Внеплановый инструктаж проводится также по требованию контролирующих (надзорных) органов, вышестоящих органов и организаций, должностного лица организации, на которое возложены обязанности по организации охраны труда, при нарушении требований нормативных правовых актов.</p>
+<p style="margin:0"><b style="color:#14212B">Внеплановый инструктаж проводит непосредственный руководитель работ</b> (начальник производства, цеха, участка, мастер, прораб, инструктор и другие уполномоченные должностные лица).</p>
+<p style="margin:0">Инструктаж проводится индивидуально или с группой лиц одной профессии (должности), выполняющих один вид работ. Объём и содержание определяются причинами, вызвавшими необходимость его проведения.</p>
+<p style="margin:0">Инструктаж завершается проверкой усвоенных знаний устным опросом или с помощью технических средств обучения, а также проверкой навыков безопасных методов и приёмов работы.</p>
+</div>
+
+<!-- основание -->
+<div style="border:1px solid #DDD9CE;background:#fff;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55">
+<b style="font-size:15px">Основание</b>
+<span style="color:#3C4A55">Инструкция о порядке обучения, стажировки, инструктажа и проверки знаний работающих по вопросам охраны труда (пост. № 175) — <a href="https://ohranatruda.of.by/">текст на ohranatruda.of.by ↗</a></span>
+</div>
+
+<!-- полезность -->
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:15px;color:#5E6872">Ответ помог?
+<button type="button" style="font:inherit;font-size:15px;font-weight:600;border:1px solid #B9B4A6;background:#fff;border-radius:10px;padding:10px 16px;min-height:44px;cursor:pointer">Да</button>
+<button type="button" style="font:inherit;font-size:15px;font-weight:600;border:1px solid #B9B4A6;background:#fff;border-radius:10px;padding:10px 16px;min-height:44px;cursor:pointer">Нет</button>
+</div>
+</article>
+
+<!-- боковая колонка -->
+<aside style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:20px;padding-top:44px">
+<div style="background:#C2410C;color:#fff;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px">
+<b style="font-size:20px;line-height:1.3">Выстроим инструктажи под ключ</b>
+<span style="font-size:15px;line-height:1.55;color:#FFE9DC">Программы, инструкции, журналы и периодичность для каждой профессии.</span>
+<a href="Usluga.dc.html" style="align-self:flex-start;background:#14212B;color:#fff;font-weight:600;padding:13px 20px;border-radius:10px;text-decoration:none">Организация работы по ОТ</a>
+</div>
+<div style="background:#fff;border:1px solid #E6E2D8;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px">
+<b style="font-size:17px">Другие виды инструктажа</b>
+<a href="Vopros.dc.html" style="font-size:15px;line-height:1.45;color:#14212B">В каком порядке проводится вводный инструктаж?</a>
+<a href="Vopros.dc.html" style="font-size:15px;line-height:1.45;color:#14212B">В каком порядке проводится первичный инструктаж на рабочем месте?</a>
+<a href="Vopros.dc.html" style="font-size:15px;line-height:1.45;color:#14212B">Каков порядок проведения повторного инструктажа?</a>
+<a href="Vopros.dc.html" style="font-size:15px;line-height:1.45;color:#14212B">В каких случаях проводится целевой инструктаж?</a>
+<a href="Vopros.dc.html" style="font-size:15px;line-height:1.45;color:#14212B">Каков порядок регистрации инструктажей?</a>
+</div>
+</aside>
+</div>
+
+<dc-import name="Podval" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":2000}}'>
+class Component extends DCLogic {
+  // Шаблон для 201 вопроса и 25 справок «Охрана труда при…» (тип «требования ОТ»).
+  // Блок «Коротко» — новое поле (вводный текст материала Joomla), остальное — fulltext.
+  // ⚠️ Ответ ссылается на Инструкцию № 175 — в redirects.csv все вопросы помечены «проверить актуальность ссылок на НПА».
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

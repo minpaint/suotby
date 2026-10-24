@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Шаблон статьи</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F4EF}
+a{color:#8A2F08}a:hover{color:#5E1F05}
+</style>
+</helmet>
+<div style="width:100%;background:#F6F4EF;color:#14212B;font-family:'Onest',system-ui,sans-serif">
+
+<dc-import name="Shapka" active="poleznoe" hint-size="100%,150px"></dc-import>
+
+<!-- шапка статьи -->
+<div style="max-width:880px;margin:0 auto;padding:28px 24px 32px;display:flex;flex-direction:column;gap:18px">
+<nav aria-label="Хлебные крошки" style="font-size:14px;color:#5E6872;display:flex;flex-wrap:wrap;gap:6px"><a href="Main.dc.html" style="color:#5E6872">Главная</a><span aria-hidden="true">/</span><a href="Razdel.dc.html" style="color:#5E6872">Статьи</a></nav>
+<span style="align-self:flex-start;background:#FBE3D4;color:#8A2F08;font-weight:600;font-size:13px;letter-spacing:0.6px;text-transform:uppercase;padding:7px 12px;border-radius:999px">Статья</span>
+<h1 style="margin:0;font-size:44px;line-height:1.1;font-weight:800;letter-spacing:-1px">Обязанности специалиста по охране труда: наказание или благо?</h1>
+<div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:#5E6872"><span>Обновлено: 17.01.2024</span><span>7 мин чтения</span><span>42 713 просмотров</span></div>
+</div>
+
+<!-- обложка -->
+<div style="max-width:1080px;margin:0 auto;padding:0 24px">
+<div style="aspect-ratio:21 / 9;border-radius:18px;background:#E6E2D8;border:1px dashed #B9B4A6;display:flex;align-items:center;justify-content:center;color:#5E6872;font-size:15px">[Обложка: /images/spec.jpg из выгрузки _media]</div>
+</div>
+
+<!-- текст -->
+<div style="max-width:880px;margin:0 auto;padding:40px 24px 64px;display:flex;flex-direction:column;gap:20px;font-size:18px;line-height:1.75;color:#2A3843">
+<div style="background:#fff;border:1px solid #E6E2D8;border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;gap:8px;font-size:16px;line-height:1.5">
+<b style="color:#14212B">В статье</b>
+<a href="#s1" style="color:#14212B">Что требует Трудовой кодекс</a>
+<a href="#s2" style="color:#14212B">Когда нужен штатный инженер по охране труда</a>
+<a href="#s3" style="color:#14212B">Если штатного специалиста нет</a>
+</div>
+<p style="margin:0;font-size:20px;line-height:1.6;color:#14212B">Выбор у нанимателя есть, но как реально организовать работу и контроль по охране труда?</p>
+<h2 id="s1" style="margin:12px 0 0;font-size:28px;line-height:1.25;font-weight:800;letter-spacing:-0.4px;color:#14212B">Что требует Трудовой кодекс</h2>
+<p style="margin:0">Согласно статье 227 ТК Республики Беларусь, наниматель для организации работы по охране труда и контроля за соблюдением законодательства об охране труда должен создать службу охраны труда, или ввести в штат должность специалиста по охране труда, или возложить обязанности на уполномоченное должностное лицо, либо привлечь аккредитованное юридическое лицо (индивидуального предпринимателя).</p>
+<h2 id="s2" style="margin:12px 0 0;font-size:28px;line-height:1.25;font-weight:800;letter-spacing:-0.4px;color:#14212B">Когда нужен штатный инженер по охране труда</h2>
+<p style="margin:0">С организациями производственной сферы, где работает свыше 100 работников (в других сферах — свыше 200), всё понятно: вводим в штат единицу и принимаем инженера по охране труда.</p>
+<blockquote style="margin:8px 0;padding:6px 0 6px 22px;border-left:4px solid #C2410C;font-size:20px;line-height:1.55;color:#14212B;font-weight:600">Инженеру по охране труда ничего не остаётся, как только честно отрабатывать свою зарплату, выявляя и предупреждая нарушения.</blockquote>
+<p style="margin:0">Для инженера по охране труда в Едином квалификационном справочнике должностей служащих разработаны должностные обязанности и квалификационные требования к образованию — как правило, высшему и желательно техническому.</p>
+
+<!-- врезка с услугой посреди статьи -->
+<div style="background:#14212B;color:#fff;border-radius:18px;padding:24px 26px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;font-size:16px;line-height:1.5">
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:6px"><b style="font-size:19px">Нет своего специалиста по ОТ?</b><span style="color:#C6D1DA">Возьмём функции на себя по договору обслуживания.</span></div>
+<a href="Usluga.dc.html" style="background:#C2410C;color:#fff;font-weight:600;padding:13px 20px;border-radius:10px;text-decoration:none">Подробнее об услуге</a>
+</div>
+
+<h2 id="s3" style="margin:12px 0 0;font-size:28px;line-height:1.25;font-weight:800;letter-spacing:-0.4px;color:#14212B">Если штатного специалиста нет</h2>
+<p style="margin:0;color:#5E6872">[Продолжение текста статьи из материала — ~1 450 слов]</p>
+
+<div style="border-top:1px solid #DDD9CE;padding-top:20px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;font-size:15px;color:#5E6872">
+<span>Ссылки на НПА проверены: [ДАТА ПРОВЕРКИ]</span>
+<span style="display:flex;gap:10px;align-items:center">Поделиться:
+<a href="#" style="color:#14212B;font-weight:600">Telegram</a><a href="#" style="color:#14212B;font-weight:600">Viber</a><a href="#" style="color:#14212B;font-weight:600">Скопировать ссылку</a></span>
+</div>
+</div>
+
+<!-- ещё статьи -->
+<div style="background:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:56px 24px 64px;display:flex;flex-direction:column;gap:20px">
+<h2 style="margin:0;font-size:26px;font-weight:800">Читайте также</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px">
+<a href="Statya.dc.html" style="background:#F6F4EF;border:1px solid #E6E2D8;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px;color:#14212B;text-decoration:none"><span style="font-size:12px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#8A2F08">Статья</span><b style="font-size:17px;line-height:1.35">Система управления охраной труда. Система, которая не работает?</b></a>
+<a href="Statya.dc.html" style="background:#F6F4EF;border:1px solid #E6E2D8;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px;color:#14212B;text-decoration:none"><span style="font-size:12px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#8A2F08">Статья</span><b style="font-size:17px;line-height:1.35">С чего начать по охране труда при создании организации?</b></a>
+<a href="Statya.dc.html" style="background:#F6F4EF;border:1px solid #E6E2D8;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px;color:#14212B;text-decoration:none"><span style="font-size:12px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#8A2F08">Статья</span><b style="font-size:17px;line-height:1.35">Контроль за соблюдением законодательства об охране труда: проводить или не проводить?</b></a>
+</div>
+</div>
+</div>
+
+<dc-import name="Podval" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":2900}}'>
+class Component extends DCLogic {
+  // Шаблон статьи (13 материалов раздела /stati/). Узкая колонка ~70 знаков для длинного чтения.
+  // Пример — /obyazannosti-specialista-po-ohrane-truda-nakazanie-ili-blago.html.
+  // ⚠️ В тексте ссылка на ст. 227 ТК — материал помечен в аудите на проверку редакций.
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Карта сайта</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F4EF}
+a{color:#8A2F08}a:hover{color:#5E1F05}
+</style>
+</helmet>
+<div style="width:100%;background:#F6F4EF;color:#14212B;font-family:'Onest',system-ui,sans-serif">
+
+<dc-import name="Shapka" active="" hint-size="100%,150px"></dc-import>
+
+<div style="max-width:1200px;margin:0 auto;padding:28px 24px 64px;display:flex;flex-direction:column;gap:28px">
+<nav aria-label="Хлебные крошки" style="font-size:14px;color:#5E6872;display:flex;flex-wrap:wrap;gap:6px"><a href="Main.dc.html" style="color:#5E6872">Главная</a><span aria-hidden="true">/</span><span>Карта сайта</span></nav>
+<h1 style="margin:0;font-size:46px;line-height:1.08;font-weight:800;letter-spacing:-1.2px">Карта сайта</h1>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;align-items:start">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="6">
+<section style="background:#fff;border:1px solid #E6E2D8;border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><a href="{{g.href}}" style="font-size:19px;font-weight:800;color:#14212B;text-decoration:none">{{g.title}}</a><span style="font-size:14px;color:#5E6872">{{g.count}}</span></div>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.4">
+<sc-for list="{{g.items}}" as="it" hint-placeholder-count="4">
+<li><a href="{{g.href}}" style="color:#3C4A55">{{it.t}}</a></li>
+</sc-for>
+</ul>
+</section>
+</sc-for>
+</div>
+</div>
+
+<dc-import name="Podval" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1900}}'>
+class Component extends DCLogic {
+  // /karta-sajta.html (7 854 обращений). HTML-карта строится из тех же категорий, что и XML-карта;
+  // в redirects.csv 13 подразделов «Вопрос-ответ» помечены «нет в XML-карте — добавить».
+  renderVals() {
+    const L = (arr) => arr.map((t) => ({ t }));
+    const groups = [
+      { title: 'Услуги по охране труда', count: '8', href: 'Uslugi.dc.html', items: L(['Разработка документов по ОТ', 'Организация работы по ОТ', 'Аудит охраны труда', 'Консультации', 'Обслуживание организаций', 'Выполнение предписаний', 'Семинары', 'Разработка инструкций']) },
+      { title: 'Разработка СУОТ', count: '9', href: 'Uslugi.dc.html', items: L(['СУОТ под ключ', 'Идентификация рисков', 'Приказы по ОТ', 'Журналы по ОТ', 'Реестр НПА', 'ОТ в должностных инструкциях', 'Сертификация СУОТ', 'Актуализация СУОТ', 'Охрана труда в IT-компании']) },
+      { title: 'О СУОТ', count: '3', href: 'Statya.dc.html', items: L(['Элементы СУОТ', 'СУОТ как часть охраны труда на предприятии', 'Разработка СУОТ — это обязательно?']) },
+      { title: 'Полезное', count: '40', href: 'Razdel.dc.html', items: L(['Нужные документы · 1', 'Инструкции по ОТ · 10', 'Приказы по ОТ · 6', 'Карты рисков · 10', 'Статьи · 13']) },
+      { title: 'Вопрос-ответ', count: '201', href: 'VoprosOtvet.dc.html', items: L(['Организация работы по ОТ · 50', 'Законодательство о труде · 34', 'Производственные процессы и оборудование · 28', 'Несчастные случаи · 25', 'Электробезопасность · 15', 'Пожарная безопасность · 15', 'Ещё 7 разделов']) },
+      { title: 'Требования охраны труда', count: '25', href: 'Vopros.dc.html', items: L(['При работе на высоте', 'При огневых работах', 'При погрузке-разгрузке', 'При эксплуатации кранов', 'Ещё 21 справка']) },
+      { title: 'О компании', count: '5', href: 'ONas.dc.html', items: L(['О нас', 'Наши клиенты', 'Цены', 'Контакты', 'Условия оказания услуг']) }
+    ];
+    return { groups };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Вопрос-ответ по охране труда</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F4EF}
+a{color:#8A2F08}a:hover{color:#5E1F05}
+</style>
+</helmet>
+<div style="width:100%;background:#F6F4EF;color:#14212B;font-family:'Onest',system-ui,sans-serif">
+
+<dc-import name="Shapka" active="faq" hint-size="100%,150px"></dc-import>
+
+<!-- заголовок и поиск -->
+<div style="max-width:1200px;margin:0 auto;padding:28px 24px 56px;display:flex;flex-direction:column;gap:18px">
+<nav aria-label="Хлебные крошки" style="font-size:14px;color:#5E6872;display:flex;flex-wrap:wrap;gap:6px"><a href="Main.dc.html" style="color:#5E6872">Главная</a><span aria-hidden="true">/</span><span>Вопрос-ответ</span></nav>
+<h1 style="margin:0;font-size:48px;line-height:1.08;font-weight:800;letter-spacing:-1.2px;max-width:860px">Часто задаваемые вопросы по охране труда</h1>
+<p style="margin:0;font-size:18px;line-height:1.55;color:#3C4A55;max-width:720px">201 ответ на вопросы нанимателей и специалистов: от трудового договора до расследования несчастных случаев.</p>
+<form role="search" style="display:flex;flex-wrap:wrap;gap:10px;max-width:760px;margin-top:6px">
+<label style="flex:1 1 320px;display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">Найти ответ<input type="search" placeholder="Например: внеплановый инструктаж" style="font:inherit;font-size:17px;padding:15px 16px;border:1px solid #B9B4A6;border-radius:12px;background:#fff"></label>
+<button type="button" style="align-self:flex-end;font:inherit;font-size:16px;font-weight:700;background:#14212B;color:#fff;border:0;border-radius:12px;padding:15px 24px;min-height:52px;cursor:pointer">Найти</button>
+</form>
+</div>
+
+<!-- подразделы -->
+<div style="background:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:56px 24px;display:flex;flex-direction:column;gap:24px">
+<h2 style="margin:0;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-0.6px">Разделы</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px">
+<sc-for list="{{sections}}" as="s" hint-placeholder-count="13">
+<a href="Razdel.dc.html" style="background:#F6F4EF;border:1px solid #E6E2D8;border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;color:#14212B;text-decoration:none">
+<b style="font-size:16px;line-height:1.4">{{s.title}}</b>
+<span style="flex:none;background:#fff;border:1px solid #DDD9CE;border-radius:999px;padding:3px 10px;font-size:14px;font-weight:600;color:#3C4A55">{{s.count}}</span>
+</a>
+</sc-for>
+</div>
+</div>
+</div>
+
+<!-- популярные вопросы -->
+<div style="background:#F6F4EF">
+<div style="max-width:1200px;margin:0 auto;padding:56px 24px;display:flex;flex-wrap:wrap;gap:40px">
+<div style="flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-0.6px">Популярные вопросы</h2>
+<span style="font-size:15px;color:#5E6872">По числу обращений за всё время</span>
+</div>
+<ol style="flex:2 1 560px;min-width:0;margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+<sc-for list="{{top}}" as="q" hint-placeholder-count="6">
+<li style="border-top:1px solid #DDD9CE;padding:16px 0;display:flex;gap:16px;align-items:baseline">
+<span style="flex:none;width:28px;font-weight:800;color:#8A2F08">{{q.n}}</span>
+<a href="Vopros.dc.html" style="flex:1 1 auto;font-size:17px;line-height:1.45;font-weight:600;color:#14212B;text-decoration:none">{{q.title}}</a>
+</li>
+</sc-for>
+</ol>
+</div>
+</div>
+
+<!-- задать вопрос -->
+<div style="background:#14212B;color:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:56px 24px;display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between">
+<div style="flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:32px;line-height:1.15;font-weight:800;letter-spacing:-0.6px">Не нашли ответ?</h2>
+<p style="margin:0;font-size:17px;line-height:1.55;color:#C6D1DA">Спросите нас напрямую или обсудите на форуме по охране труда.</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="Kontakty.dc.html" style="background:#C2410C;color:#fff;font-weight:600;font-size:17px;padding:15px 24px;border-radius:12px;text-decoration:none">Задать вопрос специалисту</a>
+<a href="https://www.ohrana-truda.by/" style="border:2px solid #fff;color:#fff;font-weight:600;font-size:17px;padding:13px 22px;border-radius:12px;text-decoration:none">Форум ohrana-truda.by ↗</a>
+</div>
+</div>
+</div>
+
+<dc-import name="Podval" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":2300}}'>
+class Component extends DCLogic {
+  // Хаб /chasto-zadavaemye-voprosy-po-ohrane-truda/: 13 подразделов (категории Joomla 31–43).
+  // Названия и количество вопросов — из выгрузки (_manifest.json); сумма 201 сходится с БД.
+  // Популярные — по счётчику sh404SEF из redirects.csv.
+  renderVals() {
+    const sections = [
+      { title: 'Организация работы по охране труда', count: 50 },
+      { title: 'Основные положения законодательства Республики Беларусь о труде', count: 34 },
+      { title: 'Охрана труда при производственных процессах и эксплуатации оборудования', count: 28 },
+      { title: 'Расследование и учёт несчастных случаев на производстве и профессиональных заболеваний', count: 25 },
+      { title: 'Электробезопасность', count: 15 },
+      { title: 'Пожарная безопасность', count: 15 },
+      { title: 'Разное', count: 8 },
+      { title: 'Страхование от несчастных случаев на производстве и профессиональных заболеваний', count: 6 },
+      { title: 'Производственная санитария', count: 5 },
+      { title: 'Средства индивидуальной и коллективной защиты, смывающие и обезвреживающие средства', count: 5 },
+      { title: 'Государственное управление охраной труда. Надзор и контроль', count: 4 },
+      { title: 'Охрана труда при эксплуатации зданий и сооружений', count: 3 },
+      { title: 'Санитарно-бытовое и лечебно-профилактическое обеспечение', count: 3 }
+    ];
+    const top = [
+      'В каких случаях и в каком порядке проводится проверка знаний по вопросам охраны труда работающих?',
+      'В каких случаях и в каком порядке проводится внеплановый инструктаж по охране труда?',
+      'В каких случаях возможно расторжение трудового договора по инициативе нанимателя?',
+      'В каких случаях и в каком порядке проводится целевой инструктаж по охране труда?',
+      'В каких случаях работник может быть отстранён от работы?',
+      'В каком порядке проводится первичный инструктаж по охране труда на рабочем месте?'
+    ].map((title, i) => ({ title, n: i + 1 }));
+    return { sections, top };
+  }
+}
+</script>
+</body>
+</html>

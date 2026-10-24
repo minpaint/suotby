@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Шаблон раздела материалов</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F4EF}
+a{color:#8A2F08}a:hover{color:#5E1F05}
+</style>
+</helmet>
+<div style="width:100%;background:#F6F4EF;color:#14212B;font-family:'Onest',system-ui,sans-serif">
+
+<dc-import name="Shapka" active="poleznoe" hint-size="100%,150px"></dc-import>
+
+<!-- заголовок раздела -->
+<div style="max-width:1200px;margin:0 auto;padding:28px 24px 40px;display:flex;flex-direction:column;gap:18px">
+<nav aria-label="Хлебные крошки" style="font-size:14px;color:#5E6872;display:flex;flex-wrap:wrap;gap:6px"><a href="Main.dc.html" style="color:#5E6872">Главная</a><span aria-hidden="true">/</span><span>Полезное</span><span aria-hidden="true">/</span><span>Приказы по охране труда</span></nav>
+<h1 style="margin:0;font-size:46px;line-height:1.08;font-weight:800;letter-spacing:-1.2px">Приказы по охране труда</h1>
+<p style="margin:0;font-size:18px;line-height:1.55;color:#3C4A55;max-width:760px">Примерные образцы приказов для белорусских организаций. Перед применением адаптируйте под свою организацию или закажите разработку у нас.</p>
+
+<!-- вкладки разделов «Полезное» -->
+<nav aria-label="Разделы «Полезное»" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px">
+<a href="Razdel.dc.html" style="background:#fff;border:1px solid #DDD9CE;border-radius:999px;padding:10px 16px;font-weight:600;color:#14212B;text-decoration:none">Нужные документы <span style="color:#5E6872;font-weight:500">1</span></a>
+<a href="Razdel.dc.html" style="background:#fff;border:1px solid #DDD9CE;border-radius:999px;padding:10px 16px;font-weight:600;color:#14212B;text-decoration:none">Инструкции по ОТ <span style="color:#5E6872;font-weight:500">10</span></a>
+<a href="Razdel.dc.html" aria-current="page" style="background:#14212B;border:1px solid #14212B;border-radius:999px;padding:10px 16px;font-weight:600;color:#fff;text-decoration:none">Приказы по ОТ <span style="color:#C6D1DA;font-weight:500">6</span></a>
+<a href="Razdel.dc.html" style="background:#fff;border:1px solid #DDD9CE;border-radius:999px;padding:10px 16px;font-weight:600;color:#14212B;text-decoration:none">Карты рисков <span style="color:#5E6872;font-weight:500">10</span></a>
+<a href="Razdel.dc.html" style="background:#fff;border:1px solid #DDD9CE;border-radius:999px;padding:10px 16px;font-weight:600;color:#14212B;text-decoration:none">Статьи <span style="color:#5E6872;font-weight:500">13</span></a>
+<a href="VoprosOtvet.dc.html" style="background:#fff;border:1px solid #DDD9CE;border-radius:999px;padding:10px 16px;font-weight:600;color:#14212B;text-decoration:none">Вопрос-ответ <span style="color:#5E6872;font-weight:500">201</span></a>
+</nav>
+</div>
+
+<!-- список материалов + боковая колонка -->
+<div style="background:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:48px 24px 64px;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+
+<div style="flex:999 1 600px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
+<label style="flex:1 1 280px;display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">Поиск в разделе<input type="search" placeholder="Например: стажировка" style="font:inherit;font-size:16px;padding:12px 14px;border:1px solid #B9B4A6;border-radius:10px;background:#fff"></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">Сортировка<select style="font:inherit;font-size:16px;padding:12px 14px;border:1px solid #B9B4A6;border-radius:10px;background:#fff"><option>Популярные</option><option>Новые</option><option>По алфавиту</option></select></label>
+</div>
+
+<sc-for list="{{items}}" as="item" hint-placeholder-count="6">
+<a href="Dokument.dc.html" style="background:#F6F4EF;border:1px solid #E6E2D8;border-radius:16px;padding:22px 24px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;color:#14212B;text-decoration:none">
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:8px">
+<span style="font-size:12px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#8A2F08">{{item.kind}}</span>
+<b style="font-size:19px;line-height:1.35">{{item.title}}</b>
+<span style="font-size:14px;color:#5E6872">Обновлено: {{item.date}} · {{item.views}} просмотров</span>
+</div>
+<span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;color:#8A2F08">Открыть<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l5 5-5 5" fill="none" stroke="#8A2F08" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</a>
+</sc-for>
+
+<!-- пагинация: на старом сайте /page-N.html → правило 301 в redirects.csv -->
+<nav aria-label="Страницы раздела" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+<a href="#" aria-current="page" style="min-width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#14212B;color:#fff;font-weight:700;text-decoration:none">1</a>
+<a href="#" style="min-width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid #DDD9CE;color:#14212B;font-weight:600;text-decoration:none">2</a>
+<a href="#" style="padding:0 16px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid #DDD9CE;color:#14212B;font-weight:600;text-decoration:none">Дальше →</a>
+</nav>
+</div>
+
+<aside style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<div style="background:#14212B;color:#fff;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px">
+<b style="font-size:20px;line-height:1.3">Нужен приказ под вашу организацию?</b>
+<span style="font-size:15px;line-height:1.55;color:#C6D1DA">Образец — только основа. Подготовим проекты приказов с учётом вашей структуры и видов работ.</span>
+<a href="Usluga.dc.html" style="align-self:flex-start;background:#C2410C;color:#fff;font-weight:600;padding:13px 20px;border-radius:10px;text-decoration:none">Разработка приказов</a>
+</div>
+<div style="background:#F6F4EF;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px">
+<b style="font-size:17px">Популярное в «Вопрос-ответ»</b>
+<a href="Vopros.dc.html" style="font-size:15px;line-height:1.45;color:#14212B">В каких случаях и в каком порядке проводится проверка знаний по вопросам охраны труда?</a>
+<a href="Vopros.dc.html" style="font-size:15px;line-height:1.45;color:#14212B">В каких случаях и в каком порядке проводится внеплановый инструктаж?</a>
+<a href="VoprosOtvet.dc.html" style="font-size:15px;font-weight:600">Все вопросы →</a>
+</div>
+</aside>
+</div>
+</div>
+
+<dc-import name="Podval" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":2100}}'>
+class Component extends DCLogic {
+  // Один шаблон на все разделы «Полезное»: /nuzhnye-dokumenty/, /instrukcii-po-ohrane-truda/,
+  // /prikazy-po-ohrane-truda/, /karty-identifikacii-opasnostej-ocenki-riskov/, /stati/.
+  // Список ниже — реальные материалы раздела «Приказы» из выгрузки (_manifest.json), просмотры — hits Joomla.
+  renderVals() {
+    const items = [
+      { kind: 'Образец приказа', title: 'Приказ о назначении ответственных по охране труда (примерный образец)', date: '14.01.2024', views: '88 905' },
+      { kind: 'Образец приказа', title: 'Приказ о прохождении стажировки (примерный образец)', date: '[ДАТА]', views: '[N]' },
+      { kind: 'Образец приказа', title: 'Приказ о создании комиссии для проверки знаний по охране труда (примерный образец)', date: '[ДАТА]', views: '[N]' },
+      { kind: 'Образец приказа', title: 'Приказ об актуализации СУОТ (образец РБ)', date: '[ДАТА]', views: '[N]' },
+      { kind: 'Образец приказа', title: 'Приказ о разработке инструкций (примерный образец)', date: '[ДАТА]', views: '[N]' },
+      { kind: 'Образец приказа', title: 'Приказ о комиссии по принятию и оформлению выполненных мероприятий по охране труда (образец)', date: '[ДАТА]', views: '[N]' }
+    ];
+    return { items };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Шаблон документа-образца</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F4EF}
+a{color:#8A2F08}a:hover{color:#5E1F05}
+</style>
+</helmet>
+<div style="width:100%;background:#F6F4EF;color:#14212B;font-family:'Onest',system-ui,sans-serif">
+
+<dc-import name="Shapka" active="poleznoe" hint-size="100%,150px"></dc-import>
+
+<!-- заголовок документа -->
+<div style="max-width:1200px;margin:0 auto;padding:28px 24px 40px;display:flex;flex-direction:column;gap:18px">
+<nav aria-label="Хлебные крошки" style="font-size:14px;color:#5E6872;display:flex;flex-wrap:wrap;gap:6px"><a href="Main.dc.html" style="color:#5E6872">Главная</a><span aria-hidden="true">/</span><a href="Razdel.dc.html" style="color:#5E6872">Приказы по охране труда</a><span aria-hidden="true">/</span><span>Приказ о назначении ответственных</span></nav>
+<span style="align-self:flex-start;background:#FBE3D4;color:#8A2F08;font-weight:600;font-size:13px;letter-spacing:0.6px;text-transform:uppercase;padding:7px 12px;border-radius:999px">Образец приказа</span>
+<h1 style="margin:0;font-size:42px;line-height:1.12;font-weight:800;letter-spacing:-1px;max-width:900px">Приказ о назначении ответственных по охране труда (примерный образец)</h1>
+<div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:#5E6872">
+<span>Обновлено: 14.01.2024</span><span>88 905 просмотров</span><span>Оценка 5,0 · 4 голоса</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
+<a href="#" style="display:inline-flex;align-items:center;gap:10px;background:#14212B;color:#fff;font-weight:600;font-size:16px;padding:14px 22px;border-radius:12px;text-decoration:none"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M5.5 8.5L10 13l4.5-4.5M4 16.5h12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Скачать .docx</a>
+<a href="#" style="display:inline-flex;align-items:center;gap:10px;border:2px solid #14212B;color:#14212B;font-weight:600;font-size:16px;padding:12px 20px;border-radius:12px;text-decoration:none">Скачать PDF</a>
+<a href="#zakaz" style="display:inline-flex;align-items:center;font-weight:600;font-size:16px;padding:12px 8px;color:#8A2F08">Подготовить под мою организацию →</a>
+</div>
+</div>
+
+<!-- тело документа -->
+<div style="background:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:48px 24px 64px;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+
+<aside style="flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<div style="background:#F6F4EF;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;font-size:15px">
+<b style="font-size:16px">Содержание</b>
+<a href="#vvedenie" style="color:#14212B">Для чего этот приказ</a>
+<a href="#tekst" style="color:#14212B">Текст приказа</a>
+<a href="#osnovaniya" style="color:#14212B">Основания назначения</a>
+<a href="#zakaz" style="color:#14212B">Нужен приказ под вашу организацию</a>
+</div>
+<div style="border:1px solid #DDD9CE;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.5;color:#3C4A55">
+<b style="font-size:15px;color:#14212B">Актуальность</b>
+<span>Ссылки на НПА проверены: [ДАТА ПРОВЕРКИ]</span>
+<span>Образец примерный — сверяйте основания с действующими редакциями актов.</span>
+</div>
+</aside>
+
+<article style="flex:999 1 600px;min-width:0;display:flex;flex-direction:column;gap:20px;font-size:17px;line-height:1.65;color:#2A3843">
+<p id="vvedenie" style="margin:0">Приказ о дальнейшем совершенствовании организации работы по охране труда, в котором назначаются основные категории ответственных по охране труда с указанием основания назначения.</p>
+
+<!-- «лист» документа -->
+<div id="tekst" style="background:#FBFAF7;border:1px solid #E6E2D8;border-radius:12px;padding:40px 44px;display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.6;box-shadow:0 2px 0 #E6E2D8">
+<div style="text-align:center;display:flex;flex-direction:column;gap:4px"><b style="font-size:18px;letter-spacing:1px">ПРИКАЗ</b><span style="font-weight:600">О дальнейшем совершенствовании организации работы по охране труда</span></div>
+<p style="margin:0">В целях дальнейшего совершенствования организации работы по охране труда, обеспечения соблюдения законодательства об охране труда, конституционного права граждан на здоровые и безопасные условия труда</p>
+<b>1. НАЗНАЧАЮ:</b>
+<p style="margin:0">1.1. Лицами, ответственными за обеспечение охраны труда и контроля за соблюдением работниками требований по охране труда в организации и структурных подразделениях, а также при выполнении отдельных видов работ, — <i>(должности, фамилии, имена, отчества)</i>.</p>
+<p id="osnovaniya" style="margin:0;padding:10px 14px;background:#EAF1F6;border-radius:8px;font-size:15px;color:#1A4F78">Основание: ст. 17 Закона Республики Беларусь от 23 июня 2008 г. № 356-З (в ред. от 18 декабря 2019 г.).</p>
+<p style="margin:0">1.2. Лицом, ответственным за общее состояние электрохозяйства организации, — <i>(должность, фамилия, имя, отчество)</i>.</p>
+<p style="margin:0;padding:10px 14px;background:#EAF1F6;border-radius:8px;font-size:15px;color:#1A4F78">Основание: п. 1.4 ТКП 181-2009 (02230) «Правила технической эксплуатации электроустановок потребителей».</p>
+<p style="margin:0">1.3. Лицами, ответственными за электрохозяйство структурных подразделений организации, — <i>(должности, фамилии, имена, отчества)</i>.</p>
+<div style="text-align:center;color:#5E6872;font-size:15px;padding-top:6px">[Далее — полный текст приказа из материала, ~7 000 слов]</div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="#" style="display:inline-flex;align-items:center;gap:10px;background:#14212B;color:#fff;font-weight:600;font-size:16px;padding:14px 22px;border-radius:12px;text-decoration:none">Скачать .docx</a>
+<span style="display:inline-flex;align-items:center;gap:8px;font-size:15px;color:#5E6872">Полезен ли образец?
+<button type="button" style="font:inherit;font-size:15px;font-weight:600;border:1px solid #B9B4A6;background:#fff;border-radius:10px;padding:10px 16px;min-height:44px;cursor:pointer">Да</button>
+<button type="button" style="font:inherit;font-size:15px;font-weight:600;border:1px solid #B9B4A6;background:#fff;border-radius:10px;padding:10px 16px;min-height:44px;cursor:pointer">Нет</button></span>
+</div>
+</article>
+</div>
+</div>
+
+<!-- заказ под организацию -->
+<div id="zakaz" style="background:#14212B;color:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:56px 24px;display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between">
+<div style="flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:32px;line-height:1.15;font-weight:800;letter-spacing:-0.6px">Образец — основа. Подготовим приказ под вашу организацию</h2>
+<p style="margin:0;font-size:17px;line-height:1.55;color:#C6D1DA">С учётом структуры, электрохозяйства, видов работ и действующих редакций НПА.</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="Usluga.dc.html" style="background:#C2410C;color:#fff;font-weight:600;font-size:17px;padding:15px 24px;border-radius:12px;text-decoration:none">Разработка приказов по ОТ</a>
+<a href="Kontakty.dc.html" style="border:2px solid #fff;color:#fff;font-weight:600;font-size:17px;padding:13px 22px;border-radius:12px;text-decoration:none">Задать вопрос</a>
+</div>
+</div>
+</div>
+
+<!-- похожие документы -->
+<div style="background:#F6F4EF">
+<div style="max-width:1200px;margin:0 auto;padding:56px 24px 64px;display:flex;flex-direction:column;gap:20px">
+<h2 style="margin:0;font-size:26px;font-weight:800">Другие образцы приказов</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">
+<a href="Dokument.dc.html" style="background:#fff;border:1px solid #E6E2D8;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px;color:#14212B;text-decoration:none"><span style="font-size:12px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#8A2F08">Образец приказа</span><b style="font-size:17px;line-height:1.35">Приказ о прохождении стажировки</b></a>
+<a href="Dokument.dc.html" style="background:#fff;border:1px solid #E6E2D8;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px;color:#14212B;text-decoration:none"><span style="font-size:12px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#8A2F08">Образец приказа</span><b style="font-size:17px;line-height:1.35">Приказ о создании комиссии для проверки знаний</b></a>
+<a href="Dokument.dc.html" style="background:#fff;border:1px solid #E6E2D8;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px;color:#14212B;text-decoration:none"><span style="font-size:12px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#8A2F08">Образец приказа</span><b style="font-size:17px;line-height:1.35">Приказ об актуализации СУОТ</b></a>
+<a href="Dokument.dc.html" style="background:#fff;border:1px solid #E6E2D8;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px;color:#14212B;text-decoration:none"><span style="font-size:12px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#8A2F08">Образец приказа</span><b style="font-size:17px;line-height:1.35">Приказ о разработке инструкций</b></a>
+</div>
+</div>
+</div>
+
+<dc-import name="Podval" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":2700}}'>
+class Component extends DCLogic {
+  // Общий шаблон для «документных» материалов: образцы приказов (6), инструкции по ОТ (10),
+  // карты рисков (10), «Нужные документы» (1). Тип выводится плашкой над заголовком.
+  // ⚠️ В тексте образца ссылки на ТКП 181-2009 — в audit/pages.csv материал помечен на проверку НПА.
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

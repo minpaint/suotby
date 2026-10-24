@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Страница не найдена (404)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F4EF}
+a{color:#8A2F08}a:hover{color:#5E1F05}
+</style>
+</helmet>
+<div style="width:100%;background:#F6F4EF;color:#14212B;font-family:'Onest',system-ui,sans-serif">
+
+<dc-import name="Shapka" active="" hint-size="100%,150px"></dc-import>
+
+<div style="max-width:1200px;margin:0 auto;padding:72px 24px 88px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+<div style="flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:18px">
+<span style="font-size:88px;line-height:1;font-weight:800;letter-spacing:-3px;color:#C2410C">404</span>
+<h1 style="margin:0;font-size:40px;line-height:1.12;font-weight:800;letter-spacing:-0.8px">Такой страницы нет — возможно, она переехала</h1>
+<p style="margin:0;font-size:18px;line-height:1.55;color:#3C4A55">Мы обновили сайт, и часть адресов изменилась. Найдите нужный материал поиском или начните с популярных разделов.</p>
+<form role="search" style="display:flex;flex-wrap:wrap;gap:10px;max-width:620px">
+<label style="flex:1 1 280px;display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">Поиск по сайту<input type="search" placeholder="Например: приказ о назначении ответственных" style="font:inherit;font-size:16px;padding:14px 16px;border:1px solid #B9B4A6;border-radius:12px;background:#fff"></label>
+<button type="button" style="align-self:flex-end;font:inherit;font-size:16px;font-weight:700;background:#14212B;color:#fff;border:0;border-radius:12px;padding:14px 22px;min-height:52px;cursor:pointer">Найти</button>
+</form>
+</div>
+<div style="flex:1 1 340px;min-width:0;background:#fff;border:1px solid #E6E2D8;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px">
+<b style="font-size:18px">Популярное</b>
+<a href="Usluga.dc.html" style="font-size:16px;color:#14212B">Разработка и внедрение СУОТ под ключ</a>
+<a href="Dokument.dc.html" style="font-size:16px;color:#14212B">Приказ о назначении ответственных по ОТ</a>
+<a href="Dokument.dc.html" style="font-size:16px;color:#14212B">Инструкция по охране труда для операторов станков с ЧПУ</a>
+<a href="Vopros.dc.html" style="font-size:16px;color:#14212B">Проверка знаний по вопросам охраны труда</a>
+<a href="Ceny.dc.html" style="font-size:16px;color:#14212B">Цены</a>
+<a href="Kontakty.dc.html" style="font-size:16px;font-weight:600">Связаться с нами →</a>
+</div>
+</div>
+
+<dc-import name="Podval" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1250}}'>
+class Component extends DCLogic {
+  // Настоящая 404 вместо «мягкой» /__404__.html (сейчас отдаёт 200 — в redirects.csv: 410, убрать из карты).
+  // ⚠️ Сервер должен отдавать код 404, а не 200 с этим шаблоном.
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

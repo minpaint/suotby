@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Подвал сайта (общий модуль)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width:100%;font-family:'Onest',system-ui,sans-serif;color:#B7C4CE;background:#14212B">
+<div style="max-width:1200px;margin:0 auto;padding:56px 24px 28px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-wrap:wrap;gap:32px 40px;font-size:14px;line-height:1.6">
+
+<div style="flex:1.4 1 280px;min-width:0;display:flex;flex-direction:column;gap:8px">
+<b style="color:#fff;font-size:20px;font-weight:800">СУОТ.BY</b>
+<span>Разработка СУОТ и услуги по охране труда в Минске и по всей Беларуси</span>
+<span>«СУОТ.BY» — торговая марка, не юридическое лицо. Услуги оказывает ИП Мингинович А.Г., УНП 192308594, по отдельным договорам.</span>
+<span>[Адрес для корреспонденции]</span>
+</div>
+
+<div style="flex:1 1 180px;min-width:0;display:flex;flex-direction:column;gap:6px">
+<b style="color:#fff;font-size:15px">Услуги</b>
+<a href="Usluga.dc.html" style="color:#B7C4CE;text-decoration:none">Разработка и внедрение СУОТ</a>
+<a href="Uslugi.dc.html" style="color:#B7C4CE;text-decoration:none">Документы по охране труда</a>
+<a href="Uslugi.dc.html" style="color:#B7C4CE;text-decoration:none">Аутсорсинг специалиста по ОТ</a>
+<a href="Uslugi.dc.html" style="color:#B7C4CE;text-decoration:none">Аудит охраны труда</a>
+<a href="Uslugi.dc.html" style="color:#B7C4CE;text-decoration:none">Все услуги</a>
+<a href="Ceny.dc.html" style="color:#B7C4CE;text-decoration:none">Цены</a>
+</div>
+
+<div style="flex:1 1 180px;min-width:0;display:flex;flex-direction:column;gap:6px">
+<b style="color:#fff;font-size:15px">Полезное</b>
+<a href="Razdel.dc.html" style="color:#B7C4CE;text-decoration:none">Инструкции по ОТ</a>
+<a href="Razdel.dc.html" style="color:#B7C4CE;text-decoration:none">Приказы по ОТ</a>
+<a href="Razdel.dc.html" style="color:#B7C4CE;text-decoration:none">Карты рисков</a>
+<a href="Razdel.dc.html" style="color:#B7C4CE;text-decoration:none">Статьи</a>
+<a href="VoprosOtvet.dc.html" style="color:#B7C4CE;text-decoration:none">Вопрос-ответ</a>
+<a href="https://www.ohrana-truda.by/" style="color:#B7C4CE;text-decoration:none">Форум по охране труда ↗</a>
+</div>
+
+<div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:6px">
+<b style="color:#fff;font-size:15px">Контакты</b>
+<a href="tel:+375293570911" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600">+375 29 357-09-11</a>
+<a href="tel:+375333570911" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600">+375 33 357-09-11</a>
+<a href="mailto:3570911@tut.by" style="color:#B7C4CE;text-decoration:none">3570911@tut.by</a>
+<span>Viber, Telegram — по тем же номерам</span>
+<a href="Kontakty.dc.html" style="color:#F4A77E;font-weight:600;text-decoration:underline">Оставить заявку →</a>
+</div>
+
+</div>
+<div style="border-top:1px solid #2C3E4C;padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;font-size:13px">
+<span>© 2013–2026 СУОТ.BY</span>
+<span style="display:flex;flex-wrap:wrap;gap:6px 20px">
+<a href="Usloviya.dc.html" style="color:#B7C4CE;text-decoration:underline">Условия оказания услуг</a>
+<a href="Usloviya.dc.html" style="color:#B7C4CE;text-decoration:underline">Политика обработки персональных данных</a>
+<a href="KartaSajta.dc.html" style="color:#B7C4CE;text-decoration:underline">Карта сайта</a>
+</span>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":420}}'>
+class Component extends DCLogic {
+  // Подвал статичный: модуль одинаков на всех страницах (в Joomla — позиция footer).
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

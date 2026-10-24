@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Шаблон страницы услуги</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F4EF}
+a{color:#8A2F08}a:hover{color:#5E1F05}
+details summary{cursor:pointer;list-style:none}
+details summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+<div style="width:100%;background:#F6F4EF;color:#14212B;font-family:'Onest',system-ui,sans-serif">
+
+<dc-import name="Shapka" active="uslugi" hint-size="100%,150px"></dc-import>
+
+<!-- главный экран услуги -->
+<div style="max-width:1200px;margin:0 auto;padding:28px 24px 64px;display:flex;flex-direction:column;gap:28px">
+<nav aria-label="Хлебные крошки" style="font-size:14px;color:#5E6872;display:flex;flex-wrap:wrap;gap:6px"><a href="Main.dc.html" style="color:#5E6872">Главная</a><span aria-hidden="true">/</span><a href="Uslugi.dc.html" style="color:#5E6872">Услуги</a><span aria-hidden="true">/</span><span>Обслуживание организаций</span></nav>
+<div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+<div style="flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<span style="align-self:flex-start;background:#FBE3D4;color:#8A2F08;font-weight:600;font-size:13px;letter-spacing:0.6px;text-transform:uppercase;padding:7px 12px;border-radius:999px">Аутсорсинг охраны труда</span>
+<h1 style="margin:0;font-size:46px;line-height:1.08;font-weight:800;letter-spacing:-1.2px">Обслуживание организации в качестве специалиста по охране труда</h1>
+<p style="margin:0;font-size:19px;line-height:1.55;color:#3C4A55">Передайте функции службы охраны труда команде, которая специализируется на услугах в области охраны труда, и сосредоточьтесь на основной деятельности.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
+<a href="#zayavka" style="background:#C2410C;color:#fff;font-weight:600;font-size:17px;padding:16px 26px;border-radius:12px;text-decoration:none">Отправить заявку</a>
+<a href="tel:+375293570911" style="border:2px solid #14212B;color:#14212B;font-weight:600;font-size:17px;padding:14px 24px;border-radius:12px;text-decoration:none">+375 29 357-09-11</a>
+</div>
+</div>
+<div style="flex:1 1 320px;min-width:0;background:#14212B;color:#fff;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;letter-spacing:0.6px;text-transform:uppercase;color:#F4A77E;font-weight:600">Стоимость</div>
+<div style="font-size:34px;font-weight:800;letter-spacing:-0.8px">от [ЦЕНА] BYN/мес</div>
+<span style="font-size:15px;line-height:1.5;color:#C6D1DA">Цены ориентировочные. Точная стоимость — после бесплатной консультации, зависит от численности и видов работ.</span>
+<div style="height:1px;background:#2C3E4C"></div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:15px;color:#D5DEE5">
+<div style="display:flex;gap:10px"><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true" style="flex:none"><path d="M4 11.5l4.5 4.5L18 6" fill="none" stroke="#F4A77E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Работаем по договору</div>
+<div style="display:flex;gap:10px"><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true" style="flex:none"><path d="M4 11.5l4.5 4.5L18 6" fill="none" stroke="#F4A77E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Безналичный расчёт</div>
+<div style="display:flex;gap:10px"><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true" style="flex:none"><path d="M4 11.5l4.5 4.5L18 6" fill="none" stroke="#F4A77E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Минск и вся Беларусь</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- текст услуги + боковая колонка -->
+<div style="background:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:64px 24px;display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
+<article style="flex:999 1 600px;min-width:0;display:flex;flex-direction:column;gap:18px;font-size:17px;line-height:1.65;color:#2A3843">
+<h2 style="margin:0;font-size:30px;line-height:1.2;font-weight:800;letter-spacing:-0.6px;color:#14212B">Доверьте охрану труда профессионалам</h2>
+<p style="margin:0">Взяв на себя обязанности по охране труда, мы оптимизируем результативное функционирование организации за счёт сосредоточения ваших усилий на основной деятельности.</p>
+<p style="margin:0">Услуги специализированной организации обходятся дешевле, чем работа штатного специалиста по охране труда. При этом вы получаете помощь группы специалистов с опытом организации работы и контроля по охране труда.</p>
+<h3 style="margin:12px 0 0;font-size:22px;font-weight:700;color:#14212B">Что берём на себя</h3>
+<ul style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px">
+<li>документы по охране труда и их актуализацию;</li>
+<li>инструктажи, стажировки, проверку знаний;</li>
+<li>контроль сроков: медосмотры, СИЗ, обучение;</li>
+<li>контроль за соблюдением требований по охране труда;</li>
+<li>сопровождение проверок контролирующих органов.</li>
+</ul>
+<div style="margin-top:12px;background:#FFF8F3;border:1px solid #F3C7AE;border-radius:16px;padding:22px 24px;display:flex;gap:16px;align-items:flex-start">
+<svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true" style="flex:none"><path d="M20 6l11 5v8c0 7-5 12-11 15-6-3-11-8-11-15v-8z" fill="none" stroke="#C2410C" stroke-width="2.6" stroke-linejoin="round"/><path d="M14.5 20l4 4 7-7.5" fill="none" stroke="#C2410C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div style="display:flex;flex-direction:column;gap:6px"><b style="font-size:18px;color:#14212B">Отвечаем за свою работу</b><span style="font-size:16px;line-height:1.55">Если обслуживаемая организация понесёт убытки в виде штрафов контролирующих органов из-за ненадлежащего выполнения нашими работниками функций службы охраны труда, эти издержки будут нами возмещены.</span></div>
+</div>
+<h3 style="margin:12px 0 0;font-size:22px;font-weight:700;color:#14212B">Как начать</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+<div style="background:#F6F4EF;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:14px;font-weight:700;color:#8A2F08">01</span><b style="font-size:17px;color:#14212B">Заявка или звонок</b><span style="font-size:15px;line-height:1.5">Рассказываете о численности и видах работ.</span></div>
+<div style="background:#F6F4EF;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:14px;font-weight:700;color:#8A2F08">02</span><b style="font-size:17px;color:#14212B">Аудит и расчёт</b><span style="font-size:15px;line-height:1.5">Смотрим документы, называем цену и срок.</span></div>
+<div style="background:#F6F4EF;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:14px;font-weight:700;color:#8A2F08">03</span><b style="font-size:17px;color:#14212B">Договор и работа</b><span style="font-size:15px;line-height:1.5">Берём функции на себя с первого месяца.</span></div>
+</div>
+<p style="margin:0">Мы всегда готовы пойти навстречу как в вопросах стоимости и порядка оплаты работ, так и в прочих значимых условиях сотрудничества.</p>
+</article>
+
+<aside style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<div style="background:#F6F4EF;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px">
+<b style="font-size:17px">Вопросы по теме</b>
+<a href="Vopros.dc.html" style="font-size:15px;line-height:1.45;color:#14212B">В каких случаях руководитель обязан создавать службу охраны труда или вводить в штат специалиста по ОТ?</a>
+<a href="Vopros.dc.html" style="font-size:15px;line-height:1.45;color:#14212B">Каковы полномочия работников службы охраны труда?</a>
+<a href="Statya.dc.html" style="font-size:15px;line-height:1.45;color:#14212B">Обязанности специалиста по охране труда: наказание или благо?</a>
+</div>
+<div style="background:#F6F4EF;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px">
+<b style="font-size:17px">Другие услуги</b>
+<a href="Usluga.dc.html" style="font-size:15px;color:#14212B">Аудит охраны труда</a>
+<a href="Usluga.dc.html" style="font-size:15px;color:#14212B">Выполнение предписаний</a>
+<a href="Usluga.dc.html" style="font-size:15px;color:#14212B">Разработка документов по ОТ</a>
+<a href="Uslugi.dc.html" style="font-size:15px;font-weight:600">Все услуги →</a>
+</div>
+</aside>
+</div>
+</div>
+
+<!-- вопросы по услуге -->
+<div style="background:#F6F4EF">
+<div style="max-width:1200px;margin:0 auto;padding:64px 24px;display:flex;flex-wrap:wrap;gap:40px">
+<h2 style="flex:1 1 280px;margin:0;font-size:32px;line-height:1.15;font-weight:800;letter-spacing:-0.8px">Частые вопросы по услуге</h2>
+<div style="flex:2 1 520px;min-width:0;display:flex;flex-direction:column">
+<details open style="border-top:1px solid #DDD9CE;padding:20px 0">
+<summary style="display:flex;justify-content:space-between;gap:16px;font-size:19px;font-weight:700"><span>[Вопрос по услуге 1]</span><span aria-hidden="true" style="color:#C2410C">+</span></summary>
+<p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#3C4A55">[Ответ — 2–4 предложения. Блок сохраняет логику аккордеонов со старой страницы СЗЗ: свои вопросы под каждой услугой.]</p>
+</details>
+<details style="border-top:1px solid #DDD9CE;padding:20px 0">
+<summary style="display:flex;justify-content:space-between;gap:16px;font-size:19px;font-weight:700"><span>[Вопрос по услуге 2]</span><span aria-hidden="true" style="color:#C2410C">+</span></summary>
+<p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#3C4A55">[Ответ]</p>
+</details>
+<details style="border-top:1px solid #DDD9CE;border-bottom:1px solid #DDD9CE;padding:20px 0">
+<summary style="display:flex;justify-content:space-between;gap:16px;font-size:19px;font-weight:700"><span>[Вопрос по услуге 3]</span><span aria-hidden="true" style="color:#C2410C">+</span></summary>
+<p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#3C4A55">[Ответ]</p>
+</details>
+</div>
+</div>
+</div>
+
+<!-- заявка по услуге -->
+<div id="zayavka" style="background:#C2410C;color:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:64px 24px;display:flex;flex-wrap:wrap;gap:40px;align-items:center">
+<div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:12px">
+<h2 style="margin:0;font-size:36px;line-height:1.1;font-weight:800;letter-spacing:-0.8px">Задать вопрос по услуге</h2>
+<p style="margin:0;font-size:17px;line-height:1.55;color:#FFE9DC">Оставьте заявку — перезвоним, ответим на вопросы и обсудим подробности сотрудничества.</p>
+</div>
+<form style="flex:1 1 380px;min-width:0;background:#fff;color:#14212B;border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">Имя<input type="text" style="font:inherit;font-size:16px;padding:13px 14px;border:1px solid #B9B4A6;border-radius:10px"></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">Телефон<input type="tel" style="font:inherit;font-size:16px;padding:13px 14px;border:1px solid #B9B4A6;border-radius:10px"></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">Услуга<input type="text" value="Обслуживание организации в качестве специалиста по ОТ" style="font:inherit;font-size:16px;padding:13px 14px;border:1px solid #B9B4A6;border-radius:10px;background:#F6F4EF"></label>
+<label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45;color:#3C4A55"><input type="checkbox" style="width:20px;height:20px;margin:0;flex:none"><span>Даю согласие на обработку персональных данных в соответствии с <a href="Usloviya.dc.html" style="color:#8A2F08;text-decoration:underline">Политикой обработки персональных данных</a></span></label>
+<button type="button" style="font:inherit;font-size:17px;font-weight:700;background:#14212B;color:#fff;border:0;border-radius:10px;padding:15px;min-height:48px;cursor:pointer">Отправить заявку</button>
+</form>
+</div>
+</div>
+
+<dc-import name="Podval" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":3000}}'>
+class Component extends DCLogic {
+  // Шаблон одной услуги (19 страниц типа «услуга» в redirects.csv).
+  // Пример наполнен реальным текстом /obsluzhivanie-organizacii-v-kachestve-specialista-po-ohrane-truda.html.
+  // ⚠️ Поле «Услуга» в форме подставляется из заголовка материала — в Joomla через модуль формы с параметром.
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
