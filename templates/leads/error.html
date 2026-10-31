@@ -1,0 +1,19 @@
+{# templates/leads/error.html — заявка не принята (ошибки формы или лимит) #}
+{% extends "base.html" %}
+{% block title %}Заявка не отправлена — {{ site.brand }}{% endblock %}
+{% block meta_extra %}<meta name="robots" content="noindex">{% endblock %}
+{% block content %}
+<div class="container stack" style="padding-top:56px;padding-bottom:88px;gap:18px;max-width:760px">
+  <h1 class="h1 h1--md">Заявка не отправлена</h1>
+  {% if limited %}
+  <p class="lead">Слишком много заявок с вашего адреса за последний час. Позвоните нам: {{ site.phone_1 }}.</p>
+  {% else %}
+  <p class="lead">Проверьте, пожалуйста, поля:</p>
+  <ul class="stack stack--sm" style="padding-left:20px">
+    {% for field in form %}{% for error in field.errors %}<li class="field__error"><b>{{ field.label }}:</b> {{ error }}</li>{% endfor %}{% endfor %}
+    {% for error in form.non_field_errors %}<li class="field__error">{{ error }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  <div class="row" style="gap:12px;margin-top:8px"><a class="btn btn--dark" href="{{ back|default:'/kontakty.html' }}#zayavka">Вернуться к форме</a><a class="btn btn--outline" href="tel:{{ site.phone_1 }}">Позвонить</a></div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{# templates/includes/header.html — модуль «шапка» (макет Shapka) #}
+{% load site_tags %}
+<div class="topbar">
+  <div class="container topbar__inner">
+    <span class="ico-label">{% icon "map-pin" 15 %}{{ site.region_note }}</span>
+    <span class="topbar__contacts">
+      {% for phone in site.phones %}<a class="ico-label" href="{{ phone|tel }}">{% icon "phone" 15 %}{{ phone }}</a>{% endfor %}
+      {% if site.email %}<a class="ico-label" href="mailto:{{ site.email }}">{% icon "mail" 15 %}{{ site.email }}</a>{% endif %}
+      {% if site.viber_url %}<a class="pill pill--viber" href="{{ site.viber_url }}">Viber</a>{% endif %}
+      {% if site.telegram_url %}<a class="pill pill--telegram" href="{{ site.telegram_url }}">Telegram</a>{% endif %}
+    </span>
+  </div>
+</div>
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="/">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#4E7E5C"/><path d="M20 8l9 4v7c0 6-4 10-9 13-5-3-9-7-9-13v-7z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/><path d="M15.5 20l3.2 3.2 6-6.4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>{{ site.brand }}</span>
+    </a>
+    <nav class="nav" aria-label="Главное меню">
+      {# ✏️ ИЗМЕНЕНО: ссылка открывает раздел, отдельная кнопка раскрывает список. #}
+      {% for item in main_menu %}
+      {% if item.children %}
+      <div class="nav__group{% if item.is_active %} nav__group--active{% endif %}">
+        <div class="nav__heading">
+          <a href="{{ item.url }}"{% if item.is_current %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-{{ item.key }}" aria-label="Показать подменю: {{ item.label }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        </div>
+        <ul class="nav__dropdown" id="nav-{{ item.key }}" hidden>
+          {% for child in item.children %}<li><a href="{{ child.url }}"{% if child.is_current %} aria-current="page"{% endif %}>{{ child.label }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      {% else %}
+      <a href="{{ item.url }}"{% if item.key == menu_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endif %}
+      {% endfor %}
+    </nav>
+    <a class="btn btn--accent" href="/kontakty.html#zayavka">Получить расчёт</a>
+  </div>
+</header>

@@ -1,0 +1,11 @@
+{# templates/includes/cta.html — оранжевая полоса «Бесплатная консультация» #}
+{% load site_tags %}
+<section class="section section--sm section--accent">
+  <div class="container row row--center" style="justify-content:space-between;gap:24px 48px">
+    <div class="grow stack stack--sm">
+      <h2 class="h2--md" style="font-weight:800">{{ cta_title|default:"Бесплатная консультация" }}</h2>
+      <p class="text-on-accent" style="font-size:17px">{% for phone in site.phones %}{{ phone }}{% if not forloop.last %} · {% endif %}{% endfor %}</p>
+    </div>
+    <a class="btn btn--dark btn--lg" href="/kontakty.html#zayavka">{{ cta_button|default:"Отправить заявку" }}</a>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+{# templates/pages/about.html — о нас (макет ONas) #}
+{% extends "base.html" %}
+{% load site_tags content_tags %}
+{% block title %}О нас — {{ site.brand }}{% endblock %}
+{% block content %}
+<div class="container services-breadcrumbs">
+  {% include "includes/breadcrumbs.html" %}
+</div>
+{% include "includes/internal_hero.html" with hero_title="Мы — инженеры по охране труда" hero_eyebrow="О нас" hero_subtitle="Помогаем организовать охрану труда в Минске и по Беларуси" hero_image="img/about-engineers.webp" hero_position="center top" %}
+<section class="container internal-intro">
+    <p class="lead">Наша команда много лет занимается охраной труда в организациях Минска и Беларуси. Опыт позволяет давать вам только необходимые и качественные документы — и системы управления охраной труда, которые реально работают.</p>
+</section>
+
+<section class="section section--md section--white">
+  <div class="container stack" style="gap:28px">
+    <h2 class="h2--md" style="font-weight:800">Наш подход</h2>
+    <div class="grid grid--fit">
+      <div class="card card--muted" style="border:0"><span class="ico-badge">{% icon "target" %}</span><b class="card__title">Только необходимые документы</b><span class="card__text">Не навязываем лишнего: в СУОТ войдут только нужные документы.</span></div>
+      <div class="card card--muted" style="border:0"><span class="ico-badge">{% icon "award" %}</span><b class="card__title">Опыт и качество</b><span class="card__text">При аудите видим недостатки и даём рекомендации по организации охраны труда.</span></div>
+      <div class="card card--muted" style="border:0"><span class="ico-badge">{% icon "layers" %}</span><b class="card__title">Всё в одной системе</b><span class="card__text">Документация по охране труда сразу интегрирована в систему управления.</span></div>
+    </div>
+    {% if material.body %}<div class="prose prose--narrow">{{ material.body|safe_html }}</div>{% endif %}
+  </div>
+</section>
+
+{% if team %}
+<section class="section section--md section--bg">
+  <div class="container stack" style="gap:28px">
+    <h2 class="h2--md" style="font-weight:800">Команда</h2>
+    <div class="grid">{% for p in team %}<div class="card">{% if p.photo %}<img class="team-photo" src="{{ p.photo.url }}" alt="{{ p.name }}">{% endif %}<b style="font-size:18px">{{ p.name }}</b>{% if p.position %}<span class="card__text">{{ p.position }}</span>{% endif %}</div>{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section--md section--dark on-dark">
+  <div class="container row" style="gap:40px;align-items:center">
+    <div class="stack" style="flex:1 1 440px;min-width:0;gap:14px">
+      <span class="eyebrow ico-label">{% icon "badge-check" 18 %}Документы</span>
+      <h2 class="h2--md" style="font-weight:800">Кто оказывает услуги</h2>
+      <p class="text-on-dark" style="font-size:17px;line-height:1.6">«{{ site.brand }}» — торговая марка, созданная для узнаваемости на рынке, и не является юридическим лицом. Полный комплекс услуг оказывает {{ site.legal_name }}, УНП {{ site.unp }}, на основании отдельных договоров.</p>
+      {% if site.accreditation %}<p class="text-on-dark">Свидетельство об аккредитации: {{ site.accreditation }}</p>{% endif %}
+      <a class="link-more" href="/usloviya-okazaniya-uslug.html" style="text-decoration:underline">Условия оказания услуг →</a>
+    </div>
+    {% if site.accreditation_scan %}<img src="{{ site.accreditation_scan.url }}" alt="Свидетельство об аккредитации" style="flex:0 1 260px;border-radius:12px">{% endif %}
+  </div>
+</section>
+
+{% if featured_clients %}
+<section class="section section--md section--white">
+  <div class="container stack" style="gap:24px">
+    <div class="row row--between"><h2 class="h2--md" style="font-weight:800">Нам доверяют</h2><a class="link-more" href="/nashi-klienty.html">Все клиенты →</a></div>
+    <div class="tags">{% for c in featured_clients %}<span class="tag">{{ c.name }}</span>{% endfor %}{% if clients_more > 0 %}<a class="tag" style="color:var(--accent-ink)" href="/nashi-klienty.html">и ещё {{ clients_more }}</a>{% endif %}</div>
+  </div>
+</section>
+{% endif %}
+{% include "includes/cta.html" %}
+{% endblock %}

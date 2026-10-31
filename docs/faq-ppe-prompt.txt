@@ -1,0 +1,4 @@
+Generated with the built-in imagegen tool on 2026-10-30.
+Asset: static/img/faq-ppe.webp
+
+Use case: photorealistic-natural. Asset: personal protective equipment FAQ panoramic website banner. Landscape 3:2. Carefully arranged authentic PPE on a clean gray workshop bench, concentrated on RIGHT half and in middle horizontal band for panoramic cropping: white industrial hard hat, clear safety glasses, dark green coated work gloves, yellow and black earmuff hearing protectors, sturdy dark safety footwear pair behind, folded green reflective workwear. LEFT half clean softly blurred workshop bench and neutral workshop wall for heading overlay. Natural daylight, tactile real materials, understated editorial product photograph, muted forest green and steel gray palette with restrained yellow accents. Proper realistic equipment construction, no people, no readable text or branding, no logos, no watermark, no UI.

@@ -1,0 +1,44 @@
+{# templates/content/material_question.html — вопрос-ответ и справки «Охрана труда при…» (макет Vopros) #}
+{% extends "base.html" %}
+{% load site_tags content_tags %}
+{% block title %}{{ material.seo_title }} — {{ site.brand }}{% endblock %}
+{% block meta_description %}{{ material.meta_description|default:material.short_answer|default:material.search_text|truncatechars:160 }}{% endblock %}
+{% block jsonld %}{% if material.type == "faq" %}{% json_ld faq_schema %}{% endif %}{% endblock %}
+{% block content %}
+<div class="container row" style="padding-top:28px;padding-bottom:64px;gap:40px;align-items:flex-start">
+  <article class="main-col stack" style="gap:20px;flex-basis:620px">
+    {% include "includes/breadcrumbs.html" %}
+    <span class="badge badge--info">{{ badge|default:"Вопрос" }}</span>
+    <h1 class="h1" style="font-size:38px;line-height:1.15;letter-spacing:-0.8px">{{ material.title }}</h1>
+    <div class="meta">
+      <span>Опубликовано: {{ material.published_at|date:"d.m.Y" }}</span>
+      {% if material.hits %}<span>{{ material.hits }} просмотров</span>{% endif %}
+      {% if material.npa_checked_at %}<span>Ответ актуален на: {{ material.npa_checked_at|date:"d.m.Y" }}</span>{% endif %}
+    </div>
+    {% if material.short_answer %}
+    <div class="short-answer"><span class="eyebrow eyebrow--light">Коротко</span><span>{{ material.short_answer }}</span></div>
+    {% endif %}
+    {% if material.intro %}<div class="prose">{{ material.intro|safe_html }}</div>{% endif %}
+    <div class="prose">{{ material.body|safe_html }}</div>
+    {% if material.basis %}<div class="notice notice--plain" style="flex-direction:column;gap:6px;font-size:15px;line-height:1.55"><b>Основание</b><div class="muted">{{ material.basis|safe_html }}</div></div>{% endif %}
+  </article>
+  <aside class="side-col stack" style="gap:20px;padding-top:44px">
+    <div class="aside-box aside-box--accent offer-box">
+      <div class="offer-box__head"><span class="ico-badge ico-badge--sm">{% icon "shield-check" 22 %}</span><b class="aside-box__title">Выстроим охрану труда под ключ</b></div>
+      <span>Подготовим всё, что спросит проверяющий, — под ваши профессии и виды работ:</span>
+      <ul class="checklist offer-box__list">
+        <li>{% check_icon color="#fff" size=20 %}Программы и журналы инструктажей</li>
+        <li>{% check_icon color="#fff" size=20 %}Инструкции по охране труда по профессиям</li>
+        <li>{% check_icon color="#fff" size=20 %}Периодичность обучения и проверки знаний</li>
+        <li>{% check_icon color="#fff" size=20 %}Приказы о назначении ответственных</li>
+      </ul>
+      <a class="btn btn--light btn--block" href="/kachestvennaya-razrabotka-dokumentov-po-ohrane-truda-individualno-dlya-vashej-organizacii.html">Организация работы по ОТ →</a>
+      <a class="offer-box__phone" href="{{ site.phone_1|tel }}"><span class="offer-box__phone-ico">{% icon "phone" 18 %}</span><span><small>Или позвоните — проконсультируем бесплатно</small>{{ site.phone_1 }}</span></a>
+    </div>
+    {% if related %}
+    <div class="aside-box aside-box--white"><b class="aside-box__title">Читайте также</b>{% for r in related %}<a href="{{ r.path }}">{{ r.title }}</a>{% endfor %}</div>
+    {% endif %}
+  </aside>
+</div>
+{% with call_link="/razrabotka-vsej-neobhodimoj-dlya-predpriyatiya-dokumentacii-po-ohrane-truda.html" call_link_text="Разработка документов по ОТ" %}{% include "includes/call_cta.html" %}{% endwith %}
+{% endblock %}

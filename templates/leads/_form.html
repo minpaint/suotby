@@ -1,0 +1,39 @@
+{# templates/leads/_form.html — форма заявки (тег {% lead_form %}) #}
+<form class="form form--card" method="post" action="{% url 'lead_create' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% if title %}<div class="stack stack--sm"><h2 class="h2--sm" style="font-weight:800">{{ title }}</h2><span class="muted" style="font-size:15px">Перезвоним в тот же день.</span></div>{% endif %}
+  <input type="hidden" name="source_url" value="{{ form.source_url.value|default:'' }}">
+  <div class="hp" aria-hidden="true"><label>Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+  {% if variant == "full" %}
+  <div class="form__grid">
+    <label class="field">Имя<input type="text" name="name" required maxlength="150" autocomplete="name"></label>
+    <label class="field">Телефон<input type="tel" name="phone" required maxlength="30" autocomplete="tel" inputmode="tel" placeholder="+375"></label>
+    <label class="field">Эл. почта (необязательно)<input type="email" name="email" autocomplete="email"></label>
+    <label class="field">Организация (необязательно)<input type="text" name="organization" maxlength="255" autocomplete="organization"></label>
+  </div>
+  <div class="form__grid">
+    <label class="field">Что нужно
+      <select name="service">{% for s in service_choices %}<option{% if s == service %} selected{% endif %}>{{ s }}</option>{% endfor %}</select>
+    </label>
+    <label class="field">Численность работников
+      <select name="headcount">{% for value, label in form.fields.headcount.choices %}<option value="{{ value }}">{{ label }}</option>{% endfor %}</select>
+    </label>
+  </div>
+  <label class="field">Комментарий<textarea name="comment" rows="4" maxlength="3000"></textarea></label>
+  <label class="field">Штатное расписание или предписание (необязательно)<input type="file" name="attachment" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png"></label>
+  {% else %}
+  <label class="field">Имя<input type="text" name="name" required maxlength="150" autocomplete="name"></label>
+  <label class="field">Телефон<input type="tel" name="phone" required maxlength="30" autocomplete="tel" inputmode="tel" placeholder="+375"></label>
+  {% if service %}
+  <label class="field">Услуга<input type="text" name="service" value="{{ service }}" maxlength="255" style="background:var(--bg)"></label>
+  {% else %}
+  <label class="field">Численность работников (необязательно)
+    <select name="headcount">{% for value, label in form.fields.headcount.choices %}<option value="{{ value }}">{{ label }}</option>{% endfor %}</select>
+  </label>
+  {% endif %}
+  {% endif %}
+
+  <label class="check"><input type="checkbox" name="consent" required><span>Даю согласие на обработку персональных данных в соответствии с <a href="/usloviya-okazaniya-uslug.html#pdn">Политикой обработки персональных данных</a></span></label>
+  <button type="submit" class="btn btn--{% if variant == 'full' %}accent{% else %}dark{% endif %} btn--lg btn--block">{{ button }}</button>
+</form>

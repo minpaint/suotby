@@ -1,0 +1,10 @@
+{# Общая фотополоса внутренних страниц — эталон: каталог услуг. #}
+{% load static %}
+<section class="services-hero" aria-labelledby="internal-page-title"{% if hero_position %} style="--hero-position:{{ hero_position }}"{% endif %}>
+  <img class="services-hero__image" src="{% static hero_image|default:'img/services-inspection.webp' %}" width="1440" height="960" alt="" fetchpriority="high">
+  <div class="container services-hero__content">
+    {% if hero_eyebrow %}<span class="eyebrow">{{ hero_eyebrow }}</span>{% endif %}
+    <h1 id="internal-page-title" class="h1">{{ hero_title }}</h1>
+    {% if hero_subtitle %}<p>{{ hero_subtitle }}</p>{% endif %}
+  </div>
+</section>

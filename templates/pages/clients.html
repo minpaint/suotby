@@ -1,0 +1,24 @@
+{# templates/pages/clients.html — наши клиенты (макет Klienty) #}
+{% extends "base.html" %}
+{% block title %}Наши клиенты — {{ site.brand }}{% endblock %}
+{% block content %}
+<div class="container services-breadcrumbs">
+  {% include "includes/breadcrumbs.html" %}
+</div>
+{% include "includes/internal_hero.html" with hero_title=material.title hero_eyebrow="Нам доверяют" hero_subtitle="Организации Минска и регионов Беларуси" hero_image="img/clients-cooperation.webp" hero_position="center 35%" %}
+<section class="container internal-intro">
+  <p class="lead" style="font-size:18px">{{ clients|length }} организаций из Минска и регионов: производство, строительство, торговля, медицина, культура и представительства иностранных компаний.</p>
+</section>
+{% if testimonials %}
+<div class="container grid grid--fit" style="padding-bottom:48px">
+  {% for t in testimonials %}<div class="card"><b style="font-size:17px">«{{ t.text }}»</b><span class="muted" style="font-size:14px">{{ t.author }}{% if t.organization %}, {{ t.organization }}{% endif %}{% if t.scan %} · <a href="{{ t.scan.url }}">скан письма</a>{% endif %}</span></div>{% endfor %}
+</div>
+{% endif %}
+<section class="section section--sm section--white">
+  <div class="container stack" style="gap:20px">
+    <h2 class="h2--sm" style="font-weight:800">Полный список</h2>
+    <ul class="clients">{% for c in clients %}<li>{{ c.name }}</li>{% endfor %}</ul>
+  </div>
+</section>
+{% with cta_title="Станьте следующим" cta_button="Получить расчёт" %}{% include "includes/cta.html" %}{% endwith %}
+{% endblock %}

@@ -1,0 +1,13 @@
+Подложки подрубрик «Вопрос-ответ», 30.10.2026.
+Созданы встроенным imagegen. WebP 1440×960.
+Пути относительно G:/Мой диск/coding/suot.by/.
+
+static/img/faq-fire.webp — промпт docs/faq-fire-prompt.txt
+static/img/faq-electrical.webp — промпт docs/faq-electrical-prompt.txt
+static/img/faq-ppe.webp — промпт docs/faq-ppe-prompt.txt
+static/img/faq-health.webp — промпт docs/faq-health-prompt.txt
+static/img/faq-hygiene.webp — промпт docs/faq-hygiene-prompt.txt
+static/img/faq-buildings.webp — промпт docs/faq-buildings-prompt.txt
+static/img/faq-investigation.webp — промпт docs/faq-investigation-prompt.txt
+
+Подбор изображений для всех 13 подрубрик: apps/content/hero_images.py.

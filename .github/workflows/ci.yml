@@ -1,0 +1,58 @@
+# .github/workflows/ci.yml — проверки на каждый push и PR
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: suot
+          POSTGRES_USER: suot
+          POSTGRES_PASSWORD: suot
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U suot" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgres://suot:suot@localhost:5432/suot
+      DJANGO_SETTINGS_MODULE: config.settings.test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Установка Poetry и зависимостей
+        run: |
+          pip install poetry==2.1.3
+          poetry config virtualenvs.create false
+          poetry install --no-root --no-interaction
+      - name: Ruff
+        run: ruff check apps config tests manage.py
+      - name: Black
+        run: black --check apps config tests manage.py
+      - name: Mypy
+        run: mypy apps config
+      - name: Bandit
+        run: bandit -q -r apps config -c pyproject.toml
+      - name: Нет несозданных миграций
+        run: python manage.py makemigrations --check --dry-run
+      - name: Тесты с покрытием
+        run: pytest --create-db --cov --cov-report=term
+      - name: Сложность кода (radon, информационно)
+        run: radon cc apps -s -n C || true
+      - name: Уязвимости зависимостей
+        run: pip-audit --strict || true
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Сборка образа
+        run: docker build -t suotby:ci .

@@ -1,0 +1,25 @@
+{# templates/404.html — страница не найдена (макет Oshibka404) #}
+{% extends "base.html" %}
+{% block title %}Страница не найдена — {{ site.brand }}{% endblock %}
+{% block meta_extra %}<meta name="robots" content="noindex">{% endblock %}
+{% block content %}
+<div class="container row" style="padding-top:72px;padding-bottom:88px;gap:48px;align-items:center">
+  <div class="stack" style="flex:1 1 520px;min-width:0;gap:18px">
+    <span style="font-size:88px;line-height:1;font-weight:800;letter-spacing:-3px;color:var(--accent)">404</span>
+    <h1 class="h1 h1--md">Такой страницы нет — возможно, она переехала</h1>
+    <p class="lead" style="font-size:18px">Мы обновили сайт, и часть адресов изменилась. Найдите нужный материал поиском или начните с популярных разделов.</p>
+    <form class="search-form" method="get" action="/poisk/" role="search">
+      <label class="field">Поиск по сайту<input type="search" name="q" placeholder="Например: приказ о назначении ответственных"></label>
+      <button class="btn btn--dark" type="submit">Найти</button>
+    </form>
+  </div>
+  <div class="aside-box aside-box--white" style="flex:1 1 340px;padding:26px;gap:12px;font-size:16px">
+    <b class="aside-box__title" style="font-size:18px">Популярное</b>
+    <a href="/razrabotka-i-vnedrenie-suot-pod-klyuch.html">Разработка и внедрение СУОТ под ключ</a>
+    <a href="/prikaz-o-naznachenii-otvetstvennyh-po-ohrane-truda-primernyj-obrazec.html">Приказ о назначении ответственных по ОТ</a>
+    {% for q in popular %}<a href="{{ q.path }}">{{ q.title }}</a>{% endfor %}
+    <a href="/ceny-na-razrabotku-suot-v-minske.html">Цены</a>
+    <a class="link-more" href="/kontakty.html">Связаться с нами →</a>
+  </div>
+</div>
+{% endblock %}

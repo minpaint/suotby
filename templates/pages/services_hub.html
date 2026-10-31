@@ -1,0 +1,28 @@
+{# templates/pages/services_hub.html — все услуги (макет Uslugi) #}
+{% extends "base.html" %}
+{% load static site_tags content_tags %}
+{% block title %}{{ material.seo_title }} — {{ site.brand }}{% endblock %}
+{% block content %}
+<div class="container services-breadcrumbs">
+  {% include "includes/breadcrumbs.html" %}
+</div>
+{% include "includes/internal_hero.html" with hero_title=material.title hero_eyebrow="СУОТ · Документы · Сопровождение" hero_subtitle="От разработки документов до ежедневной работы системы" %}
+<section class="container services-intro stack">
+  <p class="lead">Разрабатываем документы, внедряем СУОТ, берём на себя функции специалиста по охране труда. Работаем по договору, расчёт безналичный.</p>
+  <nav class="row services-intro__links" aria-label="Направления услуг">{% for g in groups %}{% if g.items %}<a class="chip" href="#{{ g.anchor }}">{{ g.title }} <span aria-hidden="true">↓</span></a>{% endif %}{% endfor %}</nav>
+</section>
+{% for g in groups %}{% if g.items %}
+<section id="{{ g.anchor }}" class="section section--md {% if forloop.first %}section--white{% else %}section--dark on-dark{% endif %}">
+  <div class="container stack" style="gap:28px">
+    <div class="row row--between"><h2 class="h2--md" style="font-weight:800">{{ g.title }}</h2><span class="{% if forloop.first %}muted{% else %}text-on-dark{% endif %}" style="font-size:15px">Услуг: {{ g.items|length }}</span></div>
+    <div class="grid">
+      {% for s in g.items %}
+      <a class="card {% if forloop.parentloop.first %}card--muted{% else %}card--dark{% endif %}" href="{{ s.path }}"><span class="ico-badge">{% icon s.title|icon_for %}</span><b class="card__title">{{ s.title }}</b>{% if s.meta_description %}<span class="card__text">{{ s.meta_description|truncatechars:140 }}</span>{% endif %}<span class="card__more"{% if not forloop.parentloop.first %} style="color:var(--dark-accent)"{% endif %}>Подробнее →</span></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}{% endfor %}
+{% if material.body %}<section class="section section--sm section--bg"><div class="container prose prose--narrow">{{ material.body|safe_html }}</div></section>{% endif %}
+{% with cta_title="Не нашли нужную услугу?" %}{% include "includes/cta.html" %}{% endwith %}
+{% endblock %}

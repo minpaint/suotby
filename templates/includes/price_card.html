@@ -1,0 +1,9 @@
+{# templates/includes/price_card.html — карточка тарифа (переменная t — PriceItem) #}
+{% load site_tags %}
+<div class="price-card{% if t.is_highlighted %} price-card--featured{% endif %}">
+  {% if t.badge %}<span class="badge badge--solid">{{ t.badge }}</span>{% endif %}
+  <b class="price-card__title">{{ t.title }}</b>
+  <div class="price-card__price">{% price_label t.price t.unit %}</div>
+  {% if t.description or t.term %}<span class="card__text">{{ t.description }}{% if t.term %} Срок — {{ t.term }}.{% endif %}</span>{% endif %}
+  <a class="btn {% if t.is_highlighted %}btn--accent{% else %}btn--outline{% endif %}" href="{% if t.service %}{{ t.service.path }}{% else %}/kontakty.html#zayavka{% endif %}">Рассчитать</a>
+</div>

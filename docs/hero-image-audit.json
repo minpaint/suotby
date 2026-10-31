@@ -1,0 +1,434 @@
+{
+  "pages": 61,
+  "unique_images": 61,
+  "duplicate_images": [],
+  "rows": [
+    {
+      "path": "/",
+      "canonical": "https://suot.by/",
+      "image": "/static/img/hero-safety.webp",
+      "bytes": 120014,
+      "sha256": "d1742dde5060936126cd6bf59d1031a051a2e05e737f9c13656999d0fc84c437"
+    },
+    {
+      "path": "/audit-ohrany-truda-na-predpriyatii.html",
+      "canonical": "https://suot.by/audit-ohrany-truda-na-predpriyatii.html",
+      "image": "/static/img/service-69.webp",
+      "bytes": 88318,
+      "sha256": "41f88ec9919ad749f7ca2bcfad14aa728760389d38c2d2b64b1029ab242a8e38"
+    },
+    {
+      "path": "/ceny-na-razrabotku-suot-v-minske.html",
+      "canonical": "https://suot.by/ceny-na-razrabotku-suot-v-minske.html",
+      "image": "/static/img/prices-calculation.webp",
+      "bytes": 96910,
+      "sha256": "649b4b2dac2d8a58aa348839121259b761e689634a0813fa4d1de541f4e0dd1e"
+    },
+    {
+      "path": "/chasto-zadavaemye-voprosy-po-ohrane-truda/",
+      "canonical": "https://suot.by/chasto-zadavaemye-voprosy-po-ohrane-truda/",
+      "image": "/static/img/knowledge-documents.webp",
+      "bytes": 103648,
+      "sha256": "88144ef80b4ba3e07c290e23c348f460f8f3f9766a192da0a0b7b02bd38de1a4"
+    },
+    {
+      "path": "/ekspertnaya-ocenka-v-analize-professionalnyh-riskov.html",
+      "canonical": "https://suot.by/ekspertnaya-ocenka-v-analize-professionalnyh-riskov.html",
+      "image": "/static/img/article-309.webp",
+      "bytes": 86424,
+      "sha256": "bb24a3dff4f74545cd7d039aae3348a74bc34af4a6f56013630765f1a3cb5c02"
+    },
+    {
+      "path": "/elektrobezopasnost/",
+      "canonical": "https://suot.by/elektrobezopasnost/",
+      "image": "/static/img/faq-electrical.webp",
+      "bytes": 87846,
+      "sha256": "e07cc6e72a57053d7ebebe0dbaf220cfbeb3999853492be4ce1df3aff72a5238"
+    },
+    {
+      "path": "/funkcionalnye-obyazannosti-po-ohrane-truda-v-dolzhnostnyh-instrukciyah.html",
+      "canonical": "https://suot.by/funkcionalnye-obyazannosti-po-ohrane-truda-v-dolzhnostnyh-instrukciyah.html",
+      "image": "/static/img/service-79.webp",
+      "bytes": 74880,
+      "sha256": "08007e674d58a593c88c6864f30a8645ef87a0711541d6ff3b6e8bf41a781cad"
+    },
+    {
+      "path": "/gosudarstvennoe-upravlenie-ohranoj-truda.-nadzor-i-kontrol-za-soblyudeniem-trebovanij-ohrany-truda/",
+      "canonical": "https://suot.by/gosudarstvennoe-upravlenie-ohranoj-truda.-nadzor-i-kontrol-za-soblyudeniem-trebovanij-ohrany-truda/",
+      "image": "/static/img/faq-oversight.webp",
+      "bytes": 65592,
+      "sha256": "f4f891e0ae384f308f190f4041749a45da3f8bc027a38a520ab163438f4171c3"
+    },
+    {
+      "path": "/instrukcii-po-ohrane-truda/",
+      "canonical": "https://suot.by/instrukcii-po-ohrane-truda/",
+      "image": "/static/img/category-instructions.webp",
+      "bytes": 94976,
+      "sha256": "bc5b57e556277d0a6381c07dfbe1c4700f3d7cfd4a214a5bddf78f15c56f814e"
+    },
+    {
+      "path": "/kachestvennaya-razrabotka-dokumentov-po-ohrane-truda-individualno-dlya-vashej-organizacii.html",
+      "canonical": "https://suot.by/kachestvennaya-razrabotka-dokumentov-po-ohrane-truda-individualno-dlya-vashej-organizacii.html",
+      "image": "/static/img/service-34.webp",
+      "bytes": 79616,
+      "sha256": "6b9907e1a03bfad00b60aa8bdb5ed817642a0ce5fb40b993355cebf41b2be1a2"
+    },
+    {
+      "path": "/kakie-izmeneniya-vneseny-v-novye-pravila-rassledovaniya-neschastnyh-sluchaev-na-proizvodstve-2024.html",
+      "canonical": "https://suot.by/kakie-izmeneniya-vneseny-v-novye-pravila-rassledovaniya-neschastnyh-sluchaev-na-proizvodstve-2024.html",
+      "image": "/static/img/article-318.webp",
+      "bytes": 68082,
+      "sha256": "263b48ca68868703ad31aaef04d18bd3a188a5403adeb073bf2dcbd0edf8527e"
+    },
+    {
+      "path": "/karty-identifikacii-opasnostej-ocenki-riskov/",
+      "canonical": "https://suot.by/karty-identifikacii-opasnostej-ocenki-riskov/",
+      "image": "/static/img/category-risks.webp",
+      "bytes": 90792,
+      "sha256": "8829c4cd36ed50dd43b85502f5354c293fc6f3edc58b4e2d5f1e2a7a3378d19c"
+    },
+    {
+      "path": "/konsultacii-po-voprosam-ohrany-truda.html",
+      "canonical": "https://suot.by/konsultacii-po-voprosam-ohrany-truda.html",
+      "image": "/static/img/service-70.webp",
+      "bytes": 72966,
+      "sha256": "a347f0d1300dc18f5c7501742e32e0f6ac4c7fd9b655ffc8ff7e4c9a69b72196"
+    },
+    {
+      "path": "/kontakty.html",
+      "canonical": "https://suot.by/kontakty.html",
+      "image": "/static/img/contacts-consultation.webp",
+      "bytes": 78840,
+      "sha256": "59e5e5b571ec18bd310c654a6bce0eb48ab344d66421c886f8861ed1f0f2ae5b"
+    },
+    {
+      "path": "/kontrol-za-soblyudeniem-zakonodatelstva-ob-ohrane-truda-v-organizacii-provodit-ili-ne-provodit.html",
+      "canonical": "https://suot.by/kontrol-za-soblyudeniem-zakonodatelstva-ob-ohrane-truda-v-organizacii-provodit-ili-ne-provodit.html",
+      "image": "/static/img/article-99.webp",
+      "bytes": 120018,
+      "sha256": "c45060cd71b7f146dac74677351ad26e4ada6bc04ab453560b82f9158202cdce"
+    },
+    {
+      "path": "/mozhno-li-otvetstvennym-za-organizaciyu-ohrany-truda-v-organizacii-naznachit-nachalnika-ceha.html",
+      "canonical": "https://suot.by/mozhno-li-otvetstvennym-za-organizaciyu-ohrany-truda-v-organizacii-naznachit-nachalnika-ceha.html",
+      "image": "/static/img/article-90.webp",
+      "bytes": 66664,
+      "sha256": "81c05669ea23715744a987478baec7709a36d5f5ebba02ee34e3c8392dbd082a"
+    },
+    {
+      "path": "/nashi-klienty.html",
+      "canonical": "https://suot.by/nashi-klienty.html",
+      "image": "/static/img/clients-cooperation.webp",
+      "bytes": 110618,
+      "sha256": "a46bb7955389ac42f9874d888ad8e216d4869bd8c4b61a27341a4531319d2b9e"
+    },
+    {
+      "path": "/nuzhnye-dokumenty/",
+      "canonical": "https://suot.by/nuzhnye-dokumenty/",
+      "image": "/static/img/category-documents.webp",
+      "bytes": 81942,
+      "sha256": "1d2b55088438e0ac9171c7f997b2fbbe1205ce1825b4c8e70cea840ec2f179e9"
+    },
+    {
+      "path": "/o-nas.html",
+      "canonical": "https://suot.by/o-nas.html",
+      "image": "/static/img/about-engineers.webp",
+      "bytes": 101792,
+      "sha256": "18563dc861fd9fa655372fff61902a606d0d7e24a9eec990c905e37d01d4c052"
+    },
+    {
+      "path": "/obsluzhivanie-organizacii-v-kachestve-specialista-po-ohrane-truda.html",
+      "canonical": "https://suot.by/obsluzhivanie-organizacii-v-kachestve-specialista-po-ohrane-truda.html",
+      "image": "/static/img/service-71.webp",
+      "bytes": 123834,
+      "sha256": "d6cb88e5564ef1f51765a91b6f7450b51862950d72b18e39d5333c7cb87169d2"
+    },
+    {
+      "path": "/obyazannosti-specialista-po-ohrane-truda-nakazanie-ili-blago.html",
+      "canonical": "https://suot.by/obyazannosti-specialista-po-ohrane-truda-nakazanie-ili-blago.html",
+      "image": "/static/img/article-96.webp",
+      "bytes": 82472,
+      "sha256": "e545eba880b3ff6e3183cc82d2f4fee960d8a88b2f50e74e61adace1859a19e4"
+    },
+    {
+      "path": "/ohrana-truda-pri-ekspluatacii-zdanij-i-sooruzhenij/",
+      "canonical": "https://suot.by/ohrana-truda-pri-ekspluatacii-zdanij-i-sooruzhenij/",
+      "image": "/static/img/faq-buildings.webp",
+      "bytes": 107546,
+      "sha256": "df47144d8aef97543eba1b1b5e54c890cac5a85f42a56472f8c4f794ba15e1f6"
+    },
+    {
+      "path": "/ohrana-truda-pri-proizvodstvennyh-processah-i-ekspluatacii-oborudovaniya/",
+      "canonical": "https://suot.by/ohrana-truda-pri-proizvodstvennyh-processah-i-ekspluatacii-oborudovaniya/",
+      "image": "/static/img/faq-equipment.webp",
+      "bytes": 106672,
+      "sha256": "4e0d25368a5cf47a420ff86935295d87dbd9f2fc4fc1d77dc7c8d3dd93bc7178"
+    },
+    {
+      "path": "/ohrana-truda-pri-rabote-s-gidravlicheskimi-i-elektricheskimi-podemnikami-peredvizhnymi-stojkami-oprokidyvatelyami.html",
+      "canonical": "https://suot.by/ohrana-truda-pri-rabote-s-gidravlicheskimi-i-elektricheskimi-podemnikami-peredvizhnymi-stojkami-oprokidyvatelyami.html",
+      "image": "/static/img/article-101.webp",
+      "bytes": 100698,
+      "sha256": "5dda908303111418defb44316df1157ef9e32da3b6525ac0de5f05f5ab1be1c9"
+    },
+    {
+      "path": "/ohrana-truda-v-it-kompanii-razrabotka-suot-i-vseh-dokumentov-pod-klyuch.html",
+      "canonical": "https://suot.by/ohrana-truda-v-it-kompanii-razrabotka-suot-i-vseh-dokumentov-pod-klyuch.html",
+      "image": "/static/img/article-311.webp",
+      "bytes": 89498,
+      "sha256": "eb94a76a7d24816742469083754ff16af367ee28feb5c006784d568145c28910"
+    },
+    {
+      "path": "/organizaciya-raboty-po-ohrane-truda/",
+      "canonical": "https://suot.by/organizaciya-raboty-po-ohrane-truda/",
+      "image": "/static/img/faq-organization.webp",
+      "bytes": 108020,
+      "sha256": "6a91d6b66e7e785be33af7c213319f0a32f3b9876b3530c962039f37dbeb2f10"
+    },
+    {
+      "path": "/osnovnye-polozheniya-zakonodatelstva-respubliki-belarus-o-trude/",
+      "canonical": "https://suot.by/osnovnye-polozheniya-zakonodatelstva-respubliki-belarus-o-trude/",
+      "image": "/static/img/faq-law.webp",
+      "bytes": 62338,
+      "sha256": "41715a1867ee67b35906ce819c0f6aa3d8b0fb83a8c24743c52c743b3bd31878"
+    },
+    {
+      "path": "/pages/more-pages/vse-uslugi-po-suot.html",
+      "canonical": "https://suot.by/pages/more-pages/vse-uslugi-po-suot.html",
+      "image": "/static/img/hub-suot.webp",
+      "bytes": 101700,
+      "sha256": "17525a145f77058b770afbd79b3cb91a107bbb695ab6030af85f890160935a04"
+    },
+    {
+      "path": "/podderzhanie-suot-v-rabotosposobnom-sostoyanii.html",
+      "canonical": "https://suot.by/podderzhanie-suot-v-rabotosposobnom-sostoyanii.html",
+      "image": "/static/img/service-74.webp",
+      "bytes": 84880,
+      "sha256": "b974e94e47d1d62305aaa75939edf91dc1a49732798c20d6655f5c68005de4c2"
+    },
+    {
+      "path": "/pozharnaya-bezopasnost/",
+      "canonical": "https://suot.by/pozharnaya-bezopasnost/",
+      "image": "/static/img/faq-fire.webp",
+      "bytes": 83898,
+      "sha256": "c3c92ed9ac1d2c42e48242f7192322c419df47b6968d2589861dd387ef27f739"
+    },
+    {
+      "path": "/prava-i-obyazannosti-zakazchika-i-podryadchika-po-ohrane-truda-kotorye-nuzhno-vklyuchit-v-dogovor-podryada.html",
+      "canonical": "https://suot.by/prava-i-obyazannosti-zakazchika-i-podryadchika-po-ohrane-truda-kotorye-nuzhno-vklyuchit-v-dogovor-podryada.html",
+      "image": "/static/img/article-312.webp",
+      "bytes": 84444,
+      "sha256": "b397b87b2f6c2c1af5f76c94a1a35311e00afd8914f741b3b0e444bd35602a05"
+    },
+    {
+      "path": "/prikaz-o-komissii-po-prinyatiyu-i-oformleniyu-vypolnennyh-meropriyatij-po-ohrane-truda-obrazec.html",
+      "canonical": "https://suot.by/prikaz-o-komissii-po-prinyatiyu-i-oformleniyu-vypolnennyh-meropriyatij-po-ohrane-truda-obrazec.html",
+      "image": "/static/img/order-102.webp",
+      "bytes": 98994,
+      "sha256": "0ae840761c83cb4a7896d8350fa0ded5e9dfc7c0b725925dcc71cdca6520d92a"
+    },
+    {
+      "path": "/prikaz-o-naznachenii-otvetstvennyh-po-ohrane-truda-primernyj-obrazec.html",
+      "canonical": "https://suot.by/prikaz-o-naznachenii-otvetstvennyh-po-ohrane-truda-primernyj-obrazec.html",
+      "image": "/static/img/order-106.webp",
+      "bytes": 67224,
+      "sha256": "5ca2ce4b6e4e654dfc5447d515a8e7d4a2378f9cc9bc6dca5b542a591a987bdb"
+    },
+    {
+      "path": "/prikaz-o-prohozhdenii-stazhirovki-primernyj-obrazec.html",
+      "canonical": "https://suot.by/prikaz-o-prohozhdenii-stazhirovki-primernyj-obrazec.html",
+      "image": "/static/img/order-103.webp",
+      "bytes": 73536,
+      "sha256": "ad8940f269436b4083c7119b67cd7fab8cda308a12bfdb68681c7c8b0bc93325"
+    },
+    {
+      "path": "/prikaz-o-razrabotke-instrukcij-primernyj-obrazec.html",
+      "canonical": "https://suot.by/prikaz-o-razrabotke-instrukcij-primernyj-obrazec.html",
+      "image": "/static/img/order-104.webp",
+      "bytes": 77114,
+      "sha256": "22a2d1acd746f7a0ade750688c705d70f3f3808da5a81bf013fd1bf27cf4c4e1"
+    },
+    {
+      "path": "/prikaz-o-sozdanii-komissii-dlya-proverki-znanij-po-ohrane-truda-primernyj-obrazec.html",
+      "canonical": "https://suot.by/prikaz-o-sozdanii-komissii-dlya-proverki-znanij-po-ohrane-truda-primernyj-obrazec.html",
+      "image": "/static/img/order-105.webp",
+      "bytes": 67326,
+      "sha256": "bb696a3599583e5537d785eae5a37c69fd11b41f4c86a6ffb821599e72a7cbaa"
+    },
+    {
+      "path": "/prikaz-ob-aktualizacii-suot-sistemy-upravleniya-ohranoj-truda-obrazec-rb.html",
+      "canonical": "https://suot.by/prikaz-ob-aktualizacii-suot-sistemy-upravleniya-ohranoj-truda-obrazec-rb.html",
+      "image": "/static/img/order-235.webp",
+      "bytes": 73204,
+      "sha256": "6112b1acc487a334e132eec35e6894e5852319d89ab50ee15bba46fde7f48691"
+    },
+    {
+      "path": "/prikazy-po-ohrane-truda/",
+      "canonical": "https://suot.by/prikazy-po-ohrane-truda/",
+      "image": "/static/img/category-orders.webp",
+      "bytes": 67984,
+      "sha256": "1f7e9c55e14f747fcefa65c71979916f961e317e4695d232ec79f663572098d5"
+    },
+    {
+      "path": "/proizvodstvennaya-sanitariya/",
+      "canonical": "https://suot.by/proizvodstvennaya-sanitariya/",
+      "image": "/static/img/faq-hygiene.webp",
+      "bytes": 101566,
+      "sha256": "2630edfb3dec6e2cdaea09e60c58b2bdebf653c1d59a23f9185e84f41c6503ca"
+    },
+    {
+      "path": "/rassledovanie-i-uchet-neschastnyh-sluchaev-na-proizvodstve-i-professionalnyh-zabolevanij/",
+      "canonical": "https://suot.by/rassledovanie-i-uchet-neschastnyh-sluchaev-na-proizvodstve-i-professionalnyh-zabolevanij/",
+      "image": "/static/img/faq-investigation.webp",
+      "bytes": 107540,
+      "sha256": "38318ef1c98501a9a13546cba4646fe5fe07ba08ff8e946ac949bda5a1fa4448"
+    },
+    {
+      "path": "/raznoe/",
+      "canonical": "https://suot.by/raznoe/",
+      "image": "/static/img/faq-misc.webp",
+      "bytes": 92288,
+      "sha256": "0708ee66c2c54f8070ee11ec4c649f5a6f1bb5c552e5749562197aeb8bd8ba5e"
+    },
+    {
+      "path": "/razrabotka-i-vnedrenie-suot-pod-klyuch.html",
+      "canonical": "https://suot.by/razrabotka-i-vnedrenie-suot-pod-klyuch.html",
+      "image": "/static/img/suot-development.webp",
+      "bytes": 96770,
+      "sha256": "cb3a95f928fca5233c5da7c352df9386c5b0b41574bb6dd106e91cfd681d5eec"
+    },
+    {
+      "path": "/razrabotka-instrukcij-po-ohrane-truda-v-minske-i-belarusi.html",
+      "canonical": "https://suot.by/razrabotka-instrukcij-po-ohrane-truda-v-minske-i-belarusi.html",
+      "image": "/static/img/service-179.webp",
+      "bytes": 92960,
+      "sha256": "a6dbf1ed5b825bcf60592e8b38290699cc425844207dd8925ccb127c8a22d1ef"
+    },
+    {
+      "path": "/razrabotka-kart-opasnostej-i-riskov-dlya-vashej-organizacii.html",
+      "canonical": "https://suot.by/razrabotka-kart-opasnostej-i-riskov-dlya-vashej-organizacii.html",
+      "image": "/static/img/service-81.webp",
+      "bytes": 110092,
+      "sha256": "2d3294a2c6f813a1d1a26d14c16641e7b99905f1048e6a3566b78eaca22f5919"
+    },
+    {
+      "path": "/razrabotka-prikazov-rasporyazhenij-po-ohrane-truda.html",
+      "canonical": "https://suot.by/razrabotka-prikazov-rasporyazhenij-po-ohrane-truda.html",
+      "image": "/static/img/service-78.webp",
+      "bytes": 61682,
+      "sha256": "cfeaeaadc141097d145850f8f811ef850e3b2231cfb9515548ccf7abb0dc02bd"
+    },
+    {
+      "path": "/razrabotka-vsej-neobhodimoj-dlya-predpriyatiya-dokumentacii-po-ohrane-truda.html",
+      "canonical": "https://suot.by/razrabotka-vsej-neobhodimoj-dlya-predpriyatiya-dokumentacii-po-ohrane-truda.html",
+      "image": "/static/img/service-76.webp",
+      "bytes": 80640,
+      "sha256": "472dd28abc8d09849c5d0ea8a384c6a4bb2b2f8b92114903964a3c77550b96bb"
+    },
+    {
+      "path": "/s-chego-nachat-po-ohrane-truda-pri-sozdanii-organizacii-ili-izmenenii-vida-ee-deyatelnosti.html",
+      "canonical": "https://suot.by/s-chego-nachat-po-ohrane-truda-pri-sozdanii-organizacii-ili-izmenenii-vida-ee-deyatelnosti.html",
+      "image": "/static/img/article-308.webp",
+      "bytes": 74826,
+      "sha256": "cd67a63b1986691f5ed786a198a017b3a1162c72c6078d335be6d1d8c0f2175e"
+    },
+    {
+      "path": "/sanitarno-bytovoe-i-lechebno-profilakticheskoe-obespechenie/",
+      "canonical": "https://suot.by/sanitarno-bytovoe-i-lechebno-profilakticheskoe-obespechenie/",
+      "image": "/static/img/faq-health.webp",
+      "bytes": 79688,
+      "sha256": "9e7a06367c4aa599ddbdec76e09d39e9e2d5685f0c388614cd39369dbf959371"
+    },
+    {
+      "path": "/seminary-po-ohrane-truda-pozharnoj-bezopasnosti.html",
+      "canonical": "https://suot.by/seminary-po-ohrane-truda-pozharnoj-bezopasnosti.html",
+      "image": "/static/img/service-72.webp",
+      "bytes": 98426,
+      "sha256": "edfc34131e6ecaad9f5d0918f53843dfba392dfbdda5c15c4f92e4b0cf551b13"
+    },
+    {
+      "path": "/sertifikaciya-sistemy-upravleniya-ohranoj-truda-suot.html",
+      "canonical": "https://suot.by/sertifikaciya-sistemy-upravleniya-ohranoj-truda-suot.html",
+      "image": "/static/img/service-75.webp",
+      "bytes": 71252,
+      "sha256": "a4ca32c90b9fa7f576732582dbdf00eac4f6a70fee71eee5ddd80ef5ffbd01ef"
+    },
+    {
+      "path": "/sistema-upravleniya-ohranoj-truda.-sistema-kotoraya-ne-rabotaet.html",
+      "canonical": "https://suot.by/sistema-upravleniya-ohranoj-truda.-sistema-kotoraya-ne-rabotaet.html",
+      "image": "/static/img/article-95.webp",
+      "bytes": 88368,
+      "sha256": "c6c6dcdf79aa129e45176b66e6d936ed277362d4a400a9d63f53e0850c1763b2"
+    },
+    {
+      "path": "/sostavlenie-reestra-zakonodatelnyh-i-drugih-primenyaemyh-v-organizacii-trebovanij-v-oblasti-ohrany-truda.html",
+      "canonical": "https://suot.by/sostavlenie-reestra-zakonodatelnyh-i-drugih-primenyaemyh-v-organizacii-trebovanij-v-oblasti-ohrany-truda.html",
+      "image": "/static/img/service-80.webp",
+      "bytes": 71772,
+      "sha256": "dbf61a6cd6f3733060bbb7780c9700d5a99358af58a13fe1d020f34620485ea8"
+    },
+    {
+      "path": "/sredstva-individualnoj-i-kollektivnoj-zashchity-smyvayushchie-i-obezvrezhivayushchie-sredstva/",
+      "canonical": "https://suot.by/sredstva-individualnoj-i-kollektivnoj-zashchity-smyvayushchie-i-obezvrezhivayushchie-sredstva/",
+      "image": "/static/img/faq-ppe.webp",
+      "bytes": 138002,
+      "sha256": "8709c0e19ec9cb12a10d24486791f332dd24842fcad9cc1fc14ac380cdc4e94e"
+    },
+    {
+      "path": "/stati/",
+      "canonical": "https://suot.by/stati/",
+      "image": "/static/img/category-articles.webp",
+      "bytes": 98260,
+      "sha256": "abd796c94152d0c3098f567fc76551d6b49855644bee2f30ce946ad23b311e76"
+    },
+    {
+      "path": "/strahovanie-ot-neschastnyh-sluchaev-na-proizvodstve-i-professionalnyh-zabolevanij/",
+      "canonical": "https://suot.by/strahovanie-ot-neschastnyh-sluchaev-na-proizvodstve-i-professionalnyh-zabolevanij/",
+      "image": "/static/img/faq-insurance.webp",
+      "bytes": 65240,
+      "sha256": "f112b2350d5eb1bdb3b4d22f5f58e200466e8da6ea67d22318e991d7ff74f284"
+    },
+    {
+      "path": "/strasti-vokrug-kanavy-trebovaniya-po-ohrane-truda-k-osmotrovym-kanavam.html",
+      "canonical": "https://suot.by/strasti-vokrug-kanavy-trebovaniya-po-ohrane-truda-k-osmotrovym-kanavam.html",
+      "image": "/static/img/article-97.webp",
+      "bytes": 135282,
+      "sha256": "0fb72c485f4dfcdec017246f279ab35d9e9863edebf53ac0214cda7d724792fd"
+    },
+    {
+      "path": "/uslugi-po-ohrane-truda-v-minske-i-po-belarusi.html",
+      "canonical": "https://suot.by/uslugi-po-ohrane-truda-v-minske-i-po-belarusi.html",
+      "image": "/static/img/services-inspection.webp",
+      "bytes": 147066,
+      "sha256": "bbfbdf788db1c20a0e10b845b97e86494acec7a726596cc3899a378bbfaa15eb"
+    },
+    {
+      "path": "/vybiraem-formu-najma-rabotnikov-kontrakt-ili-dogovor-podryada.html",
+      "canonical": "https://suot.by/vybiraem-formu-najma-rabotnikov-kontrakt-ili-dogovor-podryada.html",
+      "image": "/static/img/article-98.webp",
+      "bytes": 62040,
+      "sha256": "5d7a22f2b84f60368f2adb0eaf82eb1a425fc79e7facc253b234b7559550c2fc"
+    },
+    {
+      "path": "/vypolnenie-predpisanij-po-ohrane-truda.html",
+      "canonical": "https://suot.by/vypolnenie-predpisanij-po-ohrane-truda.html",
+      "image": "/static/img/service-68.webp",
+      "bytes": 120312,
+      "sha256": "0078a378d4f0b9eaa33d250e8da9e62318e03ed2524d2031efdecab57d01f1fa"
+    },
+    {
+      "path": "/vzhik-i-gotovo-kak-ya-pytalsya-otverstie-v-stene-prosverlit.html",
+      "canonical": "https://suot.by/vzhik-i-gotovo-kak-ya-pytalsya-otverstie-v-stene-prosverlit.html",
+      "image": "/static/img/article-100.webp",
+      "bytes": 76938,
+      "sha256": "123f3701bb73e139b1dfd65a7040904e024aa405ff40527ba83845784bea9ae7"
+    },
+    {
+      "path": "/zhurnaly-po-ohrane-truda-i-po-otdelnym-proceduram-suot.html",
+      "canonical": "https://suot.by/zhurnaly-po-ohrane-truda-i-po-otdelnym-proceduram-suot.html",
+      "image": "/static/img/service-77.webp",
+      "bytes": 67036,
+      "sha256": "bdf931c764b8fb43f7ce22ff79b9412675e21b6b5042d7ee39733616b63585df"
+    }
+  ]
+}

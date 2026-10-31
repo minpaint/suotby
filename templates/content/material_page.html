@@ -1,0 +1,14 @@
+{# templates/content/material_page.html — обычная текстовая страница (О СУОТ, элементы СУОТ и т. п.) #}
+{% extends "base.html" %}
+{% load content_tags %}
+{% block title %}{{ material.seo_title }} — {{ site.brand }}{% endblock %}
+{% block meta_description %}{{ material.meta_description|default:material.search_text|truncatechars:160 }}{% endblock %}
+{% block content %}
+<div class="container prose--narrow stack" style="padding-top:28px;padding-bottom:64px;gap:20px">
+  {% include "includes/breadcrumbs.html" %}
+  <h1 class="h1 h1--md">{{ material.title }}</h1>
+  {% if material.intro %}<div class="prose">{{ material.intro|safe_html }}</div>{% endif %}
+  <article class="prose">{{ material.body|safe_html }}</article>
+</div>
+{% include "includes/call_cta.html" %}
+{% endblock %}

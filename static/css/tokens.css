@@ -1,0 +1,52 @@
+/* static/css/tokens.css — дизайн-токены из макетов (docs/mockups) */
+:root {
+  --font: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* ✏️ ИЗМЕНЕНО: фон страницы белый (body, шапка — var(--surface)); --bg — лёгкий оттенок для чередующихся секций и карточек */
+  --bg: #F3F6F4;
+  --surface: #FFFFFF;
+  --surface-2: #F8FAF8;
+  --ink: #14212B;
+  --text: #2A3843;
+  --text-2: #3C4A55;
+  --muted: #5E6872;
+  --border: #D6DED8;
+  --border-2: #E3E9E5;
+  --border-dashed: #AEBBB2;
+
+  /* ✏️ ИЗМЕНЕНО: акцент — зелёный старого сайта suot.by (#4E7E5C, тёмный #273F2E) вместо оранжевого.
+     Контраст: белый на --accent 4.7:1, --accent-ink на белом 9:1, на --accent-soft 6.5:1 */
+  --accent: #4E7E5C;
+  --accent-hover: #3F6A4C;
+  --accent-ink: #355A40;
+  --accent-ink-hover: #273F2E;
+  --accent-soft: #E1EDE4;
+  --accent-bg: #F3F8F4;
+  --accent-line: #BFD5C5;
+  /* ⚠️ на зелёном светлый оттенок не добирает 4.5:1 — текст на акцентном фоне только белый */
+  --accent-on: #FFFFFF;
+
+  --dark: #14212B;
+  --dark-2: #1E3140;
+  --dark-line: #2C3E4C;
+  --dark-text: #C6D1DA;
+  --dark-text-2: #D5DEE5;
+  --dark-muted: #B7C4CE;
+  --dark-accent: #9FD0AE;
+
+  --info-bg: #EAF1F6;
+  --info-ink: #1A4F78;
+  --info-text: #33475A;
+
+  --viber: #7360F2;
+  --telegram: #1F7FB8;
+
+  --radius-sm: 10px;
+  --radius: 12px;
+  --radius-md: 16px;
+  --radius-lg: 18px;
+  --radius-xl: 20px;
+
+  --container: 1200px;
+  --gutter: 24px;
+}

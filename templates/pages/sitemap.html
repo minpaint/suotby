@@ -1,0 +1,19 @@
+{# templates/pages/sitemap.html — HTML-карта сайта (макет KartaSajta) #}
+{% extends "base.html" %}
+{% block title %}Карта сайта — {{ site.brand }}{% endblock %}
+{% block content %}
+<div class="container stack" style="padding-top:28px;padding-bottom:64px;gap:28px">
+  {% include "includes/breadcrumbs.html" %}
+  <h1 class="h1">Карта сайта</h1>
+  <div class="grid grid--wide" style="gap:20px;align-items:start">
+    {% for g in tree %}{% if g.count %}
+    <section class="card" style="gap:12px">
+      <div class="row" style="justify-content:space-between;align-items:baseline;gap:12px"><a href="{{ g.url }}" style="font-size:19px;font-weight:800;color:var(--ink);text-decoration:none">{{ g.title }}</a><span class="muted" style="font-size:14px">{{ g.count }}</span></div>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.4">
+        {% for title, url in g.items %}<li><a href="{{ url }}" style="color:var(--text-2)">{{ title }}</a></li>{% endfor %}
+      </ul>
+    </section>
+    {% endif %}{% endfor %}
+  </div>
+</div>
+{% endblock %}
