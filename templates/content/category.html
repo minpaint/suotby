@@ -5,9 +5,11 @@
 {% block meta_description %}{{ category.meta_description|default:category.title }}{% endblock %}
 {% block meta_extra %}{% if query %}<meta name="robots" content="noindex, follow">{% endif %}{% endblock %}
 {% block content %}
-<section class="container section--top stack" style="padding-bottom:40px;gap:18px">
+<div class="container services-breadcrumbs">
   {% include "includes/breadcrumbs.html" %}
-  <h1 class="h1">{{ category.title }}</h1>
+</div>
+{% include "includes/internal_hero.html" with hero_title=category.title %}
+<section class="container internal-intro stack">
   {% if category.description %}<div class="lead" style="font-size:18px">{{ category.description|safe_html }}</div>{% endif %}
   {% if tabs %}
   <nav class="row" style="gap:10px;margin-top:6px" aria-label="Разделы «Полезное»">

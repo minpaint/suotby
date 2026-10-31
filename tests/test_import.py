@@ -40,6 +40,18 @@ def test_import_categories(imported: JoomlaImporter) -> None:
     assert Material.objects.get(legacy_id="106").category.slug == "prikazy-po-ohrane-truda"
 
 
+@pytest.mark.parametrize("separator", ["/", "\\"])
+@pytest.mark.parametrize(
+    ("folder", "slug"),
+    [("stati", "stati"), ("prikazy", "prikazy-po-ohrane-truda")],
+)
+def test_category_for_native_paths(seeded: None, separator: str, folder: str, slug: str) -> None:
+    importer = JoomlaImporter(EXPORT)
+    category = importer.category_for({}, f"{folder}{separator}example.md")
+    assert category is not None
+    assert category.slug == slug
+
+
 def test_import_sanitizes_and_cleans_junk(imported: JoomlaImporter) -> None:
     faq = Material.objects.get(legacy_id="184")
     assert "<script" not in faq.body
@@ -91,6 +103,23 @@ def test_import_command_missing_dir(db: None) -> None:
 
     with pytest.raises(CommandError):
         call_command("import_joomla", source="/nonexistent")
+
+
+def test_organization_service_classification(seeded: None) -> None:
+    """Услуга из Uncategorised остаётся услугой после повторного импорта."""
+    importer = JoomlaImporter(EXPORT)
+    meta = {
+        "id": 34,
+        "title": "Организация работы по охране труда в организации",
+        "url": "/kachestvennaya-razrabotka-dokumentov-po-ohrane-truda-individualno-dlya-vashej-organizacii.html",
+        "type": "страница",
+        "category": "Uncategorised",
+    }
+    for _ in range(2):
+        importer.import_material(meta, "Организуем работу по охране труда.", "stranicy/34.md")
+    material = Material.objects.get(legacy_id="34")
+    assert material.type == Material.Type.SERVICE
+    assert material.category.kind == Category.Kind.SERVICES_OT
 
 
 def test_helpers() -> None:

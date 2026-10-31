@@ -5,8 +5,25 @@ from django.test import Client
 from apps.content.importer import JoomlaImporter
 from apps.content.models import Material, PriceItem
 from apps.core.models import TeamMember, Testimonial
+from tests.factories import MaterialFactory
 
 pytestmark = pytest.mark.django_db
+
+
+def test_organization_legacy_alias(client: Client) -> None:
+    """Два старых адреса показывают одну услугу с одним каноническим адресом."""
+    primary = "/kachestvennaya-razrabotka-dokumentov-po-ohrane-truda-individualno-dlya-vashej-organizacii.html"
+    alias = "/organizaciya-raboty-po-ohrane-truda-v-organizacii.html"
+    material = MaterialFactory(path=primary, type=Material.Type.SERVICE, legacy_id="34")
+    for path in (primary, alias):
+        response = client.get(path)
+        assert response.status_code == 200
+        assert response.context["material"].pk == material.pk
+        assert response.context["canonical_url"].endswith(primary)
+        assert response.content.decode().count("<h1 ") == 1
+    material.is_published = False
+    material.save()
+    assert client.get(alias).status_code == 404
 
 
 @pytest.mark.parametrize(

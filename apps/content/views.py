@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from django.conf import settings
 from django.core.paginator import Paginator
 from django.http import Http404, HttpRequest, HttpResponse
 from django.shortcuts import render
@@ -18,10 +19,19 @@ from django.views import View
 from django.views.generic import TemplateView
 
 from apps.content import services
+from apps.content.hero_images import category_hero, material_hero
 from apps.content.models import Category, Material, PriceItem
 from apps.core.models import Client, TeamMember, Testimonial
 
 PER_PAGE = 20
+
+# ✏️ ИЗМЕНЕНО: оба адреса Joomla id 34 помечены keep в redirects.csv.
+# 💡 Второй адрес показывает тот же материал; canonical остаётся у основного адреса.
+LEGACY_MATERIAL_ALIASES = {
+    "/organizaciya-raboty-po-ohrane-truda-v-organizacii.html": (
+        "/kachestvennaya-razrabotka-dokumentov-po-ohrane-truda-individualno-dlya-vashej-organizacii.html"
+    ),
+}
 
 
 class PageResolverView(View):
@@ -40,10 +50,11 @@ class PageResolverView(View):
             Http404: если по адресу ничего не опубликовано.
         """
         full_path = "/" + path
+        material_path = LEGACY_MATERIAL_ALIASES.get(full_path, full_path)
         material = (
             Material.objects.published()
             .select_related("category", "category__parent")
-            .filter(path=full_path)
+            .filter(path=material_path)
             .first()
         )
         if material is not None:
@@ -67,8 +78,10 @@ class PageResolverView(View):
             "breadcrumbs": self.material_breadcrumbs(material),
             "related": services.related_for(material),
             "menu_active": self.menu_key(material),
+            "canonical_url": settings.SITE_URL + material.path,
         }
         tpl = services.template_for(material)
+        ctx.update(material_hero(material.legacy_id, material.type))
         ctx.update(services.schema_for(material, request.build_absolute_uri(material.path)))
         if material.type == Material.Type.SERVICE:
             ctx["service_faqs"] = material.service_faqs.all()
@@ -174,6 +187,7 @@ class PageResolverView(View):
                 "breadcrumbs": crumbs,
                 "popular": services.popular_questions(3),
                 "menu_active": "faq" if is_faq else "poleznoe",
+                **category_hero(category.slug, is_faq=is_faq),
             },
         )
 

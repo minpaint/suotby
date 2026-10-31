@@ -4,10 +4,16 @@
 {% block title %}{{ material.seo_title }} — {{ site.brand }}{% endblock %}
 {% block meta_description %}{{ material.meta_description|default:material.search_text|truncatechars:160 }}{% endblock %}
 {% block content %}
+{% if material.type == "order_sample" %}
+<div class="container services-breadcrumbs">{% include "includes/breadcrumbs.html" %}</div>
+{% include "includes/internal_hero.html" with hero_title=material.title %}
+{% endif %}
 <section class="container section--top stack" style="padding-bottom:40px;gap:18px">
+  {% if material.type != "order_sample" %}
   {% include "includes/breadcrumbs.html" %}
   {% if badge %}<span class="badge">{{ badge }}</span>{% endif %}
   <h1 class="h1 h1--md" style="max-width:900px">{{ material.title }}</h1>
+  {% endif %}
   <div class="meta">
     <span>Обновлено: {{ material.updated_at|date:"d.m.Y" }}</span>
     {% if material.hits %}<span>{{ material.hits }} просмотров</span>{% endif %}

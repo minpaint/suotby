@@ -1,0 +1,4 @@
+Generated with the built-in imagegen tool on 2026-10-30.
+Asset: static/img/faq-buildings.webp
+
+Use case: photorealistic-natural. Asset: safe operation of buildings and structures FAQ panoramic banner. Landscape 3:2. RIGHT half: an adult facilities engineer in white hard hat, clear safety glasses and dark green work jacket holding a clipboard, examining the exterior steel structure and clean entrance of a well-maintained modern industrial building from a safe ground-level walkway. Visible structural columns, facade panels, handrails and industrial architecture; no high-rise work, no damage, no construction emergency. Engineer and facade detail in upper-middle band for panoramic crop. LEFT half quiet softly blurred industrial facade and walkway for HTML title overlay. Overcast soft daylight, muted forest green and steel gray palette, authentic editorial commercial photography, natural realistic anatomy. No readable text, no logos, no watermark, no UI.

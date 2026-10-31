@@ -1,0 +1,4 @@
+Generated with the built-in imagegen tool on 2026-10-30.
+Asset: static/img/faq-fire.webp
+
+Use case: photorealistic-natural. Asset: fire safety FAQ subcategory website banner, landscape 3:2 source for very wide panoramic crop. Modern clean industrial corridor with on RIGHT HALF a wall-mounted red portable fire extinguisher in a proper bracket, intact hose and pressure gauge, beside a neatly closed red fire equipment cabinet; an emergency exit corridor recedes behind. No flames, no smoke, no emergency scene, no people. LEFT half has quiet softly blurred neutral workshop wall and corridor for HTML title overlay. Extinguisher and cabinet centered in the middle horizontal band with room above and below for panoramic cropping. Authentic realistic commercial photography, soft daylight, muted sage green and steel gray surroundings with purposeful red safety equipment accents. No readable text, no invented warning lettering, no logos, no watermark, no UI.

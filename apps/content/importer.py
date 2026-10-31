@@ -253,7 +253,7 @@ class JoomlaImporter:
     def category_for(self, meta: dict[str, Any], rel: str) -> Category | None:
         """Раздел материала: по номеру категории «Вопрос-ответ», по папке или по группе услуг."""
         section = str(meta.get("section", ""))
-        top = rel.split("/")[0]
+        top = rel.replace("\\", "/").split("/")[0]
         if section.startswith("vopros-otvet/"):
             num = section.split("/")[1].split("-")[0]
             return self.categories_by_legacy.get(f"cat-{num}")
@@ -276,6 +276,10 @@ class JoomlaImporter:
         if not legacy_id or legacy_id in SKIP_IDS:
             self.report.skipped.append(f"{rel}: служебный или старый материал (id {legacy_id})")
             return
+        # ✏️ ИЗМЕНЕНО: услуга id 34 лежала в Joomla в Uncategorised и выгрузилась как страница.
+        # 💡 Исправляем классификацию при каждом импорте, сохраняя основной адрес и текст.
+        if legacy_id == "34":
+            meta = {**meta, "type": "услуга", "category": "Услуги по охране труда"}
         if not url:
             self.report.skipped.append(f"{rel}: нет адреса на сайте")
             return

@@ -6,13 +6,13 @@
 {% block og_type %}article{% endblock %}
 {% block content %}
 {% with doc=material.body|with_toc %}
-<section class="container stack prose--narrow" style="padding-top:28px;padding-bottom:32px;gap:18px">
+<div class="container services-breadcrumbs">
   {% include "includes/breadcrumbs.html" %}
-  <span class="badge">{{ badge|default:"Статья" }}</span>
-  <h1 class="h1" style="font-size:44px">{{ material.title }}</h1>
+</div>
+{% include "includes/internal_hero.html" with hero_title=material.title %}
+<section class="container internal-intro prose--narrow">
   <div class="meta"><span>Обновлено: {{ material.updated_at|date:"d.m.Y" }}</span><span>{{ material.reading_minutes }} мин чтения</span>{% if material.hits %}<span>{{ material.hits }} просмотров</span>{% endif %}</div>
 </section>
-{% if material.cover %}<div class="container" style="max-width:1080px"><img class="cover" src="{{ material.cover.url }}" alt=""></div>{% endif %}
 <div class="container prose--narrow stack" style="padding-top:40px;padding-bottom:64px;gap:20px">
   {% if doc.toc|length > 1 %}
   <nav class="toc" aria-label="Содержание"><b>В статье</b>{% for anchor, text in doc.toc %}<a href="#{{ anchor }}">{{ text }}</a>{% endfor %}</nav>

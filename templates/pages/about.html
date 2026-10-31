@@ -3,13 +3,12 @@
 {% load site_tags content_tags %}
 {% block title %}О нас — {{ site.brand }}{% endblock %}
 {% block content %}
-<section class="container section--top stack" style="gap:28px;padding-bottom:64px">
+<div class="container services-breadcrumbs">
   {% include "includes/breadcrumbs.html" %}
-  <div class="stack" style="gap:18px;max-width:860px">
-    <span class="eyebrow">Кто мы</span>
-    <h1 class="h1">Мы — инженеры по охране труда</h1>
+</div>
+{% include "includes/internal_hero.html" with hero_title="Мы — инженеры по охране труда" hero_eyebrow="О нас" hero_subtitle="Помогаем организовать охрану труда в Минске и по Беларуси" hero_image="img/about-engineers.webp" hero_position="center top" %}
+<section class="container internal-intro">
     <p class="lead">Наша команда много лет занимается охраной труда в организациях Минска и Беларуси. Опыт позволяет давать вам только необходимые и качественные документы — и системы управления охраной труда, которые реально работают.</p>
-  </div>
 </section>
 
 <section class="section section--md section--white">

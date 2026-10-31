@@ -1,0 +1,4 @@
+Generated with the built-in imagegen tool on 2026-10-30.
+Asset: static/img/faq-electrical.webp
+
+Use case: photorealistic-natural. Asset: electrical safety FAQ banner. Landscape 3:2 photograph for wide panoramic crop. RIGHT half of frame: professional electrician in navy workwear with white hard hat, clear protective glasses, holding a clipboard and visually inspecting a CLOSED modern industrial electrical distribution cabinet from a safe distance. Cabinet door fully closed, no exposed wires, no sparks, no work on energized parts. Engineer waist-up in central horizontal band, no exaggerated gestures, natural hands. LEFT half softly blurred orderly industrial electrical room, uncluttered for HTML heading overlay. Authentic editorial commercial photography, soft natural industrial lighting, muted steel gray and forest green palette with restrained yellow safety accents. No readable labels or text, no logos, no watermark, no UI.

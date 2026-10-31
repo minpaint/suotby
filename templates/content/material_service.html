@@ -1,34 +1,37 @@
 {# templates/content/material_service.html — страница услуги (макет Usluga) #}
 {% extends "base.html" %}
-{% load site_tags content_tags leads_tags %}
+{% load static site_tags content_tags leads_tags %}
 {% block title %}{{ material.seo_title }} — {{ site.brand }}{% endblock %}
 {% block meta_description %}{{ material.meta_description|default:material.search_text|truncatechars:160 }}{% endblock %}
 {% block jsonld %}{% json_ld service_schema %}{% endblock %}
 {% block content %}
-<section class="container section--top stack" style="gap:28px">
+<div class="container services-breadcrumbs">
   {% include "includes/breadcrumbs.html" %}
-  <div class="row" style="gap:40px;align-items:flex-start">
-    <div class="stack" style="flex:1 1 560px;min-width:0;gap:20px">
-      {% if badge %}<span class="badge">{{ badge }}</span>{% endif %}
-      <h1 class="h1">{{ material.title }}</h1>
+</div>
+{% if material.slug == 'razrabotka-i-vnedrenie-suot-pod-klyuch' %}
+{% include "includes/internal_hero.html" with hero_title=material.title hero_eyebrow="Разработка СУОТ" hero_subtitle="Документы и внедрение под задачи вашей организации" %}
+{% else %}
+{% include "includes/internal_hero.html" with hero_title=material.title hero_eyebrow="Услуги по охране труда" hero_subtitle="Практическая помощь вашей организации в Минске и по Беларуси" %}
+{% endif %}
+<section class="container service-summary">
+    <div class="stack">
       {% if material.intro %}<div class="lead">{{ material.intro|safe_html }}</div>{% endif %}
+      {% if material.slug == 'razrabotka-i-vnedrenie-suot-pod-klyuch' and not material.intro %}<p class="lead">Разработаем документы СУОТ под вашу организацию, оценим профессиональные риски и поможем внедрить систему в ежедневную работу.</p>{% endif %}
       <div class="row" style="gap:12px;margin-top:4px">
         <a class="btn btn--accent btn--lg" href="#zayavka">Отправить заявку</a>
         <a class="btn btn--outline btn--lg" href="{{ site.phone_1|tel }}">{{ site.phone_1 }}</a>
       </div>
     </div>
-    <div class="hero-card on-dark" style="flex:1 1 320px;min-width:0;padding:28px">
+    <div class="service-summary__price stack">
       <span class="eyebrow">Стоимость</span>
       <div class="price-card__price">{% price_label material.price_from material.price_unit %}</div>
-      <span class="text-on-dark" style="font-size:15px;line-height:1.5">Цены ориентировочные. Точная стоимость — после бесплатной консультации, зависит от численности и видов работ.</span>
-      <div style="height:1px;background:var(--dark-line)"></div>
+      <span class="muted" style="font-size:15px;line-height:1.5">Цены ориентировочные. Точная стоимость — после бесплатной консультации, зависит от численности и видов работ.</span>
       <ul class="checklist" style="gap:10px;font-size:15px">
         <li>{% check_icon size=20 %}Работаем по договору</li>
         <li>{% check_icon size=20 %}Безналичный расчёт</li>
         <li>{% check_icon size=20 %}Минск и вся Беларусь</li>
       </ul>
     </div>
-  </div>
 </section>
 
 <section class="section section--md section--white">

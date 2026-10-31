@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'css/tokens.css' %}">
-<link rel="stylesheet" href="{% static 'css/site.css' %}">
+<link rel="stylesheet" href="{% static 'css/site.css' %}?v=20261030-compact-menu">
 <link rel="icon" href="{% static 'img/favicon.svg' %}" type="image/svg+xml">
 {% json_ld org_schema %}
 {% block jsonld %}{% endblock %}
@@ -29,6 +29,8 @@
 {% block content %}{% endblock %}
 </main>
 {% include "includes/footer.html" %}
+{# ✏️ ИЗМЕНЕНО: доступные выпадающие меню услуг. #}
+<script src="{% static 'js/navigation.js' %}" defer></script>
 {% if metrika_id %}<script src="{% static 'js/metrika.js' %}" data-id="{{ metrika_id }}" defer></script>{% endif %}
 </body>
 </html>

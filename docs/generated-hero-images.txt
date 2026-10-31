@@ -1,0 +1,18 @@
+Тематические изображения внутренних хиро — 30.10.2026
+Инструмент: встроенный imagegen. Формат: WebP, 1440×960.
+Все пути ниже — относительно G:/Мой диск/coding/suot.by/.
+
+О нас: static/img/about-engineers.webp
+Промпт: docs/about-engineers-prompt.txt
+
+Контакты: static/img/contacts-consultation.webp
+Промпт: docs/contacts-consultation-prompt.txt
+
+Цены: static/img/prices-calculation.webp
+Промпт: docs/prices-calculation-prompt.txt
+
+Клиенты: static/img/clients-cooperation.webp
+Промпт: docs/clients-cooperation-prompt.txt
+
+Вопрос-ответ и полезные материалы: static/img/knowledge-documents.webp
+Промпт: docs/knowledge-documents-prompt.txt

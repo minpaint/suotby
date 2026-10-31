@@ -2,9 +2,11 @@
 {% extends "base.html" %}
 {% block title %}Наши клиенты — {{ site.brand }}{% endblock %}
 {% block content %}
-<section class="container section--top stack" style="gap:18px;padding-bottom:40px">
+<div class="container services-breadcrumbs">
   {% include "includes/breadcrumbs.html" %}
-  <h1 class="h1">{{ material.title }}</h1>
+</div>
+{% include "includes/internal_hero.html" with hero_title=material.title hero_eyebrow="Нам доверяют" hero_subtitle="Организации Минска и регионов Беларуси" hero_image="img/clients-cooperation.webp" hero_position="center 35%" %}
+<section class="container internal-intro">
   <p class="lead" style="font-size:18px">{{ clients|length }} организаций из Минска и регионов: производство, строительство, торговля, медицина, культура и представительства иностранных компаний.</p>
 </section>
 {% if testimonials %}

@@ -5,27 +5,27 @@
 {% block content %}
 
 {# ---------------- главный экран #}
-<section class="section--bg">
-  <div class="container row" style="padding-top:72px;padding-bottom:64px;gap:48px;align-items:center">
-    <div class="stack" style="flex:1 1 560px;min-width:0;gap:24px">
+<section class="home-hero" aria-labelledby="home-hero-title">
+  <img class="home-hero__background" src="{% static 'img/hero-safety.webp' %}" width="1200" height="800" alt="" fetchpriority="high">
+  <div class="container home-hero__layout">
+    <div class="home-hero__copy">
       <span class="badge">СТБ ISO 45001-2020 · ГОСТ 12.0.230</span>
-      <h1 class="h1 h1--hero">Разработка СУОТ и услуги по охране труда в Минске и по всей Беларуси</h1>
-      <p class="lead" style="max-width:600px">Разработаем и внедрим систему управления охраной труда, подготовим к сертификации и дадим собственный онлайн-сервис учёта по охране труда, чтобы система работала каждый день, а не лежала в папке.</p>
-      <div class="row row--center" style="gap:12px 20px;margin-top:8px">
+      <h1 id="home-hero-title" class="h1 home-hero__title"><span>Разработка СУОТ</span> и услуги по охране труда в Минске и по всей Беларуси</h1>
+      <p class="lead">Разработаем документы, внедрим систему и подготовим к сертификации. Подключим собственный онлайн-сервис, чтобы охрана труда работала каждый день.</p>
+      <div class="home-hero__actions">
         <a class="btn btn--accent btn--lg" href="#zayavka">Получить расчёт за 1 день</a>
-        <a class="btn btn--outline" href="#video">Смотреть видео</a>
-        <span style="font-size:15px;color:var(--text-2)">Стоимость — <a href="/ceny-na-razrabotku-suot-v-minske.html" style="font-weight:600">смотреть цены</a></span>
+        {% if site.home_video_url %}<a class="home-hero__video" href="#video"><span aria-hidden="true">▶</span> Смотреть видео</a>{% endif %}
       </div>
+      <a class="home-hero__prices" href="/ceny-na-razrabotku-suot-v-minske.html">Посмотреть стоимость услуг <span aria-hidden="true">↗</span></a>
+      <div class="home-hero__note">{% icon "shield-check" %}<span>Документы, внедрение и поддержка — под задачи вашей организации</span></div>
     </div>
-    <div class="hero-card on-dark" style="flex:1 1 360px;min-width:0">
-      <span class="eyebrow">Бесплатно</span>
-      <span class="hero-card__title">Экспресс-аудит охраны труда в вашей организации</span>
-      <ul class="checklist">
-        <li>{% check_icon %}Проверим документы и записи</li>
-        <li>{% check_icon %}Найдём нарушения до проверки</li>
-        <li>{% check_icon %}Дадим план исправлений по приоритетам</li>
-      </ul>
-      <a class="link-more" href="#zayavka" style="text-decoration:underline">Записаться на аудит →</a>
+    <div class="home-hero__visual">
+      <div class="home-hero__audit on-dark">
+        <div class="home-hero__audit-label">{% icon "search-check" %}<span class="eyebrow">Начните с бесплатного аудита</span></div>
+        <h2>Всё ли в порядке с охраной труда?</h2>
+        <p>Проверим документы, найдём нарушения и дадим план исправлений по приоритетам.</p>
+        <a class="link-more" href="#zayavka">Записаться на экспресс-аудит <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -197,13 +197,21 @@
 </section>
 
 {# ---------------- заявка #}
-<section id="zayavka" class="section section--md section--accent">
-  <div class="container row" style="gap:40px;align-items:center">
-    <div class="stack" style="flex:1 1 360px;min-width:0;gap:14px">
-      <h2 class="h2">Расскажите о задаче — перезвоним в тот же день</h2>
-      <p class="text-on-accent" style="font-size:17px">Или напишите в Viber / Telegram: {{ site.phone_1 }}.</p>
+<section id="zayavka" class="home-contact" aria-labelledby="home-contact-title">
+  <img class="home-contact__background" src="{% static 'img/contact-safety.webp' %}" width="1440" height="960" alt="" loading="lazy">
+  <div class="container home-contact__layout">
+    <div class="home-contact__copy">
+      <span class="eyebrow">От вопроса — к понятному плану</span>
+      <h2 id="home-contact-title">Разберёмся с охраной труда в вашей организации</h2>
+      <p>Нужна СУОТ, документы или помощь с предписанием? Расскажите о задаче — подскажем, с чего начать.</p>
+      <a class="home-contact__phone" href="{{ site.phone_1|tel }}">{% icon "phone" 20 %}{{ site.phone_1 }}</a>
+      <span class="home-contact__messengers">Можно написать в Viber или Telegram</span>
     </div>
-    <div style="flex:1 1 380px;min-width:0">{% lead_form variant="short" button="Получить расчёт" %}</div>
+    <div class="home-contact__panel">
+      <h3>Обсудим вашу задачу</h3>
+      <p>Оставьте номер — перезвоним в тот же день.</p>
+      {% lead_form variant="short" button="Получить расчёт" %}
+    </div>
   </div>
 </section>
 {% endblock %}

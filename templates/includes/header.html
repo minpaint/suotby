@@ -18,7 +18,22 @@
       <span>{{ site.brand }}</span>
     </a>
     <nav class="nav" aria-label="Главное меню">
-      {% for item in main_menu %}<a href="{{ item.url }}"{% if item.key == menu_active %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+      {# ✏️ ИЗМЕНЕНО: ссылка открывает раздел, отдельная кнопка раскрывает список. #}
+      {% for item in main_menu %}
+      {% if item.children %}
+      <div class="nav__group{% if item.is_active %} nav__group--active{% endif %}">
+        <div class="nav__heading">
+          <a href="{{ item.url }}"{% if item.is_current %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-{{ item.key }}" aria-label="Показать подменю: {{ item.label }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        </div>
+        <ul class="nav__dropdown" id="nav-{{ item.key }}" hidden>
+          {% for child in item.children %}<li><a href="{{ child.url }}"{% if child.is_current %} aria-current="page"{% endif %}>{{ child.label }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      {% else %}
+      <a href="{{ item.url }}"{% if item.key == menu_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endif %}
+      {% endfor %}
     </nav>
     <a class="btn btn--accent" href="/kontakty.html#zayavka">Получить расчёт</a>
   </div>
